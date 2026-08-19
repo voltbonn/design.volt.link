@@ -1,0 +1,4 @@
+Vernünftig nicht über Github hosten, damit Login für Vorlagen möglich
+Vorbild für Designvorlagen: https://design.gruene.de/4ccd94a80/p/31e403-intro
+Idee für anpassbare Designvorlagen (hinter Login): https://volt-tools.github.io/vorlagen/ 
+
