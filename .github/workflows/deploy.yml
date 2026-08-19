@@ -43,5 +43,5 @@ jobs:
         with:
           email: thomas.rosen@me.com
           build_dir: storybook-static
-          cname: ""
+          cname: "design.volt.link"
           branch: deploy_frontend
