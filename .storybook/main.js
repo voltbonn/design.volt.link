@@ -7,11 +7,12 @@ const config = {
     "../stories/**/*.stories.@(js|jsx|mjs|ts|tsx)"
   ],
   "addons": [
-    "@chromatic-com/storybook",
-    "@storybook/addon-vitest",
-    "@storybook/addon-a11y",
+    // "@chromatic-com/storybook",
+    // "@storybook/addon-vitest",
+    // "@storybook/addon-a11y",
     "@storybook/addon-docs",
-    "@storybook/addon-onboarding"
+    // "@storybook/addon-onboarding",
+    "@storybook/addon-designs"
   ],
   "framework": "@storybook/react-vite"
 };
