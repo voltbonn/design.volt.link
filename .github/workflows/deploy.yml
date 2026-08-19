@@ -45,11 +45,3 @@ jobs:
           build_dir: storybook-static
           cname: ""
           branch: deploy_frontend
-      - name: run deploy commands on uberspace
-        uses: garygrossgarten/github-action-ssh@release
-        with:
-          command: |
-            cd ~/design.volt.link/ && git checkout deploy_frontend && git pull && supervisorctl restart design_volt_link;
-          host: maury.uberspace.de
-          username: volteu
-          password: ${{ secrets.UBERSPACE_PASSWORD_VOLTEU }}
