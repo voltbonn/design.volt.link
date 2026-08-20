@@ -9,9 +9,13 @@ export default {
   parameters: {
     // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/configure/story-layout
     layout: 'centered',
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/design/oONSivQBz9b52yuD5IXeaT/thomas-stuff?node-id=222-643&t=1VxjD8XeYmSluwa1-4',
+    },
   },
   // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs
-  tags: ['autodocs'],
+  // tags: ['autodocs'],
   // More on argTypes: https://storybook.js.org/docs/api/arg-types
   argTypes: {
     backgroundColor: { control: 'color' },
