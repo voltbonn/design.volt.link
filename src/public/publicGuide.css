@@ -1,44 +1,101 @@
 .public-guide {
   min-height: 100vh;
   background: var(--volt-surface-muted);
+  color: var(--volt-text);
 }
 
 .public-guide__topbar {
   position: sticky;
   top: 0;
-  z-index: 10;
-  display: flex;
+  z-index: 20;
+  display: grid;
+  grid-template-columns: minmax(220px, 280px) 1fr auto;
   align-items: center;
-  justify-content: space-between;
-  gap: 20px;
+  min-height: 56px;
   border-bottom: 1px solid var(--volt-border);
   background: var(--volt-topbar);
-  padding: 14px 20px;
+  backdrop-filter: blur(12px);
 }
 
 .public-guide__brand {
   display: inline-flex;
   align-items: center;
   gap: 10px;
+  height: 100%;
+  box-sizing: border-box;
+  border-right: 1px solid var(--volt-border);
   color: var(--volt-text);
+  padding: 0 18px;
   text-decoration: none;
 }
 
 .public-guide__mark {
   display: grid;
   place-items: center;
-  width: 34px;
-  height: 34px;
+  width: 30px;
+  height: 30px;
   border-radius: 999px;
   background: var(--volt-purple);
   color: var(--volt-on-brand);
   font-weight: 700;
 }
 
+.public-guide__brand strong {
+  font-size: 14px;
+}
+
+.public-guide__tools,
 .public-guide__actions {
   display: flex;
-  align-items: end;
-  gap: 12px;
+  align-items: center;
+  gap: 8px;
+  padding: 0 14px;
+}
+
+.public-guide__tools {
+  min-width: 0;
+}
+
+.public-guide__actions {
+  justify-content: end;
+}
+
+.public-guide__tools button,
+.public-guide__theme-toggle,
+.public-guide__template-link,
+.public-guide__storybook-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  min-height: 34px;
+  box-sizing: border-box;
+  border-radius: 8px;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.public-guide__tools button,
+.public-guide__storybook-link {
+  border: 1px solid var(--volt-border);
+  background: var(--volt-control-bg);
+  color: var(--volt-text);
+  padding: 0 10px;
+}
+
+.public-guide__tools button {
+  cursor: pointer;
+}
+
+.public-guide__tools button:hover,
+.public-guide__tools button[aria-pressed='true'],
+.public-guide__storybook-link:hover {
+  border-color: var(--volt-purple);
+  background: var(--volt-surface-active);
+  color: var(--volt-link);
 }
 
 .public-guide__actions label,
@@ -48,6 +105,15 @@
   color: var(--volt-muted-text);
   font-size: 12px;
   font-weight: 700;
+}
+
+.public-guide__actions label span {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
 }
 
 .public-guide__actions select,
@@ -62,22 +128,13 @@
 
 .public-guide__theme-toggle,
 .public-guide__template-link {
-  border-radius: 8px;
+  border: 0;
   background: var(--volt-purple);
   color: var(--volt-on-brand);
-  padding: 10px 14px;
-  font: inherit;
-  font-weight: 700;
-  text-decoration: none;
+  padding: 0 12px;
 }
 
 .public-guide__theme-toggle {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 7px;
-  min-height: 40px;
-  border: 0;
   cursor: pointer;
 }
 
@@ -90,20 +147,31 @@
 .public-guide__layout {
   display: grid;
   grid-template-columns: 280px minmax(0, 1fr);
-  align-items: start;
+  align-items: stretch;
+  min-height: calc(100vh - 57px);
 }
 
 .public-guide__sidebar {
   position: sticky;
-  top: 63px;
+  top: 57px;
   display: grid;
-  gap: 16px;
-  height: calc(100vh - 63px);
+  grid-template-rows: auto auto minmax(0, 1fr) auto;
+  gap: 14px;
+  height: calc(100vh - 57px);
   box-sizing: border-box;
   overflow: auto;
   border-right: 1px solid var(--volt-border);
   background: var(--volt-surface);
-  padding: 18px;
+  padding: 16px 12px;
+}
+
+.public-guide__sidebar-title {
+  margin: 0;
+  color: var(--volt-muted-text);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 .public-guide__search input {
@@ -113,28 +181,40 @@
 
 .public-guide__sidebar nav {
   display: grid;
+  align-content: start;
+  gap: 16px;
+}
+
+.public-guide__nav-section {
+  display: grid;
   gap: 4px;
 }
 
-.public-guide__sidebar nav a {
-  display: grid;
-  gap: 3px;
+.public-guide__nav-section h2 {
+  margin: 0 0 4px;
+  color: var(--volt-muted-text);
+  font-size: 12px;
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+.public-guide__nav-section a {
+  display: block;
   border-radius: 8px;
   color: var(--volt-text);
-  padding: 9px 10px;
+  padding: 8px 10px;
+  font-size: 14px;
   text-decoration: none;
 }
 
-.public-guide__sidebar nav a:hover,
-.public-guide__sidebar nav a.is-active {
+.public-guide__nav-section a:hover,
+.public-guide__nav-section a.is-active {
   background: var(--volt-surface-active);
   color: var(--volt-link);
 }
 
-.public-guide__sidebar nav a span {
-  color: var(--volt-muted-text);
-  font-size: 11px;
-  font-weight: 700;
+.public-guide__nav-section a.is-active {
+  box-shadow: inset 3px 0 0 var(--volt-yellow);
 }
 
 .public-guide__empty {
@@ -152,9 +232,92 @@
 }
 
 .public-guide__content {
+  min-width: 0;
   box-sizing: border-box;
-  width: min(100%, 980px);
-  padding: 44px 28px 80px;
+  padding: 20px;
+}
+
+.public-guide__content-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 38px;
+  border: 1px solid var(--volt-border);
+  border-bottom: 0;
+  border-radius: 8px 8px 0 0;
+  background: var(--volt-surface);
+  padding: 0 14px;
+}
+
+.public-guide__content-header span {
+  color: var(--volt-muted-text);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.public-guide__content-header strong {
+  min-width: 0;
+  overflow: hidden;
+  color: var(--volt-text);
+  font-size: 13px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.public-guide__canvas {
+  position: relative;
+  min-height: calc(100vh - 136px);
+  box-sizing: border-box;
+  overflow: hidden;
+  border: 1px solid var(--volt-border);
+  border-radius: 0 0 8px 8px;
+  background: var(--volt-surface-muted);
+  padding: 48px clamp(20px, 5vw, 72px) 80px;
+}
+
+.public-guide__canvas > * {
+  position: relative;
+  z-index: 1;
+  max-width: 980px;
+}
+
+.public-guide__canvas--white {
+  background: var(--volt-surface-strong);
+}
+
+.public-guide__canvas--brand {
+  background: var(--volt-purple);
+  color: var(--volt-on-brand);
+}
+
+.public-guide__canvas--brand h1,
+.public-guide__canvas--brand h2,
+.public-guide__canvas--brand h3,
+.public-guide__canvas--brand p,
+.public-guide__canvas--brand li {
+  color: var(--volt-on-brand);
+}
+
+.public-guide__canvas--brand a:not(.volt-section-nav a):not(.volt-legal-links a) {
+  color: var(--volt-yellow);
+}
+
+.public-guide__canvas.is-grid-visible::before {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  content: '';
+  background-image:
+    linear-gradient(rgba(130, 208, 244, 0.22) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(130, 208, 244, 0.22) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.public-guide__canvas.is-outline-visible :where(h1, h2, h3, p, li, section, article, a, button, input, select) {
+  outline: 1px dashed rgba(230, 62, 18, 0.55);
+  outline-offset: 2px;
 }
 
 .public-guide__content h1 {
@@ -179,33 +342,91 @@
   line-height: 1.6;
 }
 
-.public-guide__content > p {
+.public-guide__content > p,
+.public-guide__canvas > p {
   max-width: 760px;
 }
 
-@media (max-width: 860px) {
-  .public-guide__topbar,
+@media (max-width: 1120px) {
+  .public-guide__topbar {
+    grid-template-columns: 240px 1fr;
+  }
+
   .public-guide__actions {
-    align-items: stretch;
-    flex-direction: column;
+    grid-column: 1 / -1;
+    justify-content: start;
+    border-top: 1px solid var(--volt-border);
+    padding: 10px 14px;
+  }
+
+  .public-guide__layout {
+    min-height: calc(100vh - 102px);
+  }
+
+  .public-guide__sidebar {
+    top: 102px;
+    height: calc(100vh - 102px);
+  }
+}
+
+@media (max-width: 860px) {
+  .public-guide__topbar {
+    position: static;
+    grid-template-columns: 1fr;
+  }
+
+  .public-guide__brand {
+    min-height: 56px;
+    border-right: 0;
+    border-bottom: 1px solid var(--volt-border);
+  }
+
+  .public-guide__tools,
+  .public-guide__actions {
+    flex-wrap: wrap;
+    justify-content: start;
+    padding: 10px 14px;
   }
 
   .public-guide__layout {
     grid-template-columns: 1fr;
+    min-height: auto;
   }
 
   .public-guide__sidebar {
     position: static;
     height: auto;
+    max-height: none;
     border-right: 0;
     border-bottom: 1px solid var(--volt-border);
   }
 
   .public-guide__content {
+    padding: 14px;
+  }
+
+  .public-guide__canvas {
+    min-height: auto;
     padding: 32px 18px 60px;
   }
 
   .public-guide__content h1 {
     font-size: 36px;
+  }
+}
+
+@media (max-width: 520px) {
+  .public-guide__tools button,
+  .public-guide__theme-toggle,
+  .public-guide__template-link,
+  .public-guide__storybook-link,
+  .public-guide__actions select {
+    width: 100%;
+  }
+
+  .public-guide__content-header {
+    align-items: start;
+    flex-direction: column;
+    padding: 10px 12px;
   }
 }

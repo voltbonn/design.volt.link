@@ -61,6 +61,8 @@ const pages = [
   { id: 'archive', section: 'archive', content: archive },
 ];
 
+const sectionOrder = ['00', '01', '02', '03', '04', '05', '06', 'archive'];
+
 const languages = [
   { value: 'de', label: 'Deutsch' },
   { value: 'en', label: 'English' },
@@ -69,6 +71,8 @@ const languages = [
 ];
 
 const getHashPage = () => window.location.hash.replace(/^#\/?/, '') || 'intro';
+
+const backgroundModes = ['guide', 'white', 'brand'];
 
 const pageTitle = (page, locale, t) => {
   if (page.id === 'intro') {
@@ -82,6 +86,9 @@ const PublicGuideInner = ({ setLocale, setTheme, theme }) => {
   const { locale, t } = useI18n();
   const [activePage, setActivePage] = React.useState(getHashPage);
   const [query, setQuery] = React.useState('');
+  const [showGrid, setShowGrid] = React.useState(false);
+  const [showOutline, setShowOutline] = React.useState(false);
+  const [backgroundIndex, setBackgroundIndex] = React.useState(0);
 
   React.useEffect(() => {
     const onHashChange = () => setActivePage(getHashPage());
@@ -104,8 +111,20 @@ const PublicGuideInner = ({ setLocale, setTheme, theme }) => {
     });
   }, [locale, query, t]);
 
+  const groupedPages = React.useMemo(
+    () =>
+      sectionOrder
+        .map((section) => ({
+          section,
+          pages: visiblePages.filter((item) => item.section === section),
+        }))
+        .filter((group) => group.pages.length > 0),
+    [visiblePages],
+  );
+
   const page = pages.find((item) => item.id === activePage) ?? pages[0];
   const nextTheme = theme === 'dark' ? 'light' : 'dark';
+  const background = backgroundModes[backgroundIndex];
 
   return (
     <div className="public-guide" data-theme={theme}>
@@ -114,6 +133,34 @@ const PublicGuideInner = ({ setLocale, setTheme, theme }) => {
           <span className="public-guide__mark">S</span>
           <strong>design.volt.link</strong>
         </a>
+        <div className="public-guide__tools" aria-label={t('publicGuide.tools.label')}>
+          <button
+            type="button"
+            aria-pressed={showGrid}
+            title={t('publicGuide.tools.grid')}
+            onClick={() => setShowGrid((value) => !value)}
+          >
+            <span aria-hidden="true">#</span>
+            <span>{t('publicGuide.tools.gridShort')}</span>
+          </button>
+          <button
+            type="button"
+            title={t('publicGuide.tools.background')}
+            onClick={() => setBackgroundIndex((value) => (value + 1) % backgroundModes.length)}
+          >
+            <span aria-hidden="true">□</span>
+            <span>{t(`publicGuide.backgrounds.${background}`)}</span>
+          </button>
+          <button
+            type="button"
+            aria-pressed={showOutline}
+            title={t('publicGuide.tools.outline')}
+            onClick={() => setShowOutline((value) => !value)}
+          >
+            <span aria-hidden="true">⌗</span>
+            <span>{t('publicGuide.tools.outlineShort')}</span>
+          </button>
+        </div>
         <div className="public-guide__actions">
           <label>
             <span>{t('publicGuide.language')}</span>
@@ -139,11 +186,15 @@ const PublicGuideInner = ({ setLocale, setTheme, theme }) => {
           <a className="public-guide__template-link" href="#templates">
             {t('common.templates')}
           </a>
+          <a className="public-guide__storybook-link" href="/storybook/">
+            {t('publicGuide.storybook')}
+          </a>
         </div>
       </header>
 
       <div className="public-guide__layout">
         <aside className="public-guide__sidebar">
+          <p className="public-guide__sidebar-title">{t('publicGuide.sidebarTitle')}</p>
           <label className="public-guide__search">
             <span>{t('publicGuide.search')}</span>
             <input
@@ -156,15 +207,19 @@ const PublicGuideInner = ({ setLocale, setTheme, theme }) => {
 
           <nav aria-label={t('publicGuide.navigation')}>
             {visiblePages.length === 0 && <p className="public-guide__empty">{t('publicGuide.noResults')}</p>}
-            {visiblePages.map((item) => (
-              <a
-                key={item.id}
-                className={item.id === page.id ? 'is-active' : undefined}
-                href={`#${item.id}`}
-              >
-                <span>{t(`publicGuide.sections.${item.section}`)}</span>
-                {pageTitle(item, locale, t)}
-              </a>
+            {groupedPages.map((group) => (
+              <section key={group.section} className="public-guide__nav-section">
+                <h2>{t(`publicGuide.sections.${group.section}`)}</h2>
+                {group.pages.map((item) => (
+                  <a
+                    key={item.id}
+                    className={item.id === page.id ? 'is-active' : undefined}
+                    href={`#${item.id}`}
+                  >
+                    {pageTitle(item, locale, t)}
+                  </a>
+                ))}
+              </section>
             ))}
           </nav>
 
@@ -172,18 +227,33 @@ const PublicGuideInner = ({ setLocale, setTheme, theme }) => {
         </aside>
 
         <main className="public-guide__content">
-          {page.id === 'intro' ? (
-            <GuideIntro
-              hrefs={{
-                foundations: '#designPrinciples',
-                applications: '#websites',
-                templates: '#templates',
-                help: '#help',
-              }}
-            />
-          ) : (
-            <GuidePage page={page.id} />
-          )}
+          <div className="public-guide__content-header">
+            <span>{t(`publicGuide.sections.${page.section}`)}</span>
+            <strong>{pageTitle(page, locale, t)}</strong>
+          </div>
+          <article
+            className={[
+              'public-guide__canvas',
+              `public-guide__canvas--${background}`,
+              showGrid ? 'is-grid-visible' : '',
+              showOutline ? 'is-outline-visible' : '',
+            ]
+              .filter(Boolean)
+              .join(' ')}
+          >
+            {page.id === 'intro' ? (
+              <GuideIntro
+                hrefs={{
+                  foundations: '#designPrinciples',
+                  applications: '#websites',
+                  templates: '#templates',
+                  help: '#help',
+                }}
+              />
+            ) : (
+              <GuidePage page={page.id} />
+            )}
+          </article>
         </main>
       </div>
     </div>

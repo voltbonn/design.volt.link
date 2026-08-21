@@ -4,10 +4,12 @@
 
 Dieses Projekt soll eine einfach einsehbare und nachvollziehbare Seite für alle werden, die bei Volt mit Gestaltung arbeiten: Mitglieder, Materialteam, Social-Media-Team, Website-Team, Designteam und interessierte Mitglieder. Ziel ist ein praktischer Designguide mit erklärten Grundlagen, Beispielen und Links zu Figma- und Canva-Vorlagen.
 
-Als technisches Fundament gibt es zwei Ebenen:
+Als technisches Fundament gibt es zwei Ebenen. Die öffentliche Website ist die primäre Oberfläche:
 
 - Die öffentliche Website läuft als eigene React/Vite-Seite. Sie nutzt die Guide-Inhalte, ist mehrsprachig und zeigt keine Storybook-Oberfläche.
 - Storybook bleibt als Arbeitsumgebung für Komponenten, Zustände, technische Prüfung und Designentwicklung erhalten.
+
+Die normale Website soll sich bewusst ähnlich wie eine Komponentenbibliothek bedienen lassen: linke Kapitel-Navigation, Suche, Topbar, funktionierende Ansichtswerkzeuge, Dark/Light Mode, Sprachwahl und ein eigener Inhaltsbereich. Storybook wird nicht mehr als öffentliche Oberfläche verbogen. Es dokumentiert Komponenten, die anschließend in den Unterseiten der Website eingebettet werden können.
 
 ## Ziel für Version 1
 
@@ -131,7 +133,20 @@ Geplante Startwerte aus der Volt Visual Identity:
 
 Die öffentliche Website enthält einen Sprachschalter für Deutsch, Englisch, Niederländisch und Französisch. Die UI-Übersetzungen laufen über `react-i18next` und liegen in `src/design/i18n.jsx`; die strukturierten Guide-Kapitel liegen in `src/design/content/guidePages.js` und nutzen die aktive i18next-Sprache.
 
-Storybook enthält ebenfalls einen Sprachschalter für die gerenderten Inhalte. Die Storybook-eigene Oberfläche wie Controls, Actions, Interactions oder die Sidebar-Suche ist jedoch Storybook-UI und nicht Teil des öffentlichen Designguides.
+Storybook enthält ebenfalls einen Sprachschalter für die gerenderten Inhalte. Die Storybook-eigene Oberfläche wie Controls, Actions, Interactions oder die Sidebar-Suche ist jedoch Storybook-UI und nicht Teil des öffentlichen Designguides. Diese Texte werden nicht projektseitig übersetzt.
+
+## Öffentliche Oberfläche und Storybook
+
+Die öffentliche Oberfläche liegt in `src/public/PublicGuide.jsx` und `src/public/publicGuide.css`. Dort sitzen:
+
+- Kapitelbaum und Suche
+- Sprachumschaltung
+- Dark/Light Mode
+- Raster-, Hintergrund- und Kontur-Werkzeuge
+- Link zu den anpassbaren Vorlagen
+- Links zu Impressum und Datenschutz
+
+Storybook wird weiter über `npm run storybook` gestartet. Die Datei `.storybook/manager.js` enthält nur noch stabiles Branding für `design.volt.link`; Inhalte und Komponenten werden über Stories und MDX gepflegt.
 
 ## Entwicklung
 
