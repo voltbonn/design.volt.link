@@ -2,9 +2,13 @@
   "name": "design.volt.link",
   "type": "module",
   "dependencies": {
-    "react": "^19.2.8"
+    "i18next": "^26.4.0",
+    "react": "^19.2.8",
+    "react-i18next": "^17.0.12"
   },
   "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "vite build",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },

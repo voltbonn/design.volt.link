@@ -1,87 +1,12 @@
-# To-do: Volt Designportal
+von deutsch auf andere sprache und zurück wechseln klappt nicht
+overlay und files/ordner nicht mehrsprachig
+darkmode
 
-Ziel: Eine einfach einsehbare, gut nachvollziehbare oeffentliche Seite fuer das Volt Design bauen. Sie richtet sich an Mitglieder und alle, die mit Design arbeiten: Materialteam, Social-Media-Team, Website-Team, Designteam sowie interessierte Mitglieder. Storybook dient als technisches und redaktionelles Fundament. Figma- und Canva-Vorlagen werden sichtbar verlinkt; spaeter kommen Login und anpassbare Vorlagen hinter einen geschuetzten Bereich.
 
-## 1. Grundlage klaeren
 
-- [x] Zielgruppe definieren: Mitglieder und alle, die mit Design arbeiten, insbesondere Materialteam, Social-Media-Team, Website-Team, Designteam sowie interessierte Mitglieder.
-- [x] Umfang fuer Version 1 festlegen: oeffentlicher Designguide ohne Login und ohne Vorlagen-Editor. Der Loginbereich und anpassbare Vorlagen kommen spaeter.
-- [x] Bestehende Volt-Designquellen sammeln: Fuer den Grundbau mit https://volteuropa.org/visual_identity starten; spaeter um weitere Logo-Dateien, Farbwerte, Typografie, Icons, Bildsprache, Beispielgrafiken und Kampagnenmaterial erweitern.
-- [x] Rechtliche und organisatorische Regeln sammeln: Offizielle Logo- und Visual-Identity-Nutzungsregeln sind als Startpunkt dokumentiert; Impressum/Datenschutz sind verlinkt, offene Detailfragen bleiben in Quellen, Hilfe und Planung sichtbar.
-- [x] Informationsarchitektur skizzieren: Kapitelstruktur in Storybook angelegt mit Einstieg, Quellen, Grundlagen, Anwendungen, Vorlagen, Hilfe und Komponenten.
 
-## 2. Inhalte der oeffentlichen Designseite
 
-- [x] Startseite bauen: kurze Einordnung, wofuer das Portal da ist, direkte Sprunglinks fuer Material, Social Media, Website, Design und interessierte Mitglieder.
-- [x] Kapitel "Logo" anlegen: Varianten, Schutzraum, Mindestgroesse, helle/dunkle Hintergruende, Do's und Don'ts, Downloads.
-- [x] Kapitel "Farben" anlegen: Primaerfarben, Sekundaerfarben, Abstufungen, HEX/RGB/CMYK, Kontrastempfehlungen, typische Kombinationen.
-- [x] Kapitel "Typografie" anlegen: Hausschriften, Ersatzschriften, Groessenhierarchie, Headlines, Fliesstext, Social-Media-Text.
-- [x] Kapitel "Layout" anlegen: Raster, Abstaende, Flaechen, Bild/Text-Verhaeltnis, Plakat- und Social-Media-Prinzipien.
-- [x] Kapitel "Bildsprache" anlegen: Fotoauswahl, Motive, Tonalitaet, Barrierefreiheit, Bildrechte.
-- [x] Kapitel "Icons und grafische Elemente" anlegen: Stil, Groessen, Einsatzregeln, Download/Quelle.
-- [x] Kapitel "Anwendungsbeispiele" anlegen: Social Media, Plakat, Flyer, Praesentation, Website, Newsletter und Materialarbeit.
-- [x] Kapitel "Vorlagen" anlegen: Figma-Links, Canva-Links, Downloadhinweise, Zugriffsregeln, Status pro Vorlage.
-- [x] Kapitel "Hilfe/FAQ" anlegen: haeufige Fehler, Kontakt, Freigabeprozess, Materialwuensche.
-
-## 3. Storybook als Designsystem einrichten
-
-- [x] Storybook-Beispielkomponenten entfernen oder in echte Volt-Komponenten umbauen.
-- [x] Navigation in Storybook sinnvoll strukturieren: Grundlagen, Komponenten, Vorlagen, Beispiele.
-- [x] Design-Tokens anlegen: Farben, Spacing, Typografie, Schatten, Radius, Breakpoints.
-- [x] Globale CSS-Basis erstellen: Fonts, Body, Links, Buttons, Fokus-Zustaende, responsive Layoutregeln.
-- [x] Komponenten fuer den Guide bauen: Farbkarte, Typografie-Beispiel, Downloadkarte, Do/Don't-Vergleich, Vorlagenkarte, Inhaltsnavigation.
-- [x] MDX-Dokumentationsseiten fuer die Kapitel erstellen, damit Text und Komponenten gemeinsam gepflegt werden koennen.
-- [x] Storybook Addon Designs final konfigurieren, damit Figma-Vorlagen direkt an Stories haengen koennen.
-- [x] Accessibility-Addon aktiv halten und Kontrast/Fokus-Zustaende pruefen.
-
-## 4. Figma- und Canva-Vorlagen hinterlegen
-
-- [x] Figma-Dateien ordnen: Designsystem, Komponenten, Social Media, Website, Print, Praesentation.
-- [ ] Figma-Links pro Vorlage sammeln und entscheiden, welche oeffentlich sichtbar sind.
-- [x] Canva-Vorlagen ordnen: Instagram-Post, Story, Eventgrafik, Plakat, Flyer, Praesentation und einfache Materialien fuer Mitglieder.
-- [ ] Canva-Template-Links erstellen und mit klaren Namen, Formatangaben und Vorschaubildern dokumentieren.
-- [x] Pro Vorlage Metadaten definieren: Titel, Format, Zielgruppe, Tool, Status, Link, letzte Aktualisierung.
-- [ ] Vorschaubilder fuer Vorlagen exportieren und im Portal einheitlich darstellen.
-- [x] Hinweise ergaenzen: "Vorlage duplizieren", "Nicht direkt im Original bearbeiten", "Fonts/Bilder pruefen".
-
-## 5. Frontend der oeffentlichen Seite
-
-- [x] Entscheiden, ob die oeffentliche Seite nur Storybook ist oder eine eigene Website mit Storybook als Designsystem: Version 1 nutzt Storybook als oeffentlichen Designguide.
-- [x] Landing-/Uebersichtsseite bauen, die nicht wie Marketing wirkt, sondern wie ein nutzbarer Designguide.
-- [x] Sticky Inhaltsnavigation fuer lange Kapitel bauen.
-- [x] Such- oder Filterfunktion fuer Vorlagen vorbereiten.
-- [x] Mobile Ansicht sauber gestalten: Navigation, Tabellen/Farbwerte, Vorlagenkarten, Downloadlinks.
-- [x] Download- und Linkzustaende definieren: oeffentlich, eingeschraenkt, bald verfuegbar.
-- [x] Impressum/Datenschutz verlinken, falls die Seite oeffentlich deployed wird.
-
-## 6. Deployment und Betrieb
-
-- [x] Deployment-Ziel entscheiden: GitHub Pages nur fuer oeffentlichen Guide oder eigener Server fuer spaeteren Login.
-- [x] Aktuellen GitHub-Workflow pruefen: Er nutzt yarn, das Repo nutzt aber package-lock.json/npm.
-- [x] Build-Skript und CI vereinheitlichen: npm oder yarn, nicht beides gemischt.
-- [x] CNAME und Domain-Setup fuer design.volt.link pruefen.
-- [x] Preview-Deployment fuer Pull Requests oder Testversion einrichten.
-- [x] Regelmaessige Aktualisierung planen: Wer pflegt Inhalte, wer prueft Vorlagen, wie werden Aenderungen freigegeben?
-
-## 7. Vorbereitung fuer spaeteren Loginbereich
-
-- [x] Anpassbare Vorlagen in Version 1 nur als ungeschuetzten Platzhalterbereich bauen, echte Auth spaeter backendseitig umsetzen.
-- [x] Spaetere Bereiche definieren: oeffentlich, nur Mitglieder, Admin/Redaktion.
-- [x] Auth-Optionen pruefen: bestehender Volt-Login, OAuth, Magic Link oder eigenes System.
-- [x] Datenmodell fuer Vorlagen vorbereiten: Templates, Kategorien, Berechtigungen, Versionen.
-- [x] Anforderungen fuer anpassbare Vorlagen klaeren: Canva-Links reichen zunaechst oder eigener Generator noetig?
-- [x] Redaktionsoberflaeche spaeter planen: Vorlagen anlegen, Links aktualisieren, Vorschaubilder tauschen.
-- [x] Button "Anpassbare Vorlagen" einbauen: fuehrt ohne Login direkt auf eine lila Platzhalterseite.
-- [ ] Login backendfaehig spaeter planen: Mailversand, Session, sichere Code-Pruefung und Servervalidierung erst mit Backend ergaenzen.
-
-## 8. Erste konkrete Umsetzungsschritte
-
-- [ ] Remote-Stand reinholen: lokaler Branch ist aktuell 1 Commit hinter origin/main.
-- [x] Storybook-Beispieltexte und "Acme"/"Jane Doe" entfernen.
-- [x] Button-Testtext in stories/Button.jsx bereinigen.
-- [x] README mit Projektziel, Setup und Deployment-Hinweisen ersetzen.
-- [x] Erste echte Seite "Volt Design" als Storybook-MDX-Seite anlegen.
-- [x] Erste Komponenten bauen: ColorSwatch, TypographySample, TemplateCard, DosDonts.
-- [x] Erste Inhalte einpflegen: Farben, Logo-Grundregeln, Typografie, Links zu Figma/Canva.
-- [x] Build lokal pruefen: npm run build-storybook.
-
+Version 2:
+- Loginbereich 
+- dahinter Vorlagen
+- rechtlich richtig

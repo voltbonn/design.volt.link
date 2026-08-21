@@ -1,51 +1,47 @@
 import React from 'react';
 
+import { useT } from '../src/design/i18n';
 import { Header } from './Header';
 import './page.css';
 
 export const Page = () => {
   const [showTemplates, setShowTemplates] = React.useState(false);
+  const t = useT();
 
   return (
     <article>
       <Header onOpenTemplates={() => setShowTemplates(true)} />
 
       {showTemplates ? (
-        <section className="protected-page" aria-label="Anpassbare Vorlagen">
+        <section className="protected-page" aria-label={t('common.templates')}>
           <div>
-            <p>Platzhalter fuer spaetere Funktionen</p>
-            <h2>Anpassbare Vorlagen</h2>
+            <p>{t('page.placeholder')}</p>
+            <h2>{t('common.templates')}</h2>
             <button type="button" onClick={() => setShowTemplates(false)}>
-              Zurueck zum Designguide
+              {t('common.backToGuide')}
             </button>
           </div>
         </section>
       ) : (
         <section className="storybook-page">
-          <p className="eyebrow">Version 1</p>
-          <h2>Volt Design einfach anwenden</h2>
-          <p className="lead">
-            Ein oeffentlicher Designguide fuer Mitglieder und Teams, die Materialien, Websites,
-            Social-Media-Grafiken oder Vorlagen im Volt Design erstellen.
-          </p>
+          <p className="eyebrow">{t('common.version')}</p>
+          <h2>{t('page.headline')}</h2>
+          <p className="lead">{t('page.lead')}</p>
           <div className="storybook-page__grid">
             <article>
-              <h3>Grundlagen</h3>
-              <p>Logo, Farben, Typografie, Layout, Bildsprache und grafische Elemente.</p>
+              <h3>{t('page.foundationsTitle')}</h3>
+              <p>{t('page.foundationsText')}</p>
             </article>
             <article>
-              <h3>Anwendungen</h3>
-              <p>Beispiele fuer Social Media, Print, Praesentationen, Websites und Materialarbeit.</p>
+              <h3>{t('page.applicationsTitle')}</h3>
+              <p>{t('page.applicationsText')}</p>
             </article>
             <article>
-              <h3>Vorlagen</h3>
-              <p>Figma- und Canva-Vorlagen mit Format, Status, Link und Nutzungshinweisen.</p>
+              <h3>{t('page.templatesTitle')}</h3>
+              <p>{t('page.templatesText')}</p>
             </article>
           </div>
-          <p>
-            Anpassbare Vorlagen sind als eigener Bereich vorbereitet. Ein Backend oder Login gibt
-            es aktuell noch nicht.
-          </p>
+          <p>{t('page.templateNotice')}</p>
         </section>
       )}
     </article>

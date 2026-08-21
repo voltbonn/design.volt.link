@@ -1,8 +1,60 @@
 import '../src/design/global.css';
+import { DocsI18nContainer } from './DocsI18nContainer';
+import { I18nProvider } from '../src/design/i18n';
+import { withVoltPreviewBackground } from '../src/design/storybookBackground';
+import { ThemeProvider } from '../src/design/theme';
 
 /** @type { import('@storybook/react-vite').Preview } */
 const preview = {
+  globalTypes: {
+    locale: {
+      description: 'Sprache',
+      defaultValue: 'de',
+      toolbar: {
+        icon: 'globe',
+        title: 'Sprache',
+        items: [
+          { value: 'de', title: 'Deutsch' },
+          { value: 'en', title: 'English' },
+          { value: 'nl', title: 'Nederlands' },
+          { value: 'fr', title: 'Français' },
+        ],
+        dynamicTitle: true,
+      },
+    },
+    theme: {
+      description: 'Darstellung',
+      defaultValue: 'light',
+      toolbar: {
+        icon: 'mirror',
+        title: 'Darstellung',
+        items: [
+          { value: 'light', title: 'Hell' },
+          { value: 'dark', title: 'Dunkel' },
+        ],
+        dynamicTitle: true,
+      },
+    },
+  },
+  initialGlobals: {
+    locale: 'de',
+    theme: 'light',
+  },
+  decorators: [
+    withVoltPreviewBackground,
+    (Story, context) => (
+      <ThemeProvider theme={context.globals.theme}>
+        <I18nProvider key={context.globals.locale} locale={context.globals.locale}>
+          <Story />
+        </I18nProvider>
+      </ThemeProvider>
+    ),
+  ],
   parameters: {
+    docs: {
+      container: DocsI18nContainer,
+    },
+
     controls: {
       matchers: {
         color: /(background|color)$/i,
@@ -19,12 +71,18 @@ const preview = {
 
     backgrounds: {
       default: 'Guide Light',
-      values: [
-        { name: 'Guide Light', value: '#F7F4FA' },
-        { name: 'White', value: '#FFFFFF' },
-        { name: 'Volt Purple', value: '#502379' },
-        { name: 'Volt Yellow', value: '#FDC220' },
-      ],
+      disable: false,
+      options: {
+        'Guide Light': { name: 'Guide Light', value: '#F7F4FA' },
+        White: { name: 'White', value: '#FFFFFF' },
+        'Volt Purple': { name: 'Volt Purple', value: '#502379' },
+        'Volt Yellow': { name: 'Volt Yellow', value: '#FDC220' },
+      },
+      grid: {
+        cellSize: 20,
+        cellAmount: 5,
+        opacity: 0.45,
+      },
     },
 
     viewport: {
@@ -55,11 +113,31 @@ const preview = {
           [
             '00 Einstieg',
             ['Einstieg', 'Quellen und Regeln'],
-            '01 Grundlagen',
-            ['Logo', 'Farben', 'Typografie', 'Layout', 'Grafische Elemente', 'Bildsprache'],
-            '02 Anwendungen',
-            '03 Vorlagen',
-            '04 Komponenten',
+            '01 Grundlagendesign',
+            [
+              'Designprinzipien',
+              'Marke und Tonalität',
+              'Logo',
+              'Farben',
+              'Typografie',
+              'Layout',
+              'Grafische Elemente',
+              'Bildsprache',
+              'Barrierefreiheit',
+            ],
+            '02 Digitale Anwendung',
+            [
+              'Websites',
+              'Komponenten',
+              'Icons und UI-Elemente',
+              'Social Media',
+              'Newsletter',
+              'Präsentationen',
+              'Video und Motion',
+              'Dateien und Export',
+            ],
+            '03 Anwendungen',
+            '04 Vorlagen',
             '05 Hilfe',
             '06 Planung',
             ['Deployment', 'Betrieb und Pflege', 'Loginbereich'],

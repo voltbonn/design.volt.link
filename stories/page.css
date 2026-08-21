@@ -2,7 +2,7 @@
   margin: 0 auto;
   padding: 56px 24px;
   max-width: 960px;
-  color: #201a29;
+  color: var(--volt-text);
   font-size: 16px;
   line-height: 1.55;
   font-family: Ubuntu, Arial, sans-serif;
@@ -21,7 +21,7 @@
 
 .storybook-page .eyebrow {
   margin: 0 0 12px;
-  color: #502379;
+  color: var(--volt-link);
   font-size: 12px;
   font-weight: 700;
   text-transform: uppercase;
@@ -40,15 +40,15 @@
 }
 
 .storybook-page__grid article {
-  border: 1px solid #d8d3e0;
+  border: 1px solid var(--volt-border);
   border-radius: 8px;
-  background: #ffffff;
+  background: var(--volt-surface-strong);
   padding: 20px;
 }
 
 .storybook-page__grid h3 {
   margin: 0 0 8px;
-  color: #502379;
+  color: var(--volt-link);
 }
 
 @media (max-width: 760px) {
@@ -65,8 +65,8 @@
   display: grid;
   place-items: center;
   min-height: calc(100vh - 73px);
-  background: #502379;
-  color: #ffffff;
+  background: var(--volt-purple);
+  color: var(--volt-on-brand);
   font-family: Ubuntu, Arial, sans-serif;
   padding: 32px;
   text-align: center;
@@ -86,10 +86,10 @@
 
 .protected-page button {
   margin-top: 24px;
-  border: 2px solid #ffffff;
+  border: 2px solid var(--volt-on-brand);
   border-radius: 999px;
   background: transparent;
-  color: #ffffff;
+  color: var(--volt-on-brand);
   cursor: pointer;
   padding: 10px 16px;
   font: inherit;

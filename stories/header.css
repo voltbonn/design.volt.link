@@ -3,8 +3,8 @@
   justify-content: space-between;
   align-items: center;
   gap: 24px;
-  border-bottom: 1px solid #d8d3e0;
-  background: #ffffff;
+  border-bottom: 1px solid var(--volt-border);
+  background: var(--volt-surface-strong);
   padding: 18px 24px;
   font-family: Ubuntu, Arial, sans-serif;
 }
@@ -21,14 +21,14 @@
   width: 36px;
   height: 36px;
   border-radius: 999px;
-  background: #502379;
-  color: #ffffff;
+  background: var(--volt-purple);
+  color: var(--volt-on-brand);
   font-weight: 700;
 }
 
 .storybook-header h1 {
   margin: 0;
-  color: #201a29;
+  color: var(--volt-text);
   font-weight: 700;
   font-size: 20px;
   line-height: 1;
@@ -40,6 +40,6 @@
 
 .storybook-header .welcome {
   margin-right: 10px;
-  color: #201a29;
+  color: var(--volt-text);
   font-size: 14px;
 }

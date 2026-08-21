@@ -7,9 +7,9 @@
 .volt-legal-links,
 .volt-guideline-grid article,
 .volt-dos-donts article {
-  border: 1px solid #d8d8df;
+  border: 1px solid var(--volt-border);
   border-radius: 8px;
-  background: #ffffff;
+  background: var(--volt-surface-strong);
 }
 
 .volt-color-swatch {
@@ -49,7 +49,7 @@
 .volt-color-swatch dt,
 .volt-template-card__meta,
 .volt-application-card__meta {
-  color: #62626f;
+  color: var(--volt-muted-text);
   font-size: 12px;
   font-weight: 700;
   letter-spacing: 0;
@@ -84,7 +84,7 @@
 .volt-download-card__format,
 .volt-typography-sample__label {
   margin: 0 0 8px;
-  color: #625a6f;
+  color: var(--volt-muted-text);
   font-size: 12px;
   font-weight: 700;
   letter-spacing: 0;
@@ -98,7 +98,7 @@
 }
 
 .volt-typography-sample__text {
-  color: #201a29;
+  color: var(--volt-text);
   font-family: Ubuntu, Arial, sans-serif;
   font-size: 32px;
   font-weight: 700;
@@ -106,14 +106,14 @@
 }
 
 .volt-typography-sample__description {
-  color: #625a6f;
+  color: var(--volt-muted-text);
 }
 
 .volt-template-card__status {
   width: fit-content;
   border-radius: 999px;
-  background: #f3eef8;
-  color: #502379;
+  background: var(--volt-surface-active);
+  color: var(--volt-link);
   padding: 4px 10px;
   font-size: 12px;
   font-weight: 700;
@@ -121,7 +121,7 @@
 
 .volt-template-card__updated {
   margin: 0;
-  color: #625a6f;
+  color: var(--volt-muted-text);
   font-size: 14px;
 }
 
@@ -138,7 +138,7 @@
 
 .volt-guideline-grid h3,
 .volt-application-card h3 {
-  color: #502379;
+  color: var(--volt-link);
 }
 
 .volt-guideline-grid p,
@@ -162,7 +162,7 @@
 .volt-template-gallery__controls label {
   display: grid;
   gap: 6px;
-  color: #625a6f;
+  color: var(--volt-muted-text);
   font-size: 13px;
   font-weight: 700;
 }
@@ -171,10 +171,10 @@
 .volt-template-gallery__controls select {
   width: 100%;
   box-sizing: border-box;
-  border: 1px solid #d8d3e0;
+  border: 1px solid var(--volt-border);
   border-radius: 8px;
-  background: #ffffff;
-  color: #201a29;
+  background: var(--volt-control-bg);
+  color: var(--volt-text);
   padding: 10px 12px;
   font: inherit;
 }
@@ -187,7 +187,7 @@
 
 .volt-template-gallery__empty {
   margin: 0;
-  color: #625a6f;
+  color: var(--volt-muted-text);
 }
 
 .volt-in-page-nav {
@@ -197,17 +197,17 @@
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  border: 1px solid #d8d3e0;
+  border: 1px solid var(--volt-border);
   border-radius: 8px;
-  background: rgba(255, 255, 255, 0.94);
+  background: var(--volt-topbar);
   padding: 10px;
   margin: 20px 0;
 }
 
 .volt-in-page-nav a {
   border-radius: 999px;
-  background: #f7f4fa;
-  color: #502379;
+  background: var(--volt-surface-active);
+  color: var(--volt-link);
   padding: 6px 10px;
   font-size: 13px;
   font-weight: 700;
@@ -232,17 +232,17 @@
   display: grid;
   gap: 6px;
   padding: 18px;
-  color: #201a29;
+  color: var(--volt-text);
   text-decoration: none;
 }
 
 .volt-section-nav span {
-  color: #502379;
+  color: var(--volt-link);
   font-weight: 700;
 }
 
 .volt-section-nav small {
-  color: #625a6f;
+  color: var(--volt-muted-text);
   font-size: 14px;
   line-height: 1.4;
 }
@@ -258,8 +258,8 @@
 
 .volt-legal-links a {
   border-radius: 999px;
-  background: #f7f4fa;
-  color: #502379;
+  background: var(--volt-surface-active);
+  color: var(--volt-link);
   padding: 8px 12px;
   font-size: 14px;
   font-weight: 700;

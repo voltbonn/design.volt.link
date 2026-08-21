@@ -1,5 +1,7 @@
 import { fn } from 'storybook/test';
+import React from 'react';
 
+import { useT } from '../src/design/i18n';
 import { Button } from './Button';
 
 export default {
@@ -15,41 +17,47 @@ export default {
   tags: ['autodocs'],
   argTypes: {
     backgroundColor: { control: 'color' },
+    labelKey: { table: { disable: true } },
   },
   args: { onClick: fn() },
+  render: ({ labelKey, ...args }) => {
+    const t = useT();
+
+    return React.createElement(Button, { ...args, label: t(labelKey) });
+  },
 };
 
 export const Primary = {
   args: {
     primary: true,
-    label: 'Vorlage oeffnen',
+    labelKey: 'buttonStories.openTemplate',
   },
 };
 
 export const Secondary = {
   args: {
-    label: 'Mehr erfahren',
+    labelKey: 'buttonStories.learnMore',
   },
 };
 
 export const Large = {
   args: {
     size: 'large',
-    label: 'Designguide starten',
+    labelKey: 'buttonStories.startGuide',
   },
 };
 
 export const Small = {
   args: {
     size: 'small',
-    label: 'Download',
+    labelKey: 'buttonStories.download',
   },
 };
 
 export const Hover = {
   args: {
     primary: true,
-    label: 'Hover-Zustand',
+    labelKey: 'buttonStories.hover',
   },
   parameters: {
     pseudo: { hover: true },
@@ -59,7 +67,7 @@ export const Hover = {
 export const Focus = {
   args: {
     primary: true,
-    label: 'Fokus-Zustand',
+    labelKey: 'buttonStories.focus',
   },
   parameters: {
     pseudo: { focusVisible: true },

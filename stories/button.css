@@ -12,21 +12,21 @@
     color 160ms ease;
 }
 .storybook-button--primary {
-  background-color: #502379;
-  color: white;
+  background-color: var(--volt-purple);
+  color: var(--volt-on-brand);
 }
 .storybook-button--secondary {
-  border-color: #502379;
-  background-color: #ffffff;
-  color: #502379;
+  border-color: var(--volt-purple);
+  background-color: var(--volt-surface-strong);
+  color: var(--volt-link);
 }
 .storybook-button:hover {
-  background-color: #3d185f;
-  color: #ffffff;
+  background-color: var(--volt-brand-hover);
+  color: var(--volt-on-brand);
 }
 .storybook-button:focus-visible {
   outline: 0;
-  box-shadow: 0 0 0 3px rgba(253, 194, 32, 0.55);
+  box-shadow: 0 0 0 3px var(--volt-focus);
 }
 .storybook-button--small {
   padding: 10px 16px;
