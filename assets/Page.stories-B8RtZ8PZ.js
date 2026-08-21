@@ -1,0 +1,16 @@
+import{a as e,n as t}from"./rolldown-runtime-DkW27tQK.js";import{d as n}from"./iframe-Byg457Xk.js";import{t as r}from"./jsx-runtime-DeHZSEgm.js";import{n as i,t as a}from"./Header-DH2hFoVA.js";var o,s,c;function l(){return(l=t((()=>{o=e(n(),1),i(),s=r(),c=()=>{let[e,t]=o.useState(!1);return(0,s.jsxs)(`article`,{children:[(0,s.jsx)(a,{onOpenTemplates:()=>t(!0)}),e?(0,s.jsx)(`section`,{className:`protected-page`,"aria-label":`Anpassbare Vorlagen`,children:(0,s.jsxs)(`div`,{children:[(0,s.jsx)(`p`,{children:`Platzhalter fuer spaetere Funktionen`}),(0,s.jsx)(`h2`,{children:`Anpassbare Vorlagen`}),(0,s.jsx)(`button`,{type:`button`,onClick:()=>t(!1),children:`Zurueck zum Designguide`})]})}):(0,s.jsxs)(`section`,{className:`storybook-page`,children:[(0,s.jsx)(`p`,{className:`eyebrow`,children:`Version 1`}),(0,s.jsx)(`h2`,{children:`Volt Design einfach anwenden`}),(0,s.jsx)(`p`,{className:`lead`,children:`Ein oeffentlicher Designguide fuer Mitglieder und Teams, die Materialien, Websites, Social-Media-Grafiken oder Vorlagen im Volt Design erstellen.`}),(0,s.jsxs)(`div`,{className:`storybook-page__grid`,children:[(0,s.jsxs)(`article`,{children:[(0,s.jsx)(`h3`,{children:`Grundlagen`}),(0,s.jsx)(`p`,{children:`Logo, Farben, Typografie, Layout, Bildsprache und grafische Elemente.`})]}),(0,s.jsxs)(`article`,{children:[(0,s.jsx)(`h3`,{children:`Anwendungen`}),(0,s.jsx)(`p`,{children:`Beispiele fuer Social Media, Print, Praesentationen, Websites und Materialarbeit.`})]}),(0,s.jsxs)(`article`,{children:[(0,s.jsx)(`h3`,{children:`Vorlagen`}),(0,s.jsx)(`p`,{children:`Figma- und Canva-Vorlagen mit Format, Status, Link und Nutzungshinweisen.`})]})]}),(0,s.jsx)(`p`,{children:`Anpassbare Vorlagen sind als eigener Bereich vorbereitet. Ein Backend oder Login gibt es aktuell noch nicht.`})]})]})},c.__docgenInfo={description:``,methods:[],displayName:`Page`}})))()}var u,d,f,p,m,h,g;function _(){return(_=t((()=>{l(),{expect:u,userEvent:d,within:f}=__STORYBOOK_MODULE_TEST__,p={title:`Volt Design/04 Komponenten/Page`,component:c,parameters:{layout:`fullscreen`}},m={},h={play:async({canvasElement:e})=>{let t=f(e),n=t.getByRole(`button`,{name:/Anpassbare Vorlagen/i});await u(n).toBeInTheDocument(),await d.click(n),await u(t.getByLabelText(/Anpassbare Vorlagen/i)).toBeInTheDocument(),await u(t.getByRole(`heading`,{name:/Anpassbare Vorlagen/i})).toBeInTheDocument()}},m.parameters={...m.parameters,docs:{...m.parameters?.docs,source:{originalSource:`{}`,...m.parameters?.docs?.source}}},h.parameters={...h.parameters,docs:{...h.parameters?.docs,source:{originalSource:`{
+  play: async ({
+    canvasElement
+  }) => {
+    const canvas = within(canvasElement);
+    const templatesButton = canvas.getByRole('button', {
+      name: /Anpassbare Vorlagen/i
+    });
+    await expect(templatesButton).toBeInTheDocument();
+    await userEvent.click(templatesButton);
+    await expect(canvas.getByLabelText(/Anpassbare Vorlagen/i)).toBeInTheDocument();
+    await expect(canvas.getByRole('heading', {
+      name: /Anpassbare Vorlagen/i
+    })).toBeInTheDocument();
+  }
+}`,...h.parameters?.docs?.source}}},g=[`LoggedOut`,`TemplatesArea`]})))()}_();export{m as LoggedOut,h as TemplatesArea,g as __namedExportsOrder,p as default};
