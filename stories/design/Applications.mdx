@@ -1,4 +1,5 @@
 import { Meta } from "@storybook/addon-docs/blocks";
+import { ApplicationCard } from "../../src/design/components/ApplicationCard";
 
 <Meta title="Volt Design/02 Anwendungen/Uebersicht" />
 
@@ -6,15 +7,46 @@ import { Meta } from "@storybook/addon-docs/blocks";
 
 Dieses Kapitel zeigt, wie die Grundlagen in konkreten Materialien zusammenkommen.
 
-## Geplante Beispiele
+## Beispiele fuer Version 1
 
-- Social-Media-Post
-- Social-Media-Story
-- Eventgrafik
-- Plakat
-- Flyer
-- Praesentation
-- Website-Abschnitt
-- Newsletter
-- Material fuer Infostaende und Aktionen
+<ApplicationCard
+  title="Instagram-Post"
+  team="Social Media"
+  format="1080 x 1080"
+  guidance="Kurze Botschaft, starke Headline, Purple als Wiedererkennung und maximal eine Akzentfarbe."
+/>
 
+<ApplicationCard
+  title="Story oder Reel-Cover"
+  team="Social Media"
+  format="9:16"
+  guidance="Grosse Typografie, wenig Text und ausreichend sichere Raender fuer Plattform-UI."
+/>
+
+<ApplicationCard
+  title="Plakat"
+  team="Materialteam"
+  format="A3/A2"
+  guidance="Eine Hauptbotschaft, gut lesbare Distanzwirkung, Logo und Pflichtangaben sauber trennen."
+/>
+
+<ApplicationCard
+  title="Praesentation"
+  team="Designteam"
+  format="16:9"
+  guidance="Eine Aussage pro Folie, klare Hierarchie, wiederkehrende Titel- und Inhaltsfolien."
+/>
+
+<ApplicationCard
+  title="Website-Abschnitt"
+  team="Website-Team"
+  format="Responsive"
+  guidance="Scanbare Ueberschriften, barrierearme Kontraste, klare Links und genug Abstand."
+/>
+
+<ApplicationCard
+  title="Infostand-Material"
+  team="Materialteam"
+  format="Print/Digital"
+  guidance="Schnell erfassbare Information, robuste Druckdaten und wiedererkennbare Volt-Farben."
+/>

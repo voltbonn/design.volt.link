@@ -1,0 +1,58 @@
+import { Meta } from "@storybook/addon-docs/blocks";
+
+<Meta title="Volt Design/06 Planung/Loginbereich" />
+
+# Spaeterer Loginbereich
+
+Version 1 bleibt oeffentlich. Es gibt noch kein Backend und deshalb auch keinen Login. Der Button `Anpassbare Vorlagen` fuehrt vorerst direkt auf eine lila Platzhalterseite.
+
+## Aktueller Prototyp
+
+- Oben rechts steht ein Button `Anpassbare Vorlagen`.
+- Der Button fuehrt ohne Login auf eine lila Platzhalterseite.
+- Es gibt keine E-Mail-Pruefung, keinen Einmalcode und kein Konto.
+- Der Bereich zeigt nur, wo spaeter anpassbare Vorlagen liegen koennen.
+
+## Bereiche
+
+- **Oeffentlich:** Designregeln, Grundlagen, Beispiele, rechtliche Hinweise und freigegebene Links.
+- **Mitglieder:** geschuetzte Vorlagen, interne Hinweise, lokale Materialien und nicht-oeffentliche Assets.
+- **Redaktion/Admin:** Vorlagen pflegen, Links aktualisieren, Vorschaubilder tauschen, Status setzen.
+
+## Spaetere Auth-Optionen
+
+- Bestehender Volt-Login oder Mitgliederportal, falls technisch verfuegbar.
+- OAuth mit bestehender Organisations-Infrastruktur.
+- Magic Link per E-Mail fuer einfache Zugriffe.
+- Eigenes Login nur dann, wenn es organisatorisch und datenschutzrechtlich sauber betreut werden kann.
+
+## Datenmodell fuer Vorlagen
+
+- `id`
+- `title`
+- `tool`
+- `format`
+- `category`
+- `target`
+- `status`
+- `visibility`
+- `href`
+- `previewImage`
+- `updatedAt`
+- `ownerTeam`
+- `notes`
+
+## Anforderungen an anpassbare Vorlagen
+
+Fuer den ersten Schritt reichen Canva- und Figma-Template-Links. Ein eigener Generator sollte erst entstehen, wenn klar ist, welche Vorlagen haeufig gebraucht werden und welche Felder wirklich anpassbar sein muessen.
+
+## Redaktionsoberflaeche
+
+Eine spaetere Redaktionsoberflaeche sollte koennen:
+
+- Vorlage anlegen.
+- Link, Status und Zielgruppe pflegen.
+- Vorschaubild austauschen.
+- Sichtbarkeit setzen: oeffentlich, Mitglieder, Redaktion.
+- Letzte Aktualisierung anzeigen.
+- Archivierte Vorlagen sichtbar, aber klar getrennt halten.

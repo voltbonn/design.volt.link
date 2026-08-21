@@ -10,12 +10,13 @@ const config = {
     "../public"
   ],
   "addons": [
-    // "@chromatic-com/storybook",
-    // "@storybook/addon-vitest",
-    // "@storybook/addon-a11y",
+    "@chromatic-com/storybook",
+    "@storybook/addon-vitest",
+    "@storybook/addon-a11y",
     "@storybook/addon-docs",
     // "@storybook/addon-onboarding",
-    "@storybook/addon-designs"
+    "@storybook/addon-designs",
+    "storybook-addon-pseudo-states"
   ],
   "framework": "@storybook/react-vite"
 };

@@ -2,20 +2,33 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  padding: 15px 20px;
-  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  gap: 24px;
+  border-bottom: 1px solid #d8d3e0;
+  background: #ffffff;
+  padding: 18px 24px;
+  font-family: Ubuntu, Arial, sans-serif;
 }
 
-.storybook-header svg {
-  display: inline-block;
-  vertical-align: top;
+.storybook-header__brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.storybook-header__mark {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 999px;
+  background: #502379;
+  color: #ffffff;
+  font-weight: 700;
 }
 
 .storybook-header h1 {
-  display: inline-block;
-  vertical-align: top;
-  margin: 6px 0 6px 10px;
+  margin: 0;
+  color: #201a29;
   font-weight: 700;
   font-size: 20px;
   line-height: 1;
@@ -27,6 +40,6 @@
 
 .storybook-header .welcome {
   margin-right: 10px;
-  color: #333;
+  color: #201a29;
   font-size: 14px;
 }

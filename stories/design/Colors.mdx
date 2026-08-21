@@ -1,11 +1,43 @@
 import { Meta } from "@storybook/addon-docs/blocks";
 import { ColorSwatch } from "../../src/design/components/ColorSwatch";
+import { GuidelineGrid } from "../../src/design/components/GuidelineGrid";
+import { InPageNav } from "../../src/design/components/InPageNav";
 
 <Meta title="Volt Design/01 Grundlagen/Farben" />
 
 # Farben
 
-Die Startwerte stammen aus der offiziellen Volt Visual Identity. Dieses Kapitel soll spaeter um Kontrastregeln, Kombinationen und Beispiele erweitert werden.
+Die Startwerte stammen aus der offiziellen Volt Visual Identity. Purple und White bilden die Basis; Yellow, Blue, Green und Red dienen als Akzentfarben fuer besondere Themen.
+
+<InPageNav
+  items={[
+    { label: 'Grundregeln', href: '#grundregeln' },
+    { label: 'Farbwerte', href: '#farbwerte' },
+    { label: 'Kombinationen', href: '#typische-kombinationen' },
+    { label: 'Nicht empfohlen', href: '#nicht-empfohlen' },
+  ]}
+/>
+
+## Grundregeln
+
+<GuidelineGrid
+  items={[
+    {
+      title: 'Basis',
+      text: 'Volt Purple und White sollten den visuellen Eindruck tragen. Sie sorgen fuer Wiedererkennbarkeit.',
+    },
+    {
+      title: 'Akzente',
+      text: 'Yellow, Blue, Green und Red sparsam einsetzen, damit Inhalte nicht beliebig oder bunt wirken.',
+    },
+    {
+      title: 'Kontrast',
+      text: 'Text braucht klaren Kontrast. Auf Yellow, Blue und Green dunklen Text pruefen; auf Purple bevorzugt White nutzen.',
+    },
+  ]}
+/>
+
+## Farbwerte
 
 <ColorSwatch
   name="Volt Purple"
@@ -54,3 +86,17 @@ Die Startwerte stammen aus der offiziellen Volt Visual Identity. Dieses Kapitel 
   cmyk="0 0 0 0"
   usage="Basisfarbe fuer Lesbarkeit, Raum und klare Kommunikation."
 />
+
+## Typische Kombinationen
+
+- Purple mit White fuer klare Markenkommunikation.
+- Purple mit Yellow fuer starke Aufmerksamkeit und Handlungsaufforderungen.
+- Purple mit Blue fuer Technologie-, Website- oder Digitalthemen.
+- Purple mit Green fuer Klima-, Umwelt- und Nachhaltigkeitsthemen.
+- Purple mit Red nur gezielt fuer soziale Themen, Care und Solidaritaet.
+
+## Nicht empfohlen
+
+- Mehrere Akzentfarben gleich stark in einer Grafik.
+- Akzentfarbe als alleinige Markenfarbe ohne Purple-Bezug.
+- Fliesstext auf stark gesaettigten Flaechen ohne Kontrastpruefung.

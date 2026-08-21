@@ -1,11 +1,21 @@
 import { Meta } from "@storybook/addon-docs/blocks";
-import { TemplateCard } from "../../src/design/components/TemplateCard";
+import { templates } from "../../src/design/data/templates";
+import { InPageNav } from "../../src/design/components/InPageNav";
+import { TemplateGallery } from "../../src/design/components/TemplateGallery";
 
 <Meta title="Volt Design/03 Vorlagen/Uebersicht" />
 
 # Vorlagen
 
 Hier werden Figma- und Canva-Vorlagen gesammelt. In Version 1 werden die Links sichtbar und nachvollziehbar dokumentiert. Ein Loginbereich und anpassbare Vorlagen kommen spaeter.
+
+<InPageNav
+  items={[
+    { label: 'Metadaten', href: '#vorgeschlagene-metadaten' },
+    { label: 'Hinweise', href: '#nutzungshinweise' },
+    { label: 'Galerie', href: '#vorlagengalerie' },
+  ]}
+/>
 
 ## Vorgeschlagene Metadaten
 
@@ -17,16 +27,15 @@ Hier werden Figma- und Canva-Vorlagen gesammelt. In Version 1 werden die Links s
 - Link
 - letzte Aktualisierung
 
-<TemplateCard
-  title="Instagram Post"
-  tool="Canva"
-  format="1080 x 1080"
-  status="geplant"
-/>
+## Nutzungshinweise
 
-<TemplateCard
-  title="Designsystem"
-  tool="Figma"
-  format="Komponenten und Tokens"
-  status="geplant"
+- Vorlage immer duplizieren, nicht im Original bearbeiten.
+- Format vor dem Gestalten pruefen, besonders bei Print und Social Media.
+- Schriften, Bilder, Logos und Pflichtangaben vor Veroeffentlichung pruefen.
+- Wenn eine Vorlage veraltet wirkt, lieber Rueckfrage stellen als frei umbauen.
+
+## Vorlagengalerie
+
+<TemplateGallery
+  templates={templates}
 />

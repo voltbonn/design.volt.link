@@ -1,4 +1,6 @@
 {
+  "name": "design.volt.link",
+  "type": "module",
   "dependencies": {
     "react": "^19.2.8"
   },
@@ -19,6 +21,7 @@
     "playwright": "latest",
     "prop-types": "latest",
     "storybook": "^10.5.9",
+    "storybook-addon-pseudo-states": "^10.5.9",
     "vitest": "latest"
   }
 }

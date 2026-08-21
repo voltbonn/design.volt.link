@@ -1,4 +1,6 @@
 import { Meta } from "@storybook/addon-docs/blocks";
+import { LegalLinks } from "../../src/design/components/LegalLinks";
+import { SectionNav } from "../../src/design/components/SectionNav";
 
 <Meta title="Volt Design/00 Einstieg" />
 
@@ -10,10 +12,30 @@ Version 1 ist bewusst einfach: ein nachvollziehbarer Guide ohne Login und ohne V
 
 ## Direkte Wege
 
-- **Schnell nachschlagen:** Logo, Farben, Typografie und grafische Elemente.
-- **Material erstellen:** Beispiele und Vorlagen fuer Social Media, Plakate, Flyer, Praesentationen und Websites.
-- **Richtig anwenden:** Do's und Don'ts, Nutzungsbedingungen, Bildrechte und Barrierefreiheit.
-- **Weiterarbeiten:** Figma- und Canva-Vorlagen als Ausgangspunkt fuer Teams.
+<SectionNav
+  items={[
+    {
+      label: 'Grundlagen',
+      description: 'Logo, Farben, Typografie, Layout, Bildsprache und grafische Elemente.',
+      href: '?path=/docs/volt-design-01-grundlagen-logo--docs',
+    },
+    {
+      label: 'Anwendungen',
+      description: 'Beispiele fuer Social Media, Print, Praesentation, Website und Materialarbeit.',
+      href: '?path=/docs/volt-design-02-anwendungen-uebersicht--docs',
+    },
+    {
+      label: 'Vorlagen',
+      description: 'Figma- und Canva-Vorlagen mit Format, Status, Link und Nutzungshinweisen.',
+      href: '?path=/docs/volt-design-03-vorlagen-uebersicht--docs',
+    },
+    {
+      label: 'Hilfe',
+      description: 'FAQ, Quellen, Freigaben, Kontakt und typische Fehler.',
+      href: '?path=/docs/volt-design-04-hilfe-faq--docs',
+    },
+  ]}
+/>
 
 ## Kapitelstruktur
 
@@ -25,3 +47,7 @@ Version 1 ist bewusst einfach: ein nachvollziehbarer Guide ohne Login und ohne V
 ## Redaktionsprinzip
 
 Jedes Kapitel soll kurz erklaeren, was erlaubt ist, warum es wichtig ist und wie man es praktisch anwendet. Wo moeglich, sollen Beispiele, Downloads und Vorlagen direkt neben der Regel stehen.
+
+## Rechtliches
+
+<LegalLinks />

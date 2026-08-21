@@ -2,52 +2,66 @@ import { fn } from 'storybook/test';
 
 import { Button } from './Button';
 
-// More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 export default {
-  title: 'Archiv/Storybook Starter/Button',
+  title: 'Volt Design/04 Komponenten/Button',
   component: Button,
   parameters: {
-    // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/configure/story-layout
     layout: 'centered',
     design: {
       type: 'figma',
       url: 'https://www.figma.com/design/oONSivQBz9b52yuD5IXeaT/thomas-stuff?node-id=222-643&t=1VxjD8XeYmSluwa1-4',
     },
   },
-  // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs
-  // tags: ['autodocs'],
-  // More on argTypes: https://storybook.js.org/docs/api/arg-types
+  tags: ['autodocs'],
   argTypes: {
     backgroundColor: { control: 'color' },
   },
-  // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#story-args
   args: { onClick: fn() },
 };
 
-// More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Primary = {
   args: {
     primary: true,
-    label: 'Button',
+    label: 'Vorlage oeffnen',
   },
 };
 
 export const Secondary = {
   args: {
-    label: 'Button',
+    label: 'Mehr erfahren',
   },
 };
 
 export const Large = {
   args: {
     size: 'large',
-    label: 'Button',
+    label: 'Designguide starten',
   },
 };
 
 export const Small = {
   args: {
     size: 'small',
-    label: 'Button',
+    label: 'Download',
+  },
+};
+
+export const Hover = {
+  args: {
+    primary: true,
+    label: 'Hover-Zustand',
+  },
+  parameters: {
+    pseudo: { hover: true },
+  },
+};
+
+export const Focus = {
+  args: {
+    primary: true,
+    label: 'Fokus-Zustand',
+  },
+  parameters: {
+    pseudo: { focusVisible: true },
   },
 };

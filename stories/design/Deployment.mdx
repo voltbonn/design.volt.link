@@ -1,0 +1,31 @@
+import { Meta } from "@storybook/addon-docs/blocks";
+
+<Meta title="Volt Design/06 Planung/Deployment" />
+
+# Deployment
+
+Version 1 wird als oeffentlicher, statischer Storybook-Designguide gebaut. Dafuer reicht ein statisches Deployment, weil noch kein Login, keine Datenbank und kein Vorlagen-Editor enthalten sind.
+
+## Entscheidung fuer Version 1
+
+- Storybook ist die oeffentliche Seite.
+- Build-Befehl: `npm run build-storybook`.
+- Output: `storybook-static`.
+- Deployment kann fuer Version 1 ueber GitHub Pages erfolgen.
+- Sobald Login, geschuetzte Vorlagen oder ein eigener Generator entstehen, wird ein eigener Server oder eine andere Hosting-Loesung noetig.
+
+## CI-Workflow
+
+Der GitHub-Workflow nutzt npm, passend zum vorhandenen `package-lock.json`:
+
+- `npm ci` installiert exakt die Lockfile-Abhaengigkeiten.
+- `npm run build-storybook` baut den oeffentlichen Guide.
+- Pull Requests laden `storybook-static` als Preview-Artefakt hoch.
+- `storybook-static` wird auf den Deployment-Branch veroeffentlicht.
+
+## Offene Betriebsfragen
+
+- Soll `design.volt.link` langfristig auf GitHub Pages bleiben oder fruehzeitig auf einen eigenen Server zeigen?
+- Wer bekommt Zugriff auf Deployment, Domain und DNS?
+- Wie werden Vorschauversionen fuer groessere Aenderungen getestet?
+- Welche Stelle gibt neue Designregeln frei?

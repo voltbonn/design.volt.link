@@ -1,0 +1,52 @@
+@font-face {
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: local('Ubuntu');
+}
+
+:root {
+  --volt-purple: #502379;
+  --volt-yellow: #fdc220;
+  --volt-blue: #82d0f4;
+  --volt-green: #1bbe6f;
+  --volt-red: #e63e12;
+  --volt-white: #ffffff;
+  --volt-text: #201a29;
+  --volt-muted-text: #625a6f;
+  --volt-border: #d8d3e0;
+  --volt-surface: #ffffff;
+  --volt-surface-muted: #f7f4fa;
+  --volt-focus: rgba(253, 194, 32, 0.55);
+  color-scheme: light;
+  font-family: Ubuntu, Arial, sans-serif;
+}
+
+body {
+  margin: 0;
+  background: var(--volt-surface-muted);
+  color: var(--volt-text);
+  font-family: Ubuntu, Arial, sans-serif;
+}
+
+a {
+  color: var(--volt-purple);
+  font-weight: 700;
+  text-decoration-thickness: 0.08em;
+  text-underline-offset: 0.16em;
+}
+
+a:hover {
+  color: #3d185f;
+}
+
+:focus-visible {
+  outline: 0;
+  box-shadow: 0 0 0 3px var(--volt-focus);
+}
+
+::selection {
+  background: var(--volt-yellow);
+  color: var(--volt-text);
+}
