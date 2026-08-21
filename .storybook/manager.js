@@ -64,6 +64,25 @@ const templateLabels = {
   fr: 'Modèles personnalisables',
 };
 
+const legalLabels = {
+  de: {
+    imprint: 'Impressum',
+    privacy: 'Datenschutz',
+  },
+  en: {
+    imprint: 'Legal notice',
+    privacy: 'Privacy',
+  },
+  nl: {
+    imprint: 'Colofon',
+    privacy: 'Privacy',
+  },
+  fr: {
+    imprint: 'Mentions légales',
+    privacy: 'Confidentialité',
+  },
+};
+
 const getLocaleFromUrl = () => {
   const params = new URLSearchParams(window.location.search);
   const hashParams = new URLSearchParams(window.location.hash.replace(/^#/, '').replace(/^\?/, ''));
@@ -139,6 +158,25 @@ const injectManagerThemeStyles = () => {
       white-space: nowrap !important;
     }
 
+    .volt-manager-legal-link {
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      min-height: 28px !important;
+      border-radius: 6px !important;
+      color: #502379 !important;
+      padding: 0 8px !important;
+      margin: 0 2px !important;
+      font: 700 12px/1 Ubuntu, Arial, sans-serif !important;
+      text-decoration: none !important;
+      white-space: nowrap !important;
+    }
+
+    .volt-manager-legal-link:hover {
+      background: #f3eef8 !important;
+      color: #3d185f !important;
+    }
+
     .volt-manager-templates-link:hover {
       background: #3d185f !important;
       color: #ffffff !important;
@@ -200,6 +238,15 @@ const injectManagerThemeStyles = () => {
     body[data-theme='dark'] .volt-manager-templates-link:hover {
       background: #7f4fac !important;
       color: #ffffff !important;
+    }
+
+    body[data-theme='dark'] .volt-manager-legal-link {
+      color: #fdc220 !important;
+    }
+
+    body[data-theme='dark'] .volt-manager-legal-link:hover {
+      background: #3a2450 !important;
+      color: #ffe08a !important;
     }
   `;
 };
@@ -268,6 +315,45 @@ const ensureTemplatesLink = () => {
   link.setAttribute('aria-label', label);
 };
 
+const ensureLegalLinks = () => {
+  const toolbar = findManagerToolbar();
+
+  if (!toolbar) {
+    return;
+  }
+
+  const locale = getLocaleFromUrl();
+  const labels = legalLabels[locale];
+  const links = [
+    {
+      id: 'imprint',
+      href: 'https://voltdeutschland.org/impressum',
+    },
+    {
+      id: 'privacy',
+      href: 'https://voltdeutschland.org/datenschutz',
+    },
+  ];
+
+  links.forEach((item) => {
+    let link = document.querySelector(`.volt-manager-legal-link[data-legal-link="${item.id}"]`);
+
+    if (!link) {
+      link = document.createElement('a');
+      link.className = 'volt-manager-legal-link';
+      link.dataset.legalLink = item.id;
+      link.target = '_blank';
+      link.rel = 'noreferrer';
+      toolbar.appendChild(link);
+    }
+
+    link.href = item.href;
+    link.textContent = labels[item.id];
+    link.title = labels[item.id];
+    link.setAttribute('aria-label', labels[item.id]);
+  });
+};
+
 const watchManagerText = () => {
   if (!document.body) {
     window.requestAnimationFrame(watchManagerText);
@@ -278,11 +364,13 @@ const watchManagerText = () => {
   applyManagerTheme(getThemeFromUrl(), { force: true });
   localizeSearch();
   ensureTemplatesLink();
+  ensureLegalLinks();
 
   const updateManager = () => {
     applyManagerTheme(getThemeFromUrl());
     localizeSearch();
     ensureTemplatesLink();
+    ensureLegalLinks();
   };
 
   const channel = addons.getChannel?.();
@@ -291,18 +379,21 @@ const watchManagerText = () => {
     applyManagerThemeFromEvent(payload);
     localizeSearch();
     ensureTemplatesLink();
+    ensureLegalLinks();
   });
 
   channel?.on('updateGlobals', (payload) => {
     applyManagerThemeFromEvent(payload);
     localizeSearch();
     ensureTemplatesLink();
+    ensureLegalLinks();
   });
 
   channel?.on('setGlobals', (payload) => {
     applyManagerThemeFromEvent(payload);
     localizeSearch();
     ensureTemplatesLink();
+    ensureLegalLinks();
   });
 
   const observer = new MutationObserver(updateManager);

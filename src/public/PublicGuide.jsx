@@ -28,6 +28,7 @@ import {
 } from '../design/content/guidePages';
 import { GuideIntro } from '../design/components/GuideIntro';
 import { GuidePage } from '../design/components/GuidePage';
+import { LegalLinks } from '../design/components/LegalLinks';
 import { I18nProvider, supportedLocales, useI18n } from '../design/i18n';
 import { applyTheme, getStoredTheme, supportedThemes, ThemeProvider } from '../design/theme';
 
@@ -166,6 +167,8 @@ const PublicGuideInner = ({ setLocale, setTheme, theme }) => {
               </a>
             ))}
           </nav>
+
+          <LegalLinks />
         </aside>
 
         <main className="public-guide__content">

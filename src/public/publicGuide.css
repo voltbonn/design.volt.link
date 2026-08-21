@@ -142,6 +142,15 @@
   margin: 0;
 }
 
+.public-guide__sidebar .volt-legal-links {
+  width: auto;
+  margin: 8px 0 0;
+}
+
+.public-guide__sidebar .volt-legal-links a {
+  border-radius: 8px;
+}
+
 .public-guide__content {
   box-sizing: border-box;
   width: min(100%, 980px);
