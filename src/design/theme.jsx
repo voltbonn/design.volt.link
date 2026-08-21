@@ -28,7 +28,9 @@ export const applyTheme = (theme) => {
   const activeTheme = supportedThemes.includes(theme) ? theme : 'light';
 
   document.documentElement.dataset.theme = activeTheme;
+  document.body.dataset.theme = activeTheme;
   document.documentElement.style.colorScheme = activeTheme;
+  document.body.style.colorScheme = activeTheme;
 };
 
 export const ThemeProvider = ({ theme = 'light', children }) => {

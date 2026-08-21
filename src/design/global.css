@@ -32,6 +32,7 @@
 }
 
 html[data-theme='dark'],
+body[data-theme='dark'],
 .public-guide[data-theme='dark'] {
   --volt-text: #f8f2ff;
   --volt-muted-text: #cfc4dc;
@@ -48,6 +49,13 @@ html[data-theme='dark'],
   --volt-on-brand: #ffffff;
   --volt-focus: rgba(253, 194, 32, 0.72);
   color-scheme: dark;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+  background: var(--volt-surface-muted);
 }
 
 body {

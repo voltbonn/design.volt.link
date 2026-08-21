@@ -8,8 +8,13 @@ const resolveBackground = (context) => {
   const selected = typeof data === 'string' ? data : data?.value;
   const name = selected ?? config.default;
   const item = config.options?.[name];
+  const background = typeof item === 'string' ? item : item?.value;
 
-  return typeof item === 'string' ? item : item?.value;
+  if (context.globals?.theme === 'dark' && (!selected || name === config.default || background === '#F7F4FA')) {
+    return 'var(--volt-surface-muted)';
+  }
+
+  return background;
 };
 
 const setPreviewBackground = (background) => {
@@ -35,6 +40,7 @@ const setPreviewBackground = (background) => {
     body.sb-show-main .sbdocs-wrapper,
     body.sb-show-main .sbdocs-content {
       background-color: ${background} !important;
+      color: var(--volt-text) !important;
     }
   `;
 };

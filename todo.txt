@@ -1,6 +1,7 @@
 von deutsch auf andere sprache und zurück wechseln klappt nicht
 overlay und files/ordner nicht mehrsprachig
-darkmode
+darkmode erfasst overlay nicht
+von light auf dark und zurück wechseln klappt nicht
 
 
 
