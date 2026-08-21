@@ -1,5 +1,7 @@
+import React from 'react';
 import { addons } from 'storybook/manager-api';
 import { create } from 'storybook/theming';
+import { types, useGlobals } from 'storybook/manager-api';
 
 const brandConfig = {
   brandTitle: 'design.volt.link',
@@ -62,6 +64,12 @@ const templateLabels = {
   en: 'Customisable Templates',
   nl: 'Aanpasbare Sjablonen',
   fr: 'Modèles personnalisables',
+};
+
+const getLabelLocale = (globals) => {
+  const locale = globals?.locale;
+
+  return locale === 'en' || locale === 'nl' || locale === 'fr' ? locale : 'de';
 };
 
 const legalLabels = {
@@ -142,7 +150,7 @@ const injectManagerThemeStyles = () => {
   }
 
   style.textContent = `
-    .volt-manager-templates-link {
+    .volt-manager-toolbar-link {
       display: inline-flex !important;
       align-items: center !important;
       justify-content: center !important;
@@ -158,7 +166,7 @@ const injectManagerThemeStyles = () => {
       white-space: nowrap !important;
     }
 
-    .volt-manager-legal-link {
+    .volt-manager-toolbar-link--quiet {
       display: inline-flex !important;
       align-items: center !important;
       justify-content: center !important;
@@ -172,12 +180,12 @@ const injectManagerThemeStyles = () => {
       white-space: nowrap !important;
     }
 
-    .volt-manager-legal-link:hover {
+    .volt-manager-toolbar-link--quiet:hover {
       background: #f3eef8 !important;
       color: #3d185f !important;
     }
 
-    .volt-manager-templates-link:hover {
+    .volt-manager-toolbar-link:hover {
       background: #3d185f !important;
       color: #ffffff !important;
     }
@@ -230,21 +238,21 @@ const injectManagerThemeStyles = () => {
       border-color: #71558d !important;
     }
 
-    body[data-theme='dark'] .volt-manager-templates-link {
+    body[data-theme='dark'] .volt-manager-toolbar-link {
       background: #6c3a96 !important;
       color: #ffffff !important;
     }
 
-    body[data-theme='dark'] .volt-manager-templates-link:hover {
+    body[data-theme='dark'] .volt-manager-toolbar-link:hover {
       background: #7f4fac !important;
       color: #ffffff !important;
     }
 
-    body[data-theme='dark'] .volt-manager-legal-link {
+    body[data-theme='dark'] .volt-manager-toolbar-link--quiet {
       color: #fdc220 !important;
     }
 
-    body[data-theme='dark'] .volt-manager-legal-link:hover {
+    body[data-theme='dark'] .volt-manager-toolbar-link--quiet:hover {
       background: #3a2450 !important;
       color: #ffe08a !important;
     }
@@ -275,85 +283,6 @@ const localizeSearch = () => {
   });
 };
 
-const getTemplatesHref = () => {
-  const params = new URLSearchParams(window.location.search);
-  const globals = params.get('globals');
-  const globalsQuery = globals ? `&globals=${encodeURIComponent(globals)}` : '';
-
-  return `?path=/docs/volt-design-04-vorlagen-übersicht--docs${globalsQuery}`;
-};
-
-const findManagerToolbar = () => {
-  const buttons = [...document.querySelectorAll('button, a')];
-  const languageButton = buttons.find((element) =>
-    ['Deutsch', 'English', 'Nederlands', 'Français'].includes(element.textContent.trim()),
-  );
-
-  return languageButton?.parentElement ?? document.querySelector('[role="toolbar"]');
-};
-
-const ensureTemplatesLink = () => {
-  const toolbar = findManagerToolbar();
-
-  if (!toolbar) {
-    return;
-  }
-
-  let link = document.querySelector('.volt-manager-templates-link');
-
-  if (!link) {
-    link = document.createElement('a');
-    link.className = 'volt-manager-templates-link';
-    toolbar.appendChild(link);
-  }
-
-  const label = templateLabels[getLocaleFromUrl()];
-
-  link.href = getTemplatesHref();
-  link.textContent = label;
-  link.title = label;
-  link.setAttribute('aria-label', label);
-};
-
-const ensureLegalLinks = () => {
-  const toolbar = findManagerToolbar();
-
-  if (!toolbar) {
-    return;
-  }
-
-  const locale = getLocaleFromUrl();
-  const labels = legalLabels[locale];
-  const links = [
-    {
-      id: 'imprint',
-      href: 'https://voltdeutschland.org/impressum',
-    },
-    {
-      id: 'privacy',
-      href: 'https://voltdeutschland.org/datenschutz',
-    },
-  ];
-
-  links.forEach((item) => {
-    let link = document.querySelector(`.volt-manager-legal-link[data-legal-link="${item.id}"]`);
-
-    if (!link) {
-      link = document.createElement('a');
-      link.className = 'volt-manager-legal-link';
-      link.dataset.legalLink = item.id;
-      link.target = '_blank';
-      link.rel = 'noreferrer';
-      toolbar.appendChild(link);
-    }
-
-    link.href = item.href;
-    link.textContent = labels[item.id];
-    link.title = labels[item.id];
-    link.setAttribute('aria-label', labels[item.id]);
-  });
-};
-
 const watchManagerText = () => {
   if (!document.body) {
     window.requestAnimationFrame(watchManagerText);
@@ -363,14 +292,10 @@ const watchManagerText = () => {
   injectManagerThemeStyles();
   applyManagerTheme(getThemeFromUrl(), { force: true });
   localizeSearch();
-  ensureTemplatesLink();
-  ensureLegalLinks();
 
   const updateManager = () => {
     applyManagerTheme(getThemeFromUrl());
     localizeSearch();
-    ensureTemplatesLink();
-    ensureLegalLinks();
   };
 
   const channel = addons.getChannel?.();
@@ -378,22 +303,16 @@ const watchManagerText = () => {
   channel?.on('globalsUpdated', (payload) => {
     applyManagerThemeFromEvent(payload);
     localizeSearch();
-    ensureTemplatesLink();
-    ensureLegalLinks();
   });
 
   channel?.on('updateGlobals', (payload) => {
     applyManagerThemeFromEvent(payload);
     localizeSearch();
-    ensureTemplatesLink();
-    ensureLegalLinks();
   });
 
   channel?.on('setGlobals', (payload) => {
     applyManagerThemeFromEvent(payload);
     localizeSearch();
-    ensureTemplatesLink();
-    ensureLegalLinks();
   });
 
   const observer = new MutationObserver(updateManager);
@@ -410,6 +329,67 @@ const watchManagerText = () => {
   window.addEventListener('focusin', () => window.setTimeout(updateManager, 0), true);
   window.setInterval(updateManager, 250);
 };
+
+const TemplatesTool = () => {
+  const [globals] = useGlobals();
+  const locale = getLabelLocale(globals);
+  const label = templateLabels[locale];
+
+  return React.createElement(
+    'a',
+    {
+      className: 'volt-manager-toolbar-link',
+      href: '?path=/docs/volt-design-04-vorlagen-übersicht--docs',
+      title: label,
+      'aria-label': label,
+    },
+    label,
+  );
+};
+
+const LegalTool = ({ type }) => {
+  const [globals] = useGlobals();
+  const locale = getLabelLocale(globals);
+  const label = legalLabels[locale][type];
+  const href =
+    type === 'imprint' ? 'https://voltdeutschland.org/impressum' : 'https://voltdeutschland.org/datenschutz';
+
+  return React.createElement(
+    'a',
+    {
+      className: 'volt-manager-toolbar-link--quiet',
+      href,
+      target: '_blank',
+      rel: 'noreferrer',
+      title: label,
+      'aria-label': label,
+    },
+    label,
+  );
+};
+
+addons.register('volt/manager-toolbar-links', () => {
+  addons.add('volt/templates-link', {
+    type: types.TOOL,
+    title: templateLabels.de,
+    match: () => true,
+    render: TemplatesTool,
+  });
+
+  addons.add('volt/imprint-link', {
+    type: types.TOOL,
+    title: legalLabels.de.imprint,
+    match: () => true,
+    render: () => React.createElement(LegalTool, { type: 'imprint' }),
+  });
+
+  addons.add('volt/privacy-link', {
+    type: types.TOOL,
+    title: legalLabels.de.privacy,
+    match: () => true,
+    render: () => React.createElement(LegalTool, { type: 'privacy' }),
+  });
+});
 
 addons.setConfig({ theme: managerThemes.light });
 
