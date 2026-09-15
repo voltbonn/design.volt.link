@@ -5,8 +5,14 @@ export const colors = {
     rgb: '80 35 121',
     cmyk: '82 98 0 12',
   },
+  darkPurple: {
+    name: 'Dark Purple',
+    hex: '#3F1C63',
+    rgb: '63 28 99',
+    cmyk: '84 100 18 13',
+  },
   yellow: {
-    name: 'Volt Yellow',
+    name: 'Amber / Neutral',
     hex: '#FDC220',
     rgb: '253 194 32',
     cmyk: '0 26 90 0',
@@ -38,10 +44,13 @@ export const colors = {
 };
 
 export const semanticColors = {
-  text: '#201A29',
-  mutedText: '#625A6F',
-  border: '#D8D3E0',
+  agree: '#1BBE6F',
+  neutral: '#FDC220',
+  disagree: '#E63E12',
+  text: '#17131D',
+  mutedText: '#625A6B',
+  border: '#D8D0E1',
   surface: '#FFFFFF',
-  surfaceMuted: '#F7F4FA',
-  focus: '#FDC220',
+  surfaceMuted: '#F5F2F7',
+  focus: '#502379',
 };

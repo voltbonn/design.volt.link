@@ -4,12 +4,27 @@
 .volt-typography-sample,
 .volt-application-card,
 .volt-section-nav a,
-.volt-legal-links,
 .volt-guideline-grid article,
 .volt-dos-donts article {
   border: 1px solid var(--volt-border);
-  border-radius: 8px;
+  border-radius: 2px;
   background: var(--volt-surface-strong);
+  transition:
+    transform 160ms ease,
+    border-color 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.volt-template-card:hover,
+.volt-download-card:hover,
+.volt-typography-sample:hover,
+.volt-application-card:hover,
+.volt-section-nav a:hover,
+.volt-guideline-grid article:hover,
+.volt-dos-donts article:hover {
+  border-color: var(--volt-purple);
+  box-shadow: var(--volt-shadow-small);
+  transform: translate(-1px, -1px);
 }
 
 .volt-color-swatch {
@@ -21,6 +36,7 @@
 
 .volt-color-swatch__sample {
   min-height: 144px;
+  border-right: 1px solid var(--volt-border);
 }
 
 .volt-color-swatch__content {
@@ -32,6 +48,9 @@
 .volt-application-card h3,
 .volt-guideline-grid h3 {
   margin: 0 0 12px;
+  color: var(--volt-text);
+  font-weight: 850;
+  letter-spacing: 0;
 }
 
 .volt-color-swatch dl {
@@ -51,7 +70,7 @@
 .volt-application-card__meta {
   color: var(--volt-muted-text);
   font-size: 12px;
-  font-weight: 700;
+  font-weight: 850;
   letter-spacing: 0;
   text-transform: uppercase;
 }
@@ -66,6 +85,18 @@
   display: grid;
   gap: 16px;
   padding: 20px;
+}
+
+.volt-template-card {
+  position: relative;
+}
+
+.volt-template-card::before {
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 4px;
+  content: '';
+  background: var(--volt-purple);
 }
 
 .volt-download-card,
@@ -86,7 +117,7 @@
   margin: 0 0 8px;
   color: var(--volt-muted-text);
   font-size: 12px;
-  font-weight: 700;
+  font-weight: 850;
   letter-spacing: 0;
   text-transform: uppercase;
 }
@@ -100,9 +131,10 @@
 .volt-typography-sample__text {
   color: var(--volt-text);
   font-family: Ubuntu, Arial, sans-serif;
-  font-size: 32px;
-  font-weight: 700;
+  font-size: clamp(28px, 4vw, 40px);
+  font-weight: 850;
   line-height: 1.2;
+  letter-spacing: 0;
 }
 
 .volt-typography-sample__description {
@@ -111,12 +143,14 @@
 
 .volt-template-card__status {
   width: fit-content;
-  border-radius: 999px;
-  background: var(--volt-surface-active);
-  color: var(--volt-link);
-  padding: 4px 10px;
+  border: 1px solid rgba(253, 194, 32, 0.5);
+  border-radius: 2px;
+  background: var(--volt-neutral-bg);
+  color: var(--volt-neutral-text);
+  padding: 4px 8px;
   font-size: 12px;
-  font-weight: 700;
+  font-weight: 850;
+  text-transform: uppercase;
 }
 
 .volt-template-card__updated {
@@ -164,7 +198,7 @@
   gap: 6px;
   color: var(--volt-muted-text);
   font-size: 13px;
-  font-weight: 700;
+  font-weight: 850;
 }
 
 .volt-template-gallery__controls input,
@@ -172,11 +206,18 @@
   width: 100%;
   box-sizing: border-box;
   border: 1px solid var(--volt-border);
-  border-radius: 8px;
+  border-radius: 2px;
   background: var(--volt-control-bg);
   color: var(--volt-text);
   padding: 10px 12px;
   font: inherit;
+}
+
+.volt-template-gallery__controls input:focus,
+.volt-template-gallery__controls select:focus {
+  border-color: var(--volt-purple);
+  box-shadow: 0 0 0 3px var(--volt-focus);
+  outline: 0;
 }
 
 .volt-template-gallery__grid {
@@ -198,20 +239,28 @@
   flex-wrap: wrap;
   gap: 8px;
   border: 1px solid var(--volt-border);
-  border-radius: 8px;
+  border-radius: 2px;
   background: var(--volt-topbar);
   padding: 10px;
   margin: 20px 0;
 }
 
 .volt-in-page-nav a {
-  border-radius: 999px;
+  border: 1px solid var(--volt-border);
+  border-radius: 2px;
   background: var(--volt-surface-active);
   color: var(--volt-link);
   padding: 6px 10px;
   font-size: 13px;
-  font-weight: 700;
+  font-weight: 850;
   text-decoration: none;
+}
+
+.volt-in-page-nav a:hover {
+  border-color: var(--volt-purple);
+  background: var(--volt-purple);
+  color: var(--volt-on-brand);
+  box-shadow: inset 0 -3px 0 var(--volt-amber);
 }
 
 .volt-dos-donts {
@@ -238,7 +287,7 @@
 
 .volt-section-nav span {
   color: var(--volt-link);
-  font-weight: 700;
+  font-weight: 850;
 }
 
 .volt-section-nav small {
@@ -252,22 +301,97 @@
   flex-wrap: wrap;
   gap: 12px;
   width: fit-content;
-  padding: 12px;
+  padding: 0;
   margin: 24px 0;
 }
 
 .volt-legal-links a {
-  border-radius: 999px;
-  background: var(--volt-surface-active);
+  border: 1px solid var(--volt-border);
+  border-radius: 2px;
+  background: var(--volt-surface);
   color: var(--volt-link);
   padding: 8px 12px;
   font-size: 14px;
-  font-weight: 700;
+  font-weight: 850;
   text-decoration: none;
+}
+
+.volt-legal-links a:hover {
+  border-color: var(--volt-purple);
+  background: var(--volt-purple);
+  color: var(--volt-on-brand);
 }
 
 .volt-dos-donts article {
   padding: 20px;
+}
+
+.volt-dos-donts article:first-child {
+  border-color: rgba(27, 190, 111, 0.45);
+  background: var(--volt-agree-bg);
+  color: var(--volt-agree-text);
+}
+
+.volt-dos-donts article:last-child {
+  border-color: rgba(230, 62, 18, 0.45);
+  background: var(--volt-disagree-bg);
+  color: var(--volt-disagree-text);
+}
+
+.volt-dos-donts article:first-child strong,
+.volt-dos-donts article:last-child strong,
+.volt-dos-donts article:first-child p,
+.volt-dos-donts article:last-child p {
+  color: inherit;
+}
+
+.volt-dos-donts strong {
+  display: inline-flex;
+  margin: 0 0 8px;
+  font-size: 12px;
+  font-weight: 850;
+  text-transform: uppercase;
+}
+
+.volt-download-card a,
+.volt-template-card a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  min-height: 36px;
+  border: 1px solid var(--volt-purple);
+  border-radius: 2px;
+  background: var(--volt-purple);
+  color: var(--volt-on-brand);
+  padding: 0 12px;
+  font-size: 14px;
+  font-weight: 850;
+  text-decoration: none;
+  transition:
+    transform 160ms ease,
+    box-shadow 160ms ease,
+    background 160ms ease;
+}
+
+.volt-download-card a:hover,
+.volt-template-card a:hover {
+  background: var(--volt-brand-hover);
+  color: var(--volt-on-brand);
+  box-shadow: var(--volt-shadow-small);
+  transform: translate(-1px, -1px);
+}
+
+.volt-download-card > span,
+.volt-template-card > p:last-child {
+  width: fit-content;
+  border: 1px solid var(--volt-border);
+  border-radius: 2px;
+  background: var(--volt-missing-bg);
+  color: var(--volt-missing-text);
+  padding: 6px 9px;
+  font-size: 13px;
+  font-weight: 850;
 }
 
 @media (max-width: 720px) {

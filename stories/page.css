@@ -1,7 +1,7 @@
 .storybook-page {
   margin: 0 auto;
   padding: 56px 24px;
-  max-width: 960px;
+  max-width: 1180px;
   color: var(--volt-text);
   font-size: 16px;
   line-height: 1.55;
@@ -10,7 +10,7 @@
 
 .storybook-page h2 {
   margin: 0 0 16px;
-  font-weight: 700;
+  font-weight: 850;
   font-size: 40px;
   line-height: 1.15;
 }
@@ -23,7 +23,7 @@
   margin: 0 0 12px;
   color: var(--volt-link);
   font-size: 12px;
-  font-weight: 700;
+  font-weight: 850;
   text-transform: uppercase;
 }
 
@@ -41,14 +41,34 @@
 
 .storybook-page__grid article {
   border: 1px solid var(--volt-border);
-  border-radius: 8px;
+  border-radius: 2px;
   background: var(--volt-surface-strong);
   padding: 20px;
+  transition:
+    border-color 160ms ease,
+    box-shadow 160ms ease,
+    transform 160ms ease;
+}
+
+.storybook-page__grid article:hover {
+  border-color: var(--volt-purple);
+  box-shadow: var(--volt-shadow-small);
+  transform: translate(-1px, -1px);
 }
 
 .storybook-page__grid h3 {
   margin: 0 0 8px;
   color: var(--volt-link);
+}
+
+.storybook-page__notice {
+  width: fit-content;
+  border: 1px solid var(--volt-border);
+  border-left: 4px solid var(--volt-purple);
+  background: var(--volt-surface-strong);
+  color: var(--volt-text);
+  padding: 10px 12px;
+  font-weight: 850;
 }
 
 @media (max-width: 760px) {
@@ -59,39 +79,4 @@
 
 .storybook-page .tip-wrapper svg path {
   fill: #1ea7fd;
-}
-
-.protected-page {
-  display: grid;
-  place-items: center;
-  min-height: calc(100vh - 73px);
-  background: var(--volt-purple);
-  color: var(--volt-on-brand);
-  font-family: Ubuntu, Arial, sans-serif;
-  padding: 32px;
-  text-align: center;
-}
-
-.protected-page p {
-  margin: 0 0 12px;
-  color: rgba(255, 255, 255, 0.78);
-  font-size: 14px;
-}
-
-.protected-page h2 {
-  margin: 0;
-  font-size: 48px;
-  line-height: 1.1;
-}
-
-.protected-page button {
-  margin-top: 24px;
-  border: 2px solid var(--volt-on-brand);
-  border-radius: 999px;
-  background: transparent;
-  color: var(--volt-on-brand);
-  cursor: pointer;
-  padding: 10px 16px;
-  font: inherit;
-  font-weight: 700;
 }

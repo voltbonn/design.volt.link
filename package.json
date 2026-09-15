@@ -9,6 +9,7 @@
   "scripts": {
     "dev": "vite --host 127.0.0.1",
     "build": "vite build",
+    "smoke": "node scripts/smoke-public.mjs",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },

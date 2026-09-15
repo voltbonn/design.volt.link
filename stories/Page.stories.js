@@ -12,14 +12,13 @@ export default {
 
 export const LoggedOut = {};
 
-export const TemplatesArea = {
+export const StartAction = {
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
-    const templatesButton = canvas.getByRole('button', { name: /Anpassbare Vorlagen/i });
-    await expect(templatesButton).toBeInTheDocument();
-    await userEvent.click(templatesButton);
+    const startButton = canvas.getByRole('button', { name: /Designguide starten/i });
+    await expect(startButton).toBeInTheDocument();
+    await userEvent.click(startButton);
 
-    await expect(canvas.getByLabelText(/Anpassbare Vorlagen/i)).toBeInTheDocument();
-    await expect(canvas.getByRole('heading', { name: /Anpassbare Vorlagen/i })).toBeInTheDocument();
+    await expect(canvas.getByText(/Storybook bleibt intern/i)).toBeInTheDocument();
   },
 };

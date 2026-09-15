@@ -6,7 +6,6 @@ import './designComponents.css';
 const defaultHrefs = {
   foundations: '?path=/docs/volt-design-01-grundlagen-logo--docs',
   applications: '?path=/docs/volt-design-02-anwendungen-übersicht--docs',
-  templates: '?path=/docs/volt-design-03-vorlagen-übersicht--docs',
   help: '?path=/docs/volt-design-05-hilfe-faq--docs',
 };
 
@@ -34,11 +33,6 @@ export const GuideIntro = ({ hrefs = defaultHrefs }) => {
             label: t('guideIntro.applicationsLabel'),
             description: t('guideIntro.applicationsDescription'),
             href: hrefs.applications,
-          },
-          {
-            label: t('guideIntro.templatesLabel'),
-            description: t('guideIntro.templatesDescription'),
-            href: hrefs.templates,
           },
           {
             label: t('guideIntro.helpLabel'),

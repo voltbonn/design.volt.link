@@ -150,28 +150,28 @@ export const help = {
 export const deployment = {
   de: {
     title: 'Deployment',
-    lead: 'Version 1 wird als öffentlicher, statischer Storybook-Designguide gebaut. Dafür reicht ein statisches Deployment, weil noch kein Login, keine Datenbank und kein Vorlagen-Editor enthalten sind.',
+    lead: 'Version 1 wird als öffentliche, statische React/Vite-Website gebaut. Dafür reicht ein statisches Deployment, weil noch kein Login, keine Datenbank und kein Vorlagen-Editor enthalten sind.',
     sections: [
-      { id: 'entscheidung-fuer-version-1', title: 'Entscheidung für Version 1', items: ['Storybook ist die öffentliche Seite.', 'Build-Befehl: npm run build-storybook.', 'Output: storybook-static.', 'Deployment kann für Version 1 über GitHub Pages erfolgen.', 'Sobald Login, geschützte Vorlagen oder ein eigener Generator entstehen, wird ein eigener Server oder eine andere Hosting-Lösung nötig.'] },
-      { id: 'ci-workflow', title: 'CI-Workflow', text: 'Der GitHub-Workflow nutzt npm, passend zum vorhandenen package-lock.json:', items: ['npm ci installiert exakt die Lockfile-Abhängigkeiten.', 'npm run build-storybook baut den öffentlichen Guide.', 'Pull Requests laden storybook-static als Preview-Artefakt hoch.', 'storybook-static wird auf den Deployment-Branch veröffentlicht.'] },
+      { id: 'entscheidung-fuer-version-1', title: 'Entscheidung für Version 1', items: ['Die öffentliche Seite ist die Vite-App.', 'Build-Befehl: npm run build.', 'Output: dist.', 'Storybook bleibt interne Arbeits- und Prüfumgebung.', 'Sobald Login, geschützte Vorlagen oder ein eigener Generator entstehen, wird ein eigener Server oder eine andere Hosting-Lösung nötig.'] },
+      { id: 'ci-workflow', title: 'CI-Workflow', text: 'Der GitHub-Workflow nutzt npm, passend zum vorhandenen package-lock.json:', items: ['npm ci installiert exakt die Lockfile-Abhängigkeiten.', 'npm run build baut den öffentlichen Guide.', 'npm run smoke prüft die öffentliche Oberfläche.', 'npm run build-storybook prüft Storybook separat.'] },
       { id: 'offene-betriebsfragen', title: 'Offene Betriebsfragen', items: ['Soll design.volt.link langfristig auf GitHub Pages bleiben oder frühzeitig auf einen eigenen Server zeigen?', 'Wer bekommt Zugriff auf Deployment, Domain und DNS?', 'Wie werden Vorschauversionen für größere Änderungen getestet?', 'Welche Stelle gibt neue Designregeln frei?'] },
     ],
   },
   en: {
     title: 'Deployment',
-    lead: 'Version 1 is built as a public, static Storybook design guide. Static deployment is enough because there is no login, database or template editor yet.',
+    lead: 'Version 1 is built as a public, static React/Vite website. Static deployment is enough because there is no login, database or template editor yet.',
     sections: [
-      { id: 'decision-for-version-1', title: 'Decision for Version 1', items: ['Storybook is the public site.', 'Build command: npm run build-storybook.', 'Output: storybook-static.', 'Version 1 can be deployed via GitHub Pages.', 'Once login, protected templates or a custom generator are added, a dedicated server or another hosting setup will be needed.'] },
-      { id: 'ci-workflow', title: 'CI Workflow', text: 'The GitHub workflow uses npm, matching the existing package-lock.json:', items: ['npm ci installs the exact lockfile dependencies.', 'npm run build-storybook builds the public guide.', 'Pull requests upload storybook-static as a preview artifact.', 'storybook-static is published to the deployment branch.'] },
+      { id: 'decision-for-version-1', title: 'Decision for Version 1', items: ['The public page is the Vite app.', 'Build command: npm run build.', 'Output: dist.', 'Storybook remains the internal working and review environment.', 'Once login, protected templates or a custom generator are added, a dedicated server or another hosting setup will be needed.'] },
+      { id: 'ci-workflow', title: 'CI Workflow', text: 'The GitHub workflow uses npm, matching the existing package-lock.json:', items: ['npm ci installs the exact lockfile dependencies.', 'npm run build builds the public guide.', 'npm run smoke checks the public surface.', 'npm run build-storybook checks Storybook separately.'] },
       { id: 'open-operational-questions', title: 'Open Operational Questions', items: ['Should design.volt.link stay on GitHub Pages long term or move to a dedicated server early?', 'Who gets access to deployment, domain and DNS?', 'How are preview versions tested for larger changes?', 'Which body approves new design rules?'] },
     ],
   },
   nl: {
     title: 'Deployment',
-    lead: 'Versie 1 wordt gebouwd als openbare, statische Storybook-designgids. Een statische deployment is voldoende omdat er nog geen login, database of sjablooneditor is.',
+    lead: 'Versie 1 wordt gebouwd als openbare, statische React/Vite-website. Een statische deployment is voldoende omdat er nog geen login, database of sjablooneditor is.',
     sections: [
-      { id: 'besluit-voor-versie-1', title: 'Besluit voor Versie 1', items: ['Storybook is de openbare site.', 'Build-opdracht: npm run build-storybook.', 'Output: storybook-static.', 'Deployment kan voor versie 1 via GitHub Pages verlopen.', 'Zodra login, beschermde sjablonen of een eigen generator ontstaan, is een eigen server of andere hostingoplossing nodig.'] },
-      { id: 'ci-workflow', title: 'CI-workflow', text: 'De GitHub-workflow gebruikt npm, passend bij de bestaande package-lock.json:', items: ['npm ci installeert exact de lockfile-afhankelijkheden.', 'npm run build-storybook bouwt de openbare gids.', 'Pull requests uploaden storybook-static als preview-artifact.', 'storybook-static wordt naar de deployment-branch gepubliceerd.'] },
+      { id: 'besluit-voor-versie-1', title: 'Besluit voor Versie 1', items: ['De openbare pagina is de Vite-app.', 'Build-opdracht: npm run build.', 'Output: dist.', 'Storybook blijft de interne werk- en controleomgeving.', 'Zodra login, beschermde sjablonen of een eigen generator ontstaan, is een eigen server of andere hostingoplossing nodig.'] },
+      { id: 'ci-workflow', title: 'CI-workflow', text: 'De GitHub-workflow gebruikt npm, passend bij de bestaande package-lock.json:', items: ['npm ci installeert exact de lockfile-afhankelijkheden.', 'npm run build bouwt de openbare gids.', 'npm run smoke controleert de openbare interface.', 'npm run build-storybook controleert Storybook apart.'] },
       { id: 'open-beheervragen', title: 'Open Beheervragen', items: ['Moet design.volt.link langdurig op GitHub Pages blijven of vroeg naar een eigen server gaan?', 'Wie krijgt toegang tot deployment, domein en DNS?', 'Hoe worden previewversies voor grotere wijzigingen getest?', 'Welke instantie keurt nieuwe designregels goed?'] },
     ],
   },

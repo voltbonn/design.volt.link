@@ -8,17 +8,21 @@ export const spacing = {
 };
 
 export const radii = {
-  sm: '4px',
-  md: '8px',
-  pill: '999px',
+  none: '0',
+  sm: '2px',
+  md: '3px',
+  lg: '4px',
 };
 
 export const shadows = {
-  focus: '0 0 0 3px rgba(253, 194, 32, 0.55)',
+  focus: '0 0 0 3px rgba(80, 35, 121, 0.22)',
+  offset: '8px 10px 0 rgba(80, 35, 121, 0.12)',
+  offsetSmall: '4px 5px 0 rgba(80, 35, 121, 0.08)',
 };
 
 export const breakpoints = {
   sm: '480px',
   md: '720px',
   lg: '1024px',
+  xl: '1180px',
 };

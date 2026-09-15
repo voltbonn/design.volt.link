@@ -1,32 +1,44 @@
 @font-face {
   font-family: 'Ubuntu';
   font-style: normal;
-  font-weight: 400 700;
+  font-weight: 400 850;
   font-display: swap;
   src: local('Ubuntu');
 }
 
 :root {
   --volt-purple: #502379;
+  --volt-purple-dark: #3f1c63;
   --volt-yellow: #fdc220;
+  --volt-amber: #fdc220;
   --volt-blue: #82d0f4;
   --volt-green: #1bbe6f;
   --volt-red: #e63e12;
   --volt-white: #ffffff;
-  --volt-text: #201a29;
-  --volt-muted-text: #625a6f;
-  --volt-border: #d8d3e0;
+  --volt-text: #17131d;
+  --volt-muted-text: #625a6b;
+  --volt-border: #d8d0e1;
   --volt-surface: #ffffff;
-  --volt-surface-muted: #f7f4fa;
+  --volt-surface-muted: #f5f2f7;
   --volt-surface-strong: #ffffff;
-  --volt-surface-active: #f3eef8;
-  --volt-topbar: rgba(255, 255, 255, 0.96);
+  --volt-surface-active: #eee7f5;
+  --volt-topbar: #ffffff;
   --volt-control-bg: #ffffff;
   --volt-link: #502379;
-  --volt-link-hover: #3d185f;
-  --volt-brand-hover: #3d185f;
+  --volt-link-hover: #3f1c63;
+  --volt-brand-hover: #3f1c63;
   --volt-on-brand: #ffffff;
-  --volt-focus: rgba(253, 194, 32, 0.55);
+  --volt-focus: rgba(80, 35, 121, 0.22);
+  --volt-shadow-strong: 8px 10px 0 rgba(80, 35, 121, 0.12);
+  --volt-shadow-small: 4px 5px 0 rgba(80, 35, 121, 0.08);
+  --volt-agree-bg: #dff7eb;
+  --volt-agree-text: #075d35;
+  --volt-neutral-bg: #fff1b8;
+  --volt-neutral-text: #654800;
+  --volt-disagree-bg: #ffe0d7;
+  --volt-disagree-text: #8c2106;
+  --volt-missing-bg: #ebe5ef;
+  --volt-missing-text: #625a6b;
   color-scheme: light;
   font-family: Ubuntu, Arial, sans-serif;
 }
@@ -34,20 +46,30 @@
 html[data-theme='dark'],
 body[data-theme='dark'],
 .public-guide[data-theme='dark'] {
-  --volt-text: #f8f2ff;
-  --volt-muted-text: #cfc4dc;
-  --volt-border: #71558d;
-  --volt-surface: #21152e;
-  --volt-surface-muted: #150d20;
-  --volt-surface-strong: #2b193c;
-  --volt-surface-active: #3a2450;
-  --volt-topbar: rgba(33, 21, 46, 0.96);
-  --volt-control-bg: #1b1028;
-  --volt-link: #fdc220;
-  --volt-link-hover: #ffe08a;
-  --volt-brand-hover: #6c3a96;
+  --volt-text: #f6f0fb;
+  --volt-muted-text: #c7bed1;
+  --volt-border: #3b3047;
+  --volt-surface: #1d1724;
+  --volt-surface-muted: #141018;
+  --volt-surface-strong: #211a28;
+  --volt-surface-active: #2a2033;
+  --volt-topbar: #1d1724;
+  --volt-control-bg: #211a28;
+  --volt-link: #b68cff;
+  --volt-link-hover: #d8c2ff;
+  --volt-brand-hover: #b68cff;
   --volt-on-brand: #ffffff;
-  --volt-focus: rgba(253, 194, 32, 0.72);
+  --volt-focus: rgba(182, 140, 255, 0.28);
+  --volt-shadow-strong: 8px 10px 0 rgba(182, 140, 255, 0.16);
+  --volt-shadow-small: 4px 5px 0 rgba(182, 140, 255, 0.12);
+  --volt-agree-bg: #103827;
+  --volt-agree-text: #8df0bd;
+  --volt-neutral-bg: #443610;
+  --volt-neutral-text: #ffe08a;
+  --volt-disagree-bg: #461b12;
+  --volt-disagree-text: #ff9c80;
+  --volt-missing-bg: #2a2033;
+  --volt-missing-text: #c7bed1;
   color-scheme: dark;
 }
 
@@ -63,6 +85,7 @@ body {
   background: var(--volt-surface-muted);
   color: var(--volt-text);
   font-family: Ubuntu, Arial, sans-serif;
+  line-height: 1.55;
 }
 
 a {
@@ -79,6 +102,18 @@ a:hover {
 :focus-visible {
   outline: 0;
   box-shadow: 0 0 0 3px var(--volt-focus);
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button,
+select {
+  letter-spacing: 0;
 }
 
 ::selection {

@@ -4,6 +4,7 @@ export const typography = {
     regular: 400,
     medium: 500,
     bold: 700,
+    heavy: 850,
   },
   scale: {
     eyebrow: '0.75rem',

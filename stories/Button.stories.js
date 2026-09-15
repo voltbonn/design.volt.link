@@ -30,7 +30,7 @@ export default {
 export const Primary = {
   args: {
     primary: true,
-    labelKey: 'buttonStories.openTemplate',
+    labelKey: 'buttonStories.startGuide',
   },
 };
 

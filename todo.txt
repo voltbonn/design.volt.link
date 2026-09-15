@@ -1,13 +1,9 @@
-von deutsch auf andere sprache und zurück wechseln klappt nicht
-overlay und files/ordner nicht mehrsprachig
-darkmode erfasst overlay nicht
-von light auf dark und zurück wechseln klappt nicht
+# Kurz-TODO
 
+Die Roadmap liegt in `todoKI.txt`.
 
+Aktuelle offene Bugs:
 
-Positiv/Negativbeispiele mit Erklärungen
+- Keine bekannten Blocker nach dem letzten Build.
 
-Version 2:
-- Loginbereich 
-- dahinter Vorlagen
-- rechtlich richtig
+Version-2-Themen wie Loginbereich, geschuetzte Vorlagen und Backend bleiben in `todoKI.txt`.

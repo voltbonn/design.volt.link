@@ -1,15 +1,17 @@
 .storybook-button {
   display: inline-block;
   cursor: pointer;
-  border: 2px solid transparent;
-  border-radius: 999px;
-  font-weight: 700;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  font-weight: 850;
   line-height: 1;
   font-family: Ubuntu, Arial, sans-serif;
   transition:
     background-color 160ms ease,
     border-color 160ms ease,
-    color 160ms ease;
+    box-shadow 160ms ease,
+    color 160ms ease,
+    transform 160ms ease;
 }
 .storybook-button--primary {
   background-color: var(--volt-purple);
@@ -23,6 +25,8 @@
 .storybook-button:hover {
   background-color: var(--volt-brand-hover);
   color: var(--volt-on-brand);
+  box-shadow: var(--volt-shadow-small);
+  transform: translate(-1px, -1px);
 }
 .storybook-button:focus-visible {
   outline: 0;

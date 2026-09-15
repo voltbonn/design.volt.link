@@ -1,71 +1,58 @@
 # design.volt.link
 
-Öffentliches Designportal für das Volt Design.
+Oeffentliches Designportal fuer das Volt Design.
 
-Dieses Projekt soll eine einfach einsehbare und nachvollziehbare Seite für alle werden, die bei Volt mit Gestaltung arbeiten: Mitglieder, Materialteam, Social-Media-Team, Website-Team, Designteam und interessierte Mitglieder. Ziel ist ein praktischer Designguide mit erklärten Grundlagen, Beispielen und Links zu Figma- und Canva-Vorlagen.
+Version 1 ist eine statische React/Vite-Website fuer Mitglieder und Teams, die Volt-Materialien, Websites, Social-Media-Grafiken oder Praesentationen konsistent gestalten wollen. Die oeffentliche Seite ist bewusst einfach: kein Login, kein oeffentlicher Vorlagenbereich, keine Storybook-Oberflaeche als Hauptprodukt.
 
-Als technisches Fundament gibt es zwei Ebenen. Die öffentliche Website ist die primäre Oberfläche:
+## Version 1
 
-- Die öffentliche Website läuft als eigene React/Vite-Seite. Sie nutzt die Guide-Inhalte, ist mehrsprachig und zeigt keine Storybook-Oberfläche.
-- Storybook bleibt als Arbeitsumgebung für Komponenten, Zustände, technische Prüfung und Designentwicklung erhalten.
+Die oeffentliche Website bietet:
 
-Die normale Website soll sich bewusst ähnlich wie eine Komponentenbibliothek bedienen lassen: linke Kapitel-Navigation, Suche, Topbar, funktionierende Ansichtswerkzeuge, Dark/Light Mode, Sprachwahl und ein eigener Inhaltsbereich. Storybook wird nicht mehr als öffentliche Oberfläche verbogen. Es dokumentiert Komponenten, die anschließend in den Unterseiten der Website eingebettet werden können.
+- Einstieg und Quellen
+- Grundlagendesign
+- Digitale Anwendung
+- Anwendungen
+- Hilfe und FAQ
+- Archiv
+- Impressum und Datenschutz als feste Rechtslinks
 
-## Ziel für Version 1
+Nicht Teil von Version 1:
 
-Version 1 ist ein öffentlicher Designguide ohne Login und ohne eigenen Vorlagen-Editor.
+- oeffentlicher Loginbereich
+- Admin- oder Backend-Funktionen
+- oeffentliche Vorlagenverwaltung
+- sichtbare Storybook-Navigation
+- Planungsseiten als oeffentliche Kapitel
+
+Storybook bleibt als interne Arbeitsumgebung fuer Komponenten, Zustaende, Accessibility-Pruefung und Designentwicklung erhalten.
+
+## Inhalte
 
 Der erste Ausbau orientiert sich an der offiziellen Volt-Europa-Seite zur Visual Identity:
 
 https://volteuropa.org/visual_identity
 
-Die dort beschriebenen Grundlagen werden zuerst übernommen und verständlich aufbereitet:
+Oeffentlich gepflegte Kapitel liegen in `src/design/content/guidePages.js`. UI-Texte und Accessibility-Labels liegen in `src/design/i18n.jsx` und werden fuer Deutsch, Englisch, Niederlaendisch und Franzoesisch gepflegt.
 
-- Logo und Logo-Nutzung
-- Farben
-- Typografie mit Ubuntu
-- Streifen und grafische Elemente
-- Downloads und Nutzungsbedingungen
-- Links zu Figma- und Canva-Vorlagen
-
-Später kann die Seite um einen Loginbereich erweitert werden. Hinter dem Login sollen dann anpassbare Designvorlagen, interne Dateien und eventuell ein Vorlagen-Editor liegen.
-
-## Geplante Inhalte
-
-- Startseite mit kurzer Orientierung und direkten Sprunglinks
-- Logo: Varianten, Schutzraum, Mindestgrößen, helle und dunkle Hintergründe, Do's und Don'ts
-- Farben: HEX, RGB, CMYK, Kontraste und typische Farbkombinationen
-- Typografie: Schriftfamilie, Hierarchie, Headlines, Fließtext, Calls to Action
-- Layout: Raster, Abstände, Flächen, Bild/Text-Verhältnis
-- Bildsprache: Motive, Tonalität, Bildrechte und Barrierefreiheit
-- Icons und grafische Elemente
-- Anwendungsbeispiele für Social Media, Plakate, Flyer, Präsentationen, Websites und Materialarbeit
-- Vorlagenübersicht mit Figma- und Canva-Links
-- Hilfe/FAQ mit häufigen Fehlern, Kontakt und Freigabeprozess
-
-## Empfohlene Projektstruktur
+## Projektstruktur
 
 ```text
 design.volt.link/
+  src/
+    public/
+      PublicGuide.jsx
+      publicGuide.css
+    design/
+      content/
+        guidePages.js
+      components/
+      data/
+      tokens/
+      i18n.jsx
+      global.css
   stories/
     design/
-      VoltDesign.mdx
-      Logo.mdx
-      Colors.mdx
-      Typography.mdx
-      Templates.mdx
-
-  src/
-    design/
-      tokens/
-        colors.js
-        typography.js
-      i18n.jsx
-      components/
-        ColorSwatch.jsx
-        TemplateCard.jsx
-        DosDonts.jsx
-
+    *.stories.js
   public/
     brand/
       logos/
@@ -80,114 +67,58 @@ design.volt.link/
         canva/
 ```
 
-## Ablage für Logos und Designmaterial
+## Assets
 
-`public/brand/logos/source/`
-
-Originaldateien und Quellen, zum Beispiel SVG, AI, EPS, PDF oder ZIP.
-
-`public/brand/logos/web/`
-
-Optimierte Web-Versionen, die direkt im Designguide angezeigt werden können, zum Beispiel SVG oder PNG.
-
-`public/brand/logos/print/`
-
-Druckdateien und CMYK-Varianten, falls vorhanden.
-
-`public/brand/icons/`
-
-Icons, Piktogramme und einfache grafische Elemente.
-
-`public/brand/examples/`
-
-Beispielgrafiken für Social Media, Plakate, Flyer, Websites, Newsletter oder Präsentationen.
-
-`public/brand/templates/previews/`
-
-Vorschaubilder für Figma- und Canva-Vorlagen.
-
-`public/brand/templates/figma/`
-
-Lokale Exporte oder Begleitdateien zu Figma-Vorlagen. Reine Figma-Links sollten später besser in einer Datenliste gepflegt werden.
-
-`public/brand/templates/canva/`
-
-Lokale Exporte oder Begleitdateien zu Canva-Vorlagen. Reine Canva-Template-Links sollten später besser in einer Datenliste gepflegt werden.
-
-## Design-Tokens
-
-Wiederverwendbare Designwerte sollen in `src/design/tokens/` liegen.
-
-Geplante Startwerte aus der Volt Visual Identity:
-
-- Volt Purple: `#502379`
-- Volt Yellow: `#FDC220`
-- Volt Blue: `#82D0F4`
-- Volt Green: `#1BBE6F`
-- Volt Red: `#E63E12`
-- White: `#FFFFFF`
-- Schrift: Ubuntu
-- Grafisches Element: Streifen in bevorzugt `21deg`, in Sonderfaellen `5deg` oder `55deg`
-
-## Mehrsprachigkeit
-
-Die öffentliche Website enthält einen Sprachschalter für Deutsch, Englisch, Niederländisch und Französisch. Die UI-Übersetzungen laufen über `react-i18next` und liegen in `src/design/i18n.jsx`; die strukturierten Guide-Kapitel liegen in `src/design/content/guidePages.js` und nutzen die aktive i18next-Sprache.
-
-Storybook enthält ebenfalls einen Sprachschalter für die gerenderten Inhalte. Die Storybook-eigene Oberfläche wie Controls, Actions, Interactions oder die Sidebar-Suche ist jedoch Storybook-UI und nicht Teil des öffentlichen Designguides. Diese Texte werden nicht projektseitig übersetzt.
-
-## Öffentliche Oberfläche und Storybook
-
-Die öffentliche Oberfläche liegt in `src/public/PublicGuide.jsx` und `src/public/publicGuide.css`. Dort sitzen:
-
-- Kapitelbaum und Suche
-- Sprachumschaltung
-- Dark/Light Mode
-- Raster-, Hintergrund- und Kontur-Werkzeuge
-- Link zu den anpassbaren Vorlagen
-- Links zu Impressum und Datenschutz
-
-Storybook wird weiter über `npm run storybook` gestartet. Die Datei `.storybook/manager.js` enthält nur noch stabiles Branding für `design.volt.link`; Inhalte und Komponenten werden über Stories und MDX gepflegt.
+`public/brand/` ist fuer freigegebene Marken- und Beispielmaterialien vorgesehen. Offizielle Logo-Dateien, Web-Varianten, Print-Dateien, Icons, Beispiele und spaetere Vorlagen-Vorschauen sollen dort getrennt abgelegt werden. Nur rechtlich und redaktionell freigegebenes Material darf oeffentlich eingebunden werden.
 
 ## Entwicklung
 
-Abhängigkeiten installieren:
+Abhaengigkeiten installieren:
 
 ```bash
 npm install
 ```
 
-Öffentliche Website lokal starten:
+Oeffentliche Website lokal starten:
 
 ```bash
 npm run dev
 ```
 
-Öffentliche Website bauen:
+Oeffentliche Website bauen:
 
 ```bash
 npm run build
 ```
 
-Storybook lokal starten:
+Storybook intern starten:
 
 ```bash
 npm run storybook
 ```
 
-Storybook bauen:
+Storybook als technische Pruefung bauen:
 
 ```bash
 npm run build-storybook
 ```
 
-## Nächste Schritte
+Oeffentliche Smokechecks ausfuehren:
 
-Die konkrete Arbeitsliste liegt in `todo.txt`.
+```bash
+npm run smoke
+```
 
-Kurzfristig wichtig:
+## Build und Deployment
 
-- Storybook-Beispielinhalte entfernen
-- erste echte Designguide-Seiten anlegen
-- Design-Tokens für Farben und Typografie erstellen
-- Logo- und Vorlagenstruktur im `public/brand/`-Ordner anlegen
-- Figma- und Canva-Vorlagen mit Vorschau, Format und Status dokumentieren
+Der oeffentliche Produktionsbuild ist:
+
+```bash
+npm run build
+```
+
+Der Output liegt in `dist/`. Dieses Verzeichnis ist das Deployment-Artefakt fuer die oeffentliche Website. `storybook-static/` ist nur fuer interne Storybook-Pruefungen gedacht und nicht der Hauptoutput fuer `design.volt.link`.
+
+## Roadmap
+
+Die konkrete Arbeitsliste liegt in `todoKI.txt`. `todo.txt` ist nur noch fuer sehr kurze, aktuelle Bugs gedacht.

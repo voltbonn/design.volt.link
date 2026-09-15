@@ -3,7 +3,7 @@
   justify-content: space-between;
   align-items: center;
   gap: 24px;
-  border-bottom: 1px solid var(--volt-border);
+  border-bottom: 2px solid var(--volt-border);
   background: var(--volt-surface-strong);
   padding: 18px 24px;
   font-family: Ubuntu, Arial, sans-serif;
@@ -20,16 +20,17 @@
   place-items: center;
   width: 36px;
   height: 36px;
-  border-radius: 999px;
+  border-radius: 2px;
   background: var(--volt-purple);
   color: var(--volt-on-brand);
-  font-weight: 700;
+  font-weight: 850;
+  box-shadow: var(--volt-shadow-small);
 }
 
 .storybook-header h1 {
   margin: 0;
   color: var(--volt-text);
-  font-weight: 700;
+  font-weight: 850;
   font-size: 20px;
   line-height: 1;
 }

@@ -5,23 +5,19 @@ import {
   accessibility,
   brandVoice,
   colors,
-  deployment,
   designPrinciples,
   digitalComponents,
   fileExport,
-  governance,
   graphicElements,
   help,
   iconsUi,
   imageLanguage,
   layout,
-  loginPlanning,
   logo,
   newsletter,
   presentations,
   sources,
   socialMedia,
-  templates,
   typography,
   videoMotion,
   websites,
@@ -53,15 +49,11 @@ const pages = [
   { id: 'videoMotion', section: '02', content: videoMotion },
   { id: 'fileExport', section: '02', content: fileExport },
   { id: 'applications', section: '03', content: applications },
-  { id: 'templates', section: '04', content: templates },
   { id: 'help', section: '05', content: help },
-  { id: 'deployment', section: '06', content: deployment },
-  { id: 'governance', section: '06', content: governance },
-  { id: 'loginPlanning', section: '06', content: loginPlanning },
   { id: 'archive', section: 'archive', content: archive },
 ];
 
-const sectionOrder = ['00', '01', '02', '03', '04', '05', '06', 'archive'];
+const sectionOrder = ['00', '01', '02', '03', '05', 'archive'];
 
 const languages = [
   { value: 'de', label: 'Deutsch' },
@@ -89,6 +81,8 @@ const PublicGuideInner = ({ setLocale, setTheme, theme }) => {
   const [showGrid, setShowGrid] = React.useState(false);
   const [showOutline, setShowOutline] = React.useState(false);
   const [backgroundIndex, setBackgroundIndex] = React.useState(0);
+  const [closedSections, setClosedSections] = React.useState(() => new Set());
+  const activeNavLinkRef = React.useRef(null);
 
   React.useEffect(() => {
     const onHashChange = () => setActivePage(getHashPage());
@@ -125,13 +119,47 @@ const PublicGuideInner = ({ setLocale, setTheme, theme }) => {
   const page = pages.find((item) => item.id === activePage) ?? pages[0];
   const nextTheme = theme === 'dark' ? 'light' : 'dark';
   const background = backgroundModes[backgroundIndex];
+  const backgroundLabel = t(`publicGuide.backgrounds.${background}`);
+  const isSearching = query.trim().length > 0;
+
+  React.useEffect(() => {
+    setClosedSections((current) => {
+      if (!current.has(page.section)) {
+        return current;
+      }
+
+      const next = new Set(current);
+      next.delete(page.section);
+      return next;
+    });
+  }, [page.section]);
+
+  const toggleSection = React.useCallback((section) => {
+    setClosedSections((current) => {
+      const next = new Set(current);
+
+      if (next.has(section)) {
+        next.delete(section);
+      } else {
+        next.add(section);
+      }
+
+      return next;
+    });
+  }, []);
+
+  React.useEffect(() => {
+    activeNavLinkRef.current?.scrollIntoView({ block: 'nearest' });
+  }, [page.id, groupedPages]);
 
   return (
     <div className="public-guide" data-theme={theme}>
       <header className="public-guide__topbar">
         <a className="public-guide__brand" href="#intro">
-          <span className="public-guide__mark">S</span>
-          <strong>design.volt.link</strong>
+          <span className="public-guide__mark">V</span>
+          <span className="public-guide__brand-copy">
+            <strong>design.volt.link</strong>
+          </span>
         </a>
         <div className="public-guide__tools" aria-label={t('publicGuide.tools.label')}>
           <button
@@ -145,11 +173,13 @@ const PublicGuideInner = ({ setLocale, setTheme, theme }) => {
           </button>
           <button
             type="button"
-            title={t('publicGuide.tools.background')}
+            title={`${t('publicGuide.tools.background')}: ${backgroundLabel}`}
             onClick={() => setBackgroundIndex((value) => (value + 1) % backgroundModes.length)}
           >
             <span aria-hidden="true">□</span>
-            <span>{t(`publicGuide.backgrounds.${background}`)}</span>
+            <span>
+              {t('publicGuide.tools.backgroundShort')}: {backgroundLabel}
+            </span>
           </button>
           <button
             type="button"
@@ -183,18 +213,14 @@ const PublicGuideInner = ({ setLocale, setTheme, theme }) => {
             <span aria-hidden="true">{theme === 'dark' ? '☀' : '☾'}</span>
             <span>{t(`publicGuide.theme.current.${theme}`)}</span>
           </button>
-          <a className="public-guide__template-link" href="#templates">
-            {t('common.templates')}
-          </a>
-          <a className="public-guide__storybook-link" href="/storybook/">
-            {t('publicGuide.storybook')}
+          <a className="public-guide__login-link" href="#intro" title={t('publicGuide.login.title')}>
+            {t('publicGuide.login.label')}
           </a>
         </div>
       </header>
 
       <div className="public-guide__layout">
         <aside className="public-guide__sidebar">
-          <p className="public-guide__sidebar-title">{t('publicGuide.sidebarTitle')}</p>
           <label className="public-guide__search">
             <span>{t('publicGuide.search')}</span>
             <input
@@ -207,20 +233,43 @@ const PublicGuideInner = ({ setLocale, setTheme, theme }) => {
 
           <nav aria-label={t('publicGuide.navigation')}>
             {visiblePages.length === 0 && <p className="public-guide__empty">{t('publicGuide.noResults')}</p>}
-            {groupedPages.map((group) => (
-              <section key={group.section} className="public-guide__nav-section">
-                <h2>{t(`publicGuide.sections.${group.section}`)}</h2>
-                {group.pages.map((item) => (
-                  <a
-                    key={item.id}
-                    className={item.id === page.id ? 'is-active' : undefined}
-                    href={`#${item.id}`}
+            {groupedPages.map((group) => {
+              const isExpanded = isSearching || !closedSections.has(group.section);
+              const sectionLabel = t(`publicGuide.sections.${group.section}`);
+
+              return (
+                <section key={group.section} className="public-guide__nav-section">
+                  <button
+                    type="button"
+                    className="public-guide__nav-section-toggle"
+                    aria-expanded={isExpanded}
+                    aria-label={t(isExpanded ? 'publicGuide.collapseSection' : 'publicGuide.expandSection', {
+                      section: sectionLabel,
+                    })}
+                    onClick={() => toggleSection(group.section)}
                   >
-                    {pageTitle(item, locale, t)}
-                  </a>
-                ))}
-              </section>
-            ))}
+                    <span aria-hidden="true" className="public-guide__nav-section-chevron">
+                      {isExpanded ? '-' : '+'}
+                    </span>
+                    <span>{sectionLabel}</span>
+                  </button>
+                  {isExpanded && (
+                    <div className="public-guide__nav-section-links">
+                      {group.pages.map((item) => (
+                        <a
+                          key={item.id}
+                          className={item.id === page.id ? 'is-active' : undefined}
+                          ref={item.id === page.id ? activeNavLinkRef : undefined}
+                          href={`#${item.id}`}
+                        >
+                          {pageTitle(item, locale, t)}
+                        </a>
+                      ))}
+                    </div>
+                  )}
+                </section>
+              );
+            })}
           </nav>
 
           <LegalLinks />
@@ -246,7 +295,6 @@ const PublicGuideInner = ({ setLocale, setTheme, theme }) => {
                 hrefs={{
                   foundations: '#designPrinciples',
                   applications: '#websites',
-                  templates: '#templates',
                   help: '#help',
                 }}
               />

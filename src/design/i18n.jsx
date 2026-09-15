@@ -37,13 +37,16 @@ export const resources = {
         templatesText: 'Figma- und Canva-Vorlagen mit Format, Status, Link und Nutzungshinweisen.',
         templateNotice:
           'Anpassbare Vorlagen sind als eigener Bereich vorbereitet. Ein Backend oder Login gibt es aktuell noch nicht.',
+        helpTitle: 'Hilfe',
+        helpText: 'FAQ, Quellen, Freigaben, Kontakt und typische Fehler.',
+        startNotice: 'Der Designguide ist die öffentliche Version-1-Oberfläche. Storybook bleibt intern.',
       },
       guideIntro: {
         title: 'Volt Design',
         lead:
           'Der öffentliche Designguide für alle, die Volt sichtbar machen: Mitglieder, Materialteam, Social-Media-Team, Website-Team, Designteam und interessierte Mitglieder.',
         version:
-          'Version 1 ist bewusst einfach: ein nachvollziehbarer Guide ohne Login und ohne Vorlagen-Editor. Die erste inhaltliche Grundlage ist die offizielle Volt-Europa-Seite zur Visual Identity.',
+          'Version 1 ist bewusst einfach: ein nachvollziehbarer Guide ohne Login. Die erste inhaltliche Grundlage ist die offizielle Volt-Europa-Seite zur Visual Identity.',
         directRoutes: 'Direkte Wege',
         foundationsLabel: 'Grundlagendesign',
         foundationsDescription: 'Prinzipien, Marke, Logo, Farben, Typografie, Layout, Bildsprache und Barrierefreiheit.',
@@ -58,12 +61,11 @@ export const resources = {
           'Grundlagendesign: Prinzipien, Marke, Logo, Farben, Typografie, Layout, Bildsprache und Barrierefreiheit.',
           'Digitale Anwendung: Websites, Komponenten, UI, Social Media, Newsletter, Präsentationen, Video und Export.',
           'Anwendungen: konkrete Beispiele für wiederkehrende Materialien und Kampagnen.',
-          'Vorlagen: Figma- und Canva-Links mit Format, Zielgruppe und Status.',
           'Hilfe: FAQ, Kontakt, Freigabeprozess und typische Fehler.',
         ],
         editorialPrinciple: 'Redaktionsprinzip',
         editorialText:
-          'Jedes Kapitel soll kurz erklären, was erlaubt ist, warum es wichtig ist und wie man es praktisch anwendet. Wo möglich, sollen Beispiele, Downloads und Vorlagen direkt neben der Regel stehen.',
+          'Jedes Kapitel soll kurz erklären, was erlaubt ist, warum es wichtig ist und wie man es praktisch anwendet. Wo möglich, sollen Beispiele und Downloads direkt neben der Regel stehen.',
         legal: 'Rechtliches',
       },
       templateGallery: {
@@ -87,6 +89,9 @@ export const resources = {
         imprint: 'Impressum',
         privacy: 'Datenschutz',
       },
+      inPageNav: {
+        label: 'Inhalt',
+      },
       buttonStories: {
         openTemplate: 'Vorlage öffnen',
         learnMore: 'Mehr erfahren',
@@ -101,16 +106,19 @@ export const resources = {
         search: 'Suchen',
         searchPlaceholder: 'Kapitel suchen',
         noResults: 'Keine Kapitel gefunden.',
+        expandSection: '{{section}} ausklappen',
+        collapseSection: '{{section}} einklappen',
         intro: 'Volt Design',
+        productLine: 'Civic-Tech Designguide',
         sidebarTitle: 'Volt Design',
-        storybook: 'Komponenten',
         tools: {
           label: 'Ansichtswerkzeuge',
           grid: 'Raster anzeigen',
           gridShort: 'Raster',
           background: 'Hintergrund wechseln',
+          backgroundShort: 'Hintergrund',
           outline: 'Konturen anzeigen',
-          outlineShort: 'Kontur',
+          outlineShort: 'Konturen',
         },
         backgrounds: {
           guide: 'Guide',
@@ -125,14 +133,16 @@ export const resources = {
             dark: 'Dunkel',
           },
         },
+        login: {
+          label: 'Login',
+          title: 'Login öffnen',
+        },
         sections: {
           '00': 'Einstieg',
           '01': 'Grundlagendesign',
           '02': 'Digitale Anwendung',
           '03': 'Anwendungen',
-          '04': 'Vorlagen',
           '05': 'Hilfe',
-          '06': 'Planung',
           archive: 'Archiv',
         },
       },
@@ -190,13 +200,16 @@ export const resources = {
       templatesText: 'Figma and Canva templates with format, status, link and usage notes.',
       templateNotice:
         'Customisable templates are prepared as a separate area. There is currently no backend or login.',
+      helpTitle: 'Help',
+      helpText: 'FAQ, sources, approvals, contact and common mistakes.',
+      startNotice: 'The design guide is the public version-1 surface. Storybook remains internal.',
     },
     guideIntro: {
       title: 'Volt Design',
       lead:
         'The public design guide for everyone making Volt visible: members, materials teams, social media teams, website teams, design teams and interested members.',
       version:
-        'Version 1 is intentionally simple: a clear guide without login and without a template editor. The first content basis is the official Volt Europe visual identity page.',
+        'Version 1 is intentionally simple: a clear guide without login. The first content basis is the official Volt Europe visual identity page.',
       directRoutes: 'Direct Routes',
       foundationsLabel: 'Foundational Design',
       foundationsDescription: 'Principles, brand, logo, colours, typography, layout, imagery and accessibility.',
@@ -211,12 +224,11 @@ export const resources = {
         'Foundational design: principles, brand, logo, colours, typography, layout, imagery and accessibility.',
         'Digital application: websites, components, UI, social media, newsletters, presentations, video and export.',
         'Applications: practical examples for recurring materials and campaigns.',
-        'Templates: Figma and Canva links with format, audience and status.',
         'Help: FAQ, contact, approval process and common mistakes.',
       ],
       editorialPrinciple: 'Editorial Principle',
       editorialText:
-        'Each chapter should briefly explain what is allowed, why it matters and how to apply it in practice. Where possible, examples, downloads and templates should sit next to the rule.',
+        'Each chapter should briefly explain what is allowed, why it matters and how to apply it in practice. Where possible, examples and downloads should sit next to the rule.',
       legal: 'Legal',
     },
     templateGallery: {
@@ -240,6 +252,9 @@ export const resources = {
       imprint: 'Legal notice',
       privacy: 'Privacy',
     },
+    inPageNav: {
+      label: 'Contents',
+    },
       buttonStories: {
         openTemplate: 'Open template',
         learnMore: 'Learn more',
@@ -254,16 +269,19 @@ export const resources = {
         search: 'Search',
         searchPlaceholder: 'Search chapters',
         noResults: 'No chapters found.',
+        expandSection: 'Expand {{section}}',
+        collapseSection: 'Collapse {{section}}',
         intro: 'Volt Design',
+        productLine: 'Civic-tech design guide',
         sidebarTitle: 'Volt Design',
-        storybook: 'Components',
         tools: {
           label: 'View tools',
           grid: 'Show grid',
           gridShort: 'Grid',
           background: 'Change background',
+          backgroundShort: 'Background',
           outline: 'Show outlines',
-          outlineShort: 'Outline',
+          outlineShort: 'Outlines',
         },
         backgrounds: {
           guide: 'Guide',
@@ -278,14 +296,16 @@ export const resources = {
             dark: 'Dark',
           },
         },
+        login: {
+          label: 'Login',
+          title: 'Open login',
+        },
         sections: {
           '00': 'Introduction',
           '01': 'Foundational Design',
           '02': 'Digital Application',
           '03': 'Applications',
-          '04': 'Templates',
           '05': 'Help',
-          '06': 'Planning',
           archive: 'Archive',
         },
       },
@@ -343,13 +363,16 @@ export const resources = {
       templatesText: 'Figma- en Canva-sjablonen met formaat, status, link en gebruikstips.',
       templateNotice:
         'Aanpasbare sjablonen zijn voorbereid als aparte omgeving. Er is momenteel nog geen backend of login.',
+      helpTitle: 'Hulp',
+      helpText: 'FAQ, bronnen, goedkeuringen, contact en veelgemaakte fouten.',
+      startNotice: 'De designgids is de openbare versie-1-omgeving. Storybook blijft intern.',
     },
     guideIntro: {
       title: 'Volt Design',
       lead:
         'De openbare designgids voor iedereen die Volt zichtbaar maakt: leden, materiaalteams, socialmediateams, websiteteams, designteams en geïnteresseerde leden.',
       version:
-        'Versie 1 is bewust eenvoudig: een duidelijke gids zonder login en zonder sjablooneditor. De eerste inhoudelijke basis is de officiële Volt Europe-pagina over de visuele identiteit.',
+        'Versie 1 is bewust eenvoudig: een duidelijke gids zonder login. De eerste inhoudelijke basis is de officiële Volt Europe-pagina over de visuele identiteit.',
       directRoutes: 'Directe Routes',
       foundationsLabel: 'Basisdesign',
       foundationsDescription: 'Principes, merk, logo, kleuren, typografie, lay-out, beeldtaal en toegankelijkheid.',
@@ -364,12 +387,11 @@ export const resources = {
         'Basisdesign: principes, merk, logo, kleuren, typografie, lay-out, beeldtaal en toegankelijkheid.',
         'Digitale toepassing: websites, componenten, UI, social media, nieuwsbrieven, presentaties, video en export.',
         'Toepassingen: praktische voorbeelden voor terugkerende materialen en campagnes.',
-        'Sjablonen: Figma- en Canva-links met formaat, doelgroep en status.',
         'Hulp: FAQ, contact, goedkeuringsproces en veelgemaakte fouten.',
       ],
       editorialPrinciple: 'Redactioneel Principe',
       editorialText:
-        'Elk hoofdstuk moet kort uitleggen wat is toegestaan, waarom het belangrijk is en hoe je het praktisch toepast. Waar mogelijk staan voorbeelden, downloads en sjablonen direct naast de regel.',
+        'Elk hoofdstuk moet kort uitleggen wat is toegestaan, waarom het belangrijk is en hoe je het praktisch toepast. Waar mogelijk staan voorbeelden en downloads direct naast de regel.',
       legal: 'Juridisch',
     },
     templateGallery: {
@@ -393,6 +415,9 @@ export const resources = {
       imprint: 'Colofon',
       privacy: 'Privacy',
     },
+    inPageNav: {
+      label: 'Inhoud',
+    },
       buttonStories: {
         openTemplate: 'Sjabloon openen',
         learnMore: 'Meer weten',
@@ -407,16 +432,19 @@ export const resources = {
         search: 'Zoeken',
         searchPlaceholder: 'Hoofdstukken zoeken',
         noResults: 'Geen hoofdstukken gevonden.',
+        expandSection: '{{section}} uitklappen',
+        collapseSection: '{{section}} inklappen',
         intro: 'Volt Design',
+        productLine: 'Civic-tech designgids',
         sidebarTitle: 'Volt Design',
-        storybook: 'Componenten',
         tools: {
           label: 'Weergavetools',
           grid: 'Raster tonen',
           gridShort: 'Raster',
           background: 'Achtergrond wisselen',
+          backgroundShort: 'Achtergrond',
           outline: 'Contouren tonen',
-          outlineShort: 'Contour',
+          outlineShort: 'Contouren',
         },
         backgrounds: {
           guide: 'Gids',
@@ -431,14 +459,16 @@ export const resources = {
             dark: 'Donker',
           },
         },
+        login: {
+          label: 'Login',
+          title: 'Login openen',
+        },
         sections: {
           '00': 'Start',
           '01': 'Basisdesign',
           '02': 'Digitale Toepassing',
           '03': 'Toepassingen',
-          '04': 'Sjablonen',
           '05': 'Hulp',
-          '06': 'Planning',
           archive: 'Archief',
         },
       },
@@ -496,13 +526,16 @@ export const resources = {
         templatesText: 'Modèles Figma et Canva avec format, statut, lien et consignes d’utilisation.',
         templateNotice:
           'Les modèles personnalisables sont préparés comme espace séparé. Il n’y a actuellement ni backend ni connexion.',
+        helpTitle: 'Aide',
+        helpText: 'FAQ, sources, validations, contact et erreurs fréquentes.',
+        startNotice: 'Le guide de design est l’interface publique de la version 1. Storybook reste interne.',
       },
       guideIntro: {
         title: 'Design Volt',
         lead:
           'Le guide de design public pour toutes les personnes qui rendent Volt visible : membres, équipes matériel, réseaux sociaux, site web, design et membres intéressés.',
         version:
-          'La version 1 reste volontairement simple : un guide clair, sans connexion et sans éditeur de modèles. La première base de contenu est la page officielle de Volt Europe sur l’identité visuelle.',
+          'La version 1 reste volontairement simple : un guide clair, sans connexion. La première base de contenu est la page officielle de Volt Europe sur l’identité visuelle.',
         directRoutes: 'Accès directs',
         foundationsLabel: 'Design fondamental',
         foundationsDescription: 'Principes, marque, logo, couleurs, typographie, mise en page, langage visuel et accessibilité.',
@@ -517,12 +550,11 @@ export const resources = {
           'Design fondamental : principes, marque, logo, couleurs, typographie, mise en page, langage visuel et accessibilité.',
           'Application numérique : sites web, composants, UI, réseaux sociaux, newsletters, présentations, vidéo et export.',
           'Applications : exemples concrets pour supports récurrents et campagnes.',
-          'Modèles : liens Figma et Canva avec format, public cible et statut.',
           'Aide : FAQ, contact, processus de validation et erreurs fréquentes.',
         ],
         editorialPrinciple: 'Principe éditorial',
         editorialText:
-          'Chaque chapitre doit expliquer brièvement ce qui est autorisé, pourquoi c’est important et comment l’appliquer concrètement. Lorsque c’est possible, exemples, téléchargements et modèles doivent être placés près de la règle.',
+          'Chaque chapitre doit expliquer brièvement ce qui est autorisé, pourquoi c’est important et comment l’appliquer concrètement. Lorsque c’est possible, exemples et téléchargements doivent être placés près de la règle.',
         legal: 'Mentions légales',
       },
       templateGallery: {
@@ -546,6 +578,9 @@ export const resources = {
         imprint: 'Mentions légales',
         privacy: 'Confidentialité',
       },
+      inPageNav: {
+        label: 'Contenu',
+      },
       buttonStories: {
         openTemplate: 'Ouvrir le modèle',
         learnMore: 'En savoir plus',
@@ -560,14 +595,17 @@ export const resources = {
         search: 'Rechercher',
         searchPlaceholder: 'Rechercher des chapitres',
         noResults: 'Aucun chapitre trouvé.',
+        expandSection: 'Développer {{section}}',
+        collapseSection: 'Replier {{section}}',
         intro: 'Design Volt',
+        productLine: 'Guide civic-tech',
         sidebarTitle: 'Design Volt',
-        storybook: 'Composants',
         tools: {
           label: 'Outils d’affichage',
           grid: 'Afficher la grille',
           gridShort: 'Grille',
           background: 'Changer l’arrière-plan',
+          backgroundShort: 'Fond',
           outline: 'Afficher les contours',
           outlineShort: 'Contours',
         },
@@ -584,14 +622,16 @@ export const resources = {
             dark: 'Sombre',
           },
         },
+        login: {
+          label: 'Login',
+          title: 'Ouvrir le login',
+        },
         sections: {
           '00': 'Introduction',
           '01': 'Design fondamental',
           '02': 'Application numérique',
           '03': 'Applications',
-          '04': 'Modèles',
           '05': 'Aide',
-          '06': 'Planification',
           archive: 'Archive',
         },
       },

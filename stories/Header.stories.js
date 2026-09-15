@@ -10,7 +10,7 @@ export default {
     layout: 'fullscreen',
   },
   args: {
-    onOpenTemplates: fn(),
+    onStartGuide: fn(),
   },
 };
 
