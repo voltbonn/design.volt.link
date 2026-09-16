@@ -183,7 +183,6 @@ const PublicGuideInner = ({ setLocale, setTheme, theme }) => {
   const isSearching = query.trim().length > 0;
   const logoSrc = theme === 'dark' ? logoWhite : logoPurple;
   const sectionLabel = t(`publicGuide.sections.${page.section}`);
-  const showSidebarLegalLinks = page.section !== '00';
 
   const toggleSection = React.useCallback((section) => {
     setClosedSections((current) => {
@@ -360,7 +359,7 @@ const PublicGuideInner = ({ setLocale, setTheme, theme }) => {
             })}
           </nav>
 
-          {showSidebarLegalLinks && <LegalLinks labelKey="legalLinks.sidebarLabel" />}
+          <LegalLinks labelKey="legalLinks.sidebarLabel" />
         </aside>
 
         <main id="main-content" className="public-guide__content" tabIndex="-1">

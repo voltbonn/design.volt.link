@@ -353,9 +353,20 @@ try {
   await page.getByRole('searchbox', { name: 'Suchen' }).waitFor();
   await page.getByRole('button', { name: /Archiv/ }).waitFor();
 
-  const introLegalLinks = await page.locator('.volt-legal-links').count();
-  if (introLegalLinks > 0) {
-    throw new Error('Der Einstieg zeigt noch rechtliche Links.');
+  const imprintHref = await page.locator('.public-guide__sidebar .volt-legal-links a', { hasText: 'Impressum' }).first().getAttribute('href');
+  const privacyHref = await page.locator('.public-guide__sidebar .volt-legal-links a', { hasText: 'Datenschutz' }).first().getAttribute('href');
+
+  if (imprintHref !== 'https://voltdeutschland.org/impressum') {
+    throw new Error('Impressum-Link zeigt nicht auf die erwartete URL.');
+  }
+
+  if (privacyHref !== 'https://voltdeutschland.org/datenschutz') {
+    throw new Error('Datenschutz-Link zeigt nicht auf die erwartete URL.');
+  }
+
+  const contentLegalLinks = await page.locator('.public-guide__content .volt-legal-links').count();
+  if (contentLegalLinks > 0) {
+    throw new Error('Der Seiteninhalt zeigt rechtliche Links.');
   }
 
   await waitForLogoVariant(page, 'logo_lila', 'Logo im Light Mode');

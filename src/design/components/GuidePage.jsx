@@ -44,7 +44,6 @@ import { DosDonts } from './DosDonts';
 import { DownloadCard } from './DownloadCard';
 import { GuidelineGrid } from './GuidelineGrid';
 import { InPageNav } from './InPageNav';
-import { LegalLinks } from './LegalLinks';
 import { TemplateGallery } from './TemplateGallery';
 import { TypographySample } from './TypographySample';
 
@@ -356,8 +355,6 @@ export const GuidePage = ({ page: pageId }) => {
               <p>{answer.answer}</p>
             </section>
           ))}
-          <h2 id={c.sections.legal.id}>{c.sections.legal.title}</h2>
-          <LegalLinks />
         </>
       )}
 
