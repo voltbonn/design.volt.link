@@ -2,6 +2,7 @@ import { createServer } from 'node:http';
 import { readFile } from 'node:fs/promises';
 import { existsSync } from 'node:fs';
 import { extname, join, resolve } from 'node:path';
+import axeCore from 'axe-core';
 import { chromium } from 'playwright';
 
 const root = resolve('dist');
@@ -17,6 +18,66 @@ const mimeTypes = {
   '.jpg': 'image/jpeg',
   '.jpeg': 'image/jpeg',
   '.webp': 'image/webp',
+};
+
+const checkedViewports = [
+  { label: 'mobile', width: 390, height: 844 },
+  { label: 'tablet', width: 768, height: 1024 },
+  { label: 'small desktop', width: 1024, height: 768 },
+  { label: 'desktop', width: 1280, height: 800 },
+  { label: 'wide desktop', width: 1440, height: 900 },
+];
+
+const forbiddenPublicSelectors = [
+  'a[href*="storybook"]',
+  'a[href="#templates"]',
+  'a[href="#deployment"]',
+  'a[href="#governance"]',
+  'a[href="#loginPlanning"]',
+].join(', ');
+
+const assertNoHorizontalScroll = async (page, label) => {
+  const viewport = await page.evaluate(() => ({
+    scrollWidth: document.documentElement.scrollWidth,
+    clientWidth: document.documentElement.clientWidth,
+  }));
+
+  if (viewport.scrollWidth > viewport.clientWidth) {
+    throw new Error(`${label}: horizontales Scrollen erkannt.`);
+  }
+};
+
+const assertNoForbiddenPublicLinks = async (page) => {
+  const forbiddenLinks = await page.locator(forbiddenPublicSelectors).count();
+
+  if (forbiddenLinks > 0) {
+    throw new Error('Oeffentliche Navigation enthaelt Storybook-, Vorlagen- oder Planungs-Link.');
+  }
+};
+
+const assertNoA11yViolations = async (page, label) => {
+  await page.addScriptTag({ content: axeCore.source });
+
+  const results = await page.evaluate(async () =>
+    window.axe.run(document, {
+      resultTypes: ['violations'],
+    }),
+  );
+
+  if (results.violations.length > 0) {
+    const summary = results.violations
+      .map((violation) => {
+        const targets = violation.nodes
+          .slice(0, 3)
+          .map((node) => node.target.join(' '))
+          .join(', ');
+
+        return `${violation.id} (${violation.impact ?? 'unknown'}): ${targets}`;
+      })
+      .join('\n');
+
+    throw new Error(`${label}: Accessibility-Verstoesse gefunden:\n${summary}`);
+  }
 };
 
 if (!existsSync(join(root, 'index.html'))) {
@@ -50,7 +111,11 @@ const server = createServer(async (request, response) => {
 await new Promise((resolveListen) => server.listen(port, '127.0.0.1', resolveListen));
 
 const browser = await chromium.launch({ headless: true });
-const page = await browser.newPage({ viewport: { width: 390, height: 844 } });
+const context = await browser.newContext({
+  locale: 'en-US',
+  viewport: { width: 390, height: 844 },
+});
+const page = await context.newPage();
 await page.addInitScript(() => {
   if (!window.localStorage.getItem('volt-theme')) {
     window.localStorage.setItem('volt-theme', 'light');
@@ -61,6 +126,29 @@ try {
   await page.goto(`http://127.0.0.1:${port}/#intro`);
   await page.getByRole('heading', { name: 'Volt Design' }).waitFor();
   await page.locator('.public-guide[data-theme="light"]').waitFor();
+  await page.locator('.public-guide__actions select').waitFor();
+
+  const browserLocale = await page.locator('.public-guide__actions select').inputValue();
+
+  if (browserLocale !== 'en') {
+    throw new Error('Browsersprache en-US wird nicht als Startsprache verwendet.');
+  }
+
+  await page.getByRole('searchbox', { name: 'Search' }).waitFor();
+  await page.locator('.public-guide__actions select').selectOption('de');
+  await page.getByRole('searchbox', { name: 'Suchen' }).waitFor();
+  await page.getByRole('button', { name: /Archiv/ }).waitFor();
+
+  const imprintHref = await page.getByRole('link', { name: 'Impressum' }).first().getAttribute('href');
+  const privacyHref = await page.getByRole('link', { name: 'Datenschutz' }).first().getAttribute('href');
+
+  if (imprintHref !== 'https://voltdeutschland.org/impressum') {
+    throw new Error('Impressum-Link zeigt nicht auf die erwartete URL.');
+  }
+
+  if (privacyHref !== 'https://voltdeutschland.org/datenschutz') {
+    throw new Error('Datenschutz-Link zeigt nicht auf die erwartete URL.');
+  }
 
   const initialLogo = await page.locator('.public-guide__mark img').evaluate((image) => ({
     src: image.getAttribute('src'),
@@ -71,14 +159,7 @@ try {
     throw new Error('Logo im Light Mode wird nicht korrekt geladen.');
   }
 
-  const initialViewport = await page.evaluate(() => ({
-    scrollWidth: document.documentElement.scrollWidth,
-    clientWidth: document.documentElement.clientWidth,
-  }));
-
-  if (initialViewport.scrollWidth > initialViewport.clientWidth) {
-    throw new Error('Mobile Ansicht erzeugt horizontales Scrollen.');
-  }
+  await assertNoHorizontalScroll(page, 'mobile initial');
 
   await page.getByRole('button', { name: /Hintergrund/ }).click();
   await page.getByRole('button', { name: /Hintergrund/ }).click();
@@ -121,17 +202,28 @@ try {
   await page.getByRole('button', { name: /Grundlagendesign/ }).click();
   await page.getByRole('searchbox', { name: 'Suchen' }).fill('Farben');
   await page.getByRole('link', { name: 'Farben', exact: true }).waitFor();
+  await page.getByRole('searchbox', { name: 'Suchen' }).fill('');
 
-  const forbiddenLinks = await page.locator('a[href*="storybook"], a[href="#templates"]').count();
-  if (forbiddenLinks > 0) {
-    throw new Error('Oeffentliche Navigation enthaelt Storybook- oder Templates-Link.');
-  }
+  await assertNoForbiddenPublicLinks(page);
+  await assertNoA11yViolations(page, 'public guide initial');
 
   const loginLinks = await page.getByRole('link', { name: /^Login$/ }).count();
   if (loginLinks > 0) {
     throw new Error('Oeffentliche Navigation enthaelt einen Login-Link.');
   }
+
+  for (const viewport of checkedViewports) {
+    await page.setViewportSize({ width: viewport.width, height: viewport.height });
+
+    for (const locale of ['de', 'en', 'nl', 'fr']) {
+      await page.locator('.public-guide__actions select').selectOption(locale);
+      await page.getByRole('searchbox').waitFor();
+      await assertNoHorizontalScroll(page, `${viewport.label} ${locale}`);
+      await assertNoForbiddenPublicLinks(page);
+    }
+  }
 } finally {
+  await context.close();
   await browser.close();
   await new Promise((resolveClose) => server.close(resolveClose));
 }

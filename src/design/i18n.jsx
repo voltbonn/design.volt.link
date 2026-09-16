@@ -18,6 +18,7 @@ export const resources = {
         backToGuide: 'Zurück zum Designguide',
         version: 'Version 1',
         statusPlanned: 'geplant',
+        visibilityInternal: 'intern',
         visibilityPublicPlanned: 'öffentlich geplant',
         updatedOpen: 'offen',
       },
@@ -86,6 +87,7 @@ export const resources = {
       },
       legalLinks: {
         label: 'Rechtliche Links',
+        sidebarLabel: 'Rechtliche Links in der Seitenleiste',
         imprint: 'Impressum',
         privacy: 'Datenschutz',
       },
@@ -178,6 +180,7 @@ export const resources = {
       backToGuide: 'Back to the design guide',
       version: 'Version 1',
       statusPlanned: 'planned',
+      visibilityInternal: 'internal',
       visibilityPublicPlanned: 'public planned',
       updatedOpen: 'open',
     },
@@ -246,6 +249,7 @@ export const resources = {
     },
     legalLinks: {
       label: 'Legal links',
+      sidebarLabel: 'Legal links in the sidebar',
       imprint: 'Legal notice',
       privacy: 'Privacy',
     },
@@ -338,6 +342,7 @@ export const resources = {
       backToGuide: 'Terug naar de designgids',
       version: 'Versie 1',
       statusPlanned: 'gepland',
+      visibilityInternal: 'intern',
       visibilityPublicPlanned: 'openbaar gepland',
       updatedOpen: 'open',
     },
@@ -406,6 +411,7 @@ export const resources = {
     },
     legalLinks: {
       label: 'Juridische links',
+      sidebarLabel: 'Juridische links in de zijbalk',
       imprint: 'Colofon',
       privacy: 'Privacy',
     },
@@ -498,6 +504,7 @@ export const resources = {
         backToGuide: 'Retour au guide de design',
         version: 'Version 1',
         statusPlanned: 'prévu',
+        visibilityInternal: 'interne',
         visibilityPublicPlanned: 'public prévu',
         updatedOpen: 'ouvert',
       },
@@ -566,6 +573,7 @@ export const resources = {
       },
       legalLinks: {
         label: 'Liens juridiques',
+        sidebarLabel: 'Liens juridiques de la barre latérale',
         imprint: 'Mentions légales',
         privacy: 'Confidentialité',
       },
@@ -722,10 +730,13 @@ export const useLocalizedTemplates = (templates) => {
         target: t(`templates.${template.id}.target`) === `templates.${template.id}.target`
           ? template.target
           : t(`templates.${template.id}.target`),
-        status: template.status === 'geplant' ? t('common.statusPlanned') : template.status,
-        visibility:
-          template.visibility === 'öffentlich geplant' ? t('common.visibilityPublicPlanned') : template.visibility,
-        updated: template.updated === 'offen' ? t('common.updatedOpen') : template.updated,
+        status: ['geplant', 'planned'].includes(template.status) ? t('common.statusPlanned') : template.status,
+        visibility: ['öffentlich geplant', 'public_planned'].includes(template.visibility)
+          ? t('common.visibilityPublicPlanned')
+          : template.visibility === 'internal'
+            ? t('common.visibilityInternal')
+            : template.visibility,
+        updatedAt: template.updatedAt ?? (template.updated === 'offen' ? t('common.updatedOpen') : template.updated),
       })),
     [templates, t],
   );

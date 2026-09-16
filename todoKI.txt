@@ -2,26 +2,9 @@
 
 Diese Datei enthaelt nur noch offene Punkte. Erledigte Punkte werden entfernt.
 
-## 1. Offene Produkt- und IA-Entscheidungen
+## 1. Inhaltsmodell und Inhaltsseiten konsolidieren
 
-1. Entscheiden, ob "Archiv" oeffentlich sichtbar bleibt oder nur als Hilfsseite fuer alte Designs dient.
-
-2. Primaere Redaktionssprache verbindlich festlegen. Aktuell ist Deutsch die faktische Quelle.
-
-3. Entscheiden, ob Planungsinhalte im Repo bleiben:
-   - Wenn ja: nicht oeffentlich verlinken und klar als interne Projektdokumentation kennzeichnen.
-   - Wenn nein: entfernen oder in README/todoKI ueberfuehren.
-
-## 2. Inhaltsmodell und Inhaltsseiten konsolidieren
-
-1. `src/design/content/guidePages.js` auf veraltete Planungsinhalte pruefen:
-   - Deployment
-   - Governance
-   - LoginPlanning
-   - Templates
-   - Texte, die noch Storybook als oeffentliche Seite beschreiben.
-
-2. Jede oeffentliche Inhaltsseite redaktionell fertigstellen:
+1. Jede oeffentliche Inhaltsseite redaktionell fertigstellen:
    - Einstieg
    - Quellen und Regeln
    - Designprinzipien
@@ -45,7 +28,7 @@ Diese Datei enthaelt nur noch offene Punkte. Erledigte Punkte werden entfernt.
    - Hilfe und FAQ
    - Archiv
 
-3. Fuer jede Seite Mindestumfang ergaenzen:
+2. Fuer jede Seite Mindestumfang ergaenzen:
    - Kurzer Zweck.
    - Regeln.
    - Gute Beispiele.
@@ -53,9 +36,9 @@ Diese Datei enthaelt nur noch offene Punkte. Erledigte Punkte werden entfernt.
    - Praktische Hinweise.
    - Quellen oder Downloads, falls relevant.
 
-4. Platzhalter und "noch zu definieren"-Texte markieren oder ersetzen.
+3. Platzhalter und "noch zu definieren"-Texte markieren oder ersetzen.
 
-## 3. Volt-Quellen und rechtliche Grundlage klaeren
+## 2. Volt-Quellen und rechtliche Grundlage klaeren
 
 1. Offizielle Volt-Europa-Visual-Identity-Quelle vollstaendig auswerten:
    - Logo-Regeln
@@ -84,7 +67,7 @@ Diese Datei enthaelt nur noch offene Punkte. Erledigte Punkte werden entfernt.
    - Wann muss eine Freigabe eingeholt werden?
    - Wo meldet man fehlerhafte oder veraltete Inhalte?
 
-## 4. Assets und Dateiablage vervollstaendigen
+## 3. Assets und Dateiablage vervollstaendigen
 
 1. Offizielle Logo-Dateien einsortieren:
    - Originale getrennt von Web- und Print-Versionen.
@@ -108,7 +91,7 @@ Diese Datei enthaelt nur noch offene Punkte. Erledigte Punkte werden entfernt.
 
 5. Assets auf Lizenz und Freigabe pruefen, bevor sie oeffentlich eingebunden werden.
 
-## 5. Design-Tokens und Komponenten vervollstaendigen
+## 4. Design-Tokens und Komponenten vervollstaendigen
 
 1. Tokens pruefen und ergaenzen:
    - Farben
@@ -155,7 +138,7 @@ Diese Datei enthaelt nur noch offene Punkte. Erledigte Punkte werden entfernt.
    - Light/Dark.
    - Mehrsprachige Inhalte, soweit sinnvoll.
 
-## 6. Positive und negative Beispiele ergaenzen
+## 5. Positive und negative Beispiele ergaenzen
 
 1. Fuer zentrale Kapitel Do/Don't-Beispiele erstellen:
    - Logo
@@ -181,23 +164,9 @@ Diese Datei enthaelt nur noch offene Punkte. Erledigte Punkte werden entfernt.
 
 4. Sicherstellen, dass Beispiele nicht wie echte offizielle Kampagnen wirken, wenn sie nur Demonstrationen sind.
 
-## 7. Vorlagen-Thema sauber fuer spaeter vorbereiten
+## 6. Vorlagen-Thema sauber fuer spaeter vorbereiten
 
-1. Interne Datenstruktur fuer Vorlagen pruefen:
-   - `src/design/data/templates.js`
-   - Status
-   - Sichtbarkeit
-   - Zielgruppe
-   - Tool
-   - Link
-   - Aktualisierungsdatum
-
-2. Entscheiden, was oeffentlich sichtbar sein darf:
-   - Gar nichts bis zum Login.
-   - Nur Hinweise auf kommende Vorlagen.
-   - Nur freigegebene oeffentliche Vorlagen.
-
-3. Spaetere Version-2-Anforderungen notieren:
+1. Spaetere Version-2-Anforderungen notieren:
    - Loginbereich.
    - Geschuetzte Vorlagen.
    - Rollen: Mitglied, Redaktion/Admin.
@@ -205,9 +174,7 @@ Diese Datei enthaelt nur noch offene Punkte. Erledigte Punkte werden entfernt.
    - Freigabestatus.
    - Audit/letzte Aktualisierung.
 
-4. Keine Version-2-Funktion halb oeffentlich verlinken.
-
-## 8. Barrierefreiheit und Qualitaet pruefen
+## 7. Barrierefreiheit und Qualitaet pruefen
 
 1. Tastaturnavigation manuell testen:
    - Header-Controls.
@@ -237,51 +204,28 @@ Diese Datei enthaelt nur noch offene Punkte. Erledigte Punkte werden entfernt.
 
 6. Motion/Animation gering halten und nicht fuer zentrale Information nutzen.
 
-## 9. Responsives Layout final testen
+## 8. Responsives Layout final testen
 
-1. Viewports testen:
-   - 390 px mobile.
-   - 768 px tablet.
-   - 1024 px small desktop.
-   - 1280 px desktop.
-   - Breite Desktop-Ansicht.
-
-2. Lange Texte und lange Woerter pruefen:
+1. Lange Texte und lange Woerter pruefen:
    - Deutsch.
    - Englisch.
    - Niederlaendisch.
    - Franzoesisch.
 
-3. Sidebar-Verhalten pruefen:
+2. Sidebar-Verhalten pruefen:
    - Viele Gruppen offen.
    - Viele Gruppen geschlossen.
    - Suche aktiv.
    - Wechsel zwischen Seiten.
 
-4. Inhaltsseiten pruefen:
+3. Inhaltsseiten pruefen:
    - Karten.
    - Listen.
    - Beispiele.
    - Downloads.
    - Tabellen oder Metadaten, falls spaeter eingebaut.
 
-## 10. Tests und technische Pruefung ausbauen
-
-1. Vitest-Konfiguration pruefen:
-   - Gibt es sinnvolle Unit- oder Component-Tests?
-   - Falls nicht: minimale Tests fuer kritische Logik ergaenzen.
-
-2. Playwright-Smoketests erweitern:
-   - Weitere Viewports.
-   - Rechtliche Links.
-   - Keine oeffentlichen Links zu Planungsseiten.
-   - Mehrsprachige lange Labels.
-
-3. Accessibility-Checks ergaenzen:
-   - Storybook a11y Addon nutzen.
-   - Optional Playwright/Axe fuer die oeffentliche Seite.
-
-## 11. Deployment fuer Version 1 festlegen
+## 9. Deployment fuer Version 1 festlegen
 
 1. Deployment-Ziel entscheiden:
    - GitHub Pages.
@@ -297,17 +241,11 @@ Diese Datei enthaelt nur noch offene Punkte. Erledigte Punkte werden entfernt.
    - Direkte Hash-Links funktionieren.
    - Externe Links zu Impressum/Datenschutz funktionieren.
 
-4. CI/CD einrichten:
-   - Dependencies installieren mit `npm ci`.
-   - Build ausfuehren.
-   - Tests ausfuehren.
-   - Deployment nur bei erfolgreichem Build.
-
-5. Preview-Prozess definieren:
+4. Preview-Prozess definieren:
    - Wie werden groessere Aenderungen vor Veroeffentlichung getestet?
    - Wer gibt Releases frei?
 
-## 12. Redaktioneller Freigabeprozess
+## 10. Redaktioneller Freigabeprozess
 
 1. Rollen klaeren:
    - Redaktion.
@@ -336,7 +274,7 @@ Diese Datei enthaelt nur noch offene Punkte. Erledigte Punkte werden entfernt.
    - Pruefung nach Volt-Brand-Updates.
    - Pruefung vor Kampagnen.
 
-## 13. Version 1 Release vorbereiten
+## 11. Version 1 Release vorbereiten
 
 1. Alle oeffentlichen Seiten durchlesen.
 
@@ -362,7 +300,7 @@ Diese Datei enthaelt nur noch offene Punkte. Erledigte Punkte werden entfernt.
    - Was ist bewusst noch nicht enthalten?
    - Wo kann Feedback gegeben werden?
 
-## 14. Nach Version 1: Version 2 vorbereiten
+## 12. Nach Version 1: Version 2 vorbereiten
 
 1. Anforderungen fuer Loginbereich sammeln:
    - Wer darf sich anmelden?
@@ -396,7 +334,7 @@ Diese Datei enthaelt nur noch offene Punkte. Erledigte Punkte werden entfernt.
    - Wer Ergebnisse prueft.
    - Wie Missbrauch verhindert wird.
 
-## 15. Laufende Pflege
+## 13. Laufende Pflege
 
 1. Neue Volt-Brand-Regeln regelmaessig uebernehmen.
 

@@ -7,10 +7,12 @@ export const TemplateCard = ({
   format,
   target,
   status = 'geplant',
+  visibility,
   href,
-  updated,
+  updatedAt,
 }) => {
   const t = useT();
+  const meta = [status, visibility].filter(Boolean).join(' · ');
 
   return (
     <article className="volt-template-card">
@@ -19,8 +21,8 @@ export const TemplateCard = ({
         <h3>{title}</h3>
         {target && <p>{target}</p>}
       </div>
-      <span className="volt-template-card__status">{status}</span>
-      {updated && <p className="volt-template-card__updated">{t('templateCard.updated')}: {updated}</p>}
+      {meta && <span className="volt-template-card__status">{meta}</span>}
+      {updatedAt && <p className="volt-template-card__updated">{t('templateCard.updated')}: {updatedAt}</p>}
       {href ? (
         <a href={href} target="_blank" rel="noreferrer">
           {t('templateCard.open')}

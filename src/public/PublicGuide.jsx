@@ -68,6 +68,28 @@ const getHashPage = () => window.location.hash.replace(/^#\/?/, '') || 'intro';
 
 const backgroundModes = ['guide', 'white', 'brand'];
 
+const getBrowserLocale = () => {
+  if (typeof navigator === 'undefined') {
+    return 'de';
+  }
+
+  const browserLanguages = [...(navigator.languages ?? []), navigator.language].filter(Boolean);
+
+  for (const language of browserLanguages) {
+    const normalizedLanguage = language.toLowerCase();
+    const baseLanguage = normalizedLanguage.split('-')[0];
+    const matchingLocale = supportedLocales.find(
+      (locale) => locale === normalizedLanguage || locale === baseLanguage,
+    );
+
+    if (matchingLocale) {
+      return matchingLocale;
+    }
+  }
+
+  return 'de';
+};
+
 const pageSection = (pageId) => (pages.find((item) => item.id === pageId) ?? pages[0]).section;
 
 const pageTitle = (page, locale, t) => {
@@ -276,7 +298,7 @@ const PublicGuideInner = ({ setLocale, setTheme, theme }) => {
             })}
           </nav>
 
-          <LegalLinks />
+          <LegalLinks labelKey="legalLinks.sidebarLabel" />
         </aside>
 
         <main className="public-guide__content">
@@ -313,7 +335,7 @@ const PublicGuideInner = ({ setLocale, setTheme, theme }) => {
 };
 
 export const PublicGuide = () => {
-  const [locale, setLocale] = React.useState('de');
+  const [locale, setLocale] = React.useState(getBrowserLocale);
   const [theme, setThemeState] = React.useState(getStoredTheme);
   const activeLocale = supportedLocales.includes(locale) ? locale : 'de';
   const activeTheme = supportedThemes.includes(theme) ? theme : 'light';
