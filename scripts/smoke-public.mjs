@@ -373,11 +373,14 @@ try {
   await waitForLogoVariant(page, 'logo_white', 'Logo im Dark Mode');
 
   await page.reload();
+  await waitForPublicGuide(page, diagnostics, 'Smoke-Test nach Reload');
   await page.locator('.public-guide[data-theme="dark"]').waitFor();
+  await page.getByRole('searchbox', { name: 'Search' }).waitFor({ timeout: 60000 });
 
   await page.locator('.public-guide__actions select').selectOption('en');
-  await page.getByRole('heading', { name: 'Volt Design' }).waitFor();
+  await page.getByRole('searchbox', { name: 'Search' }).waitFor();
   await page.locator('.public-guide__actions select').selectOption('de');
+  await page.getByRole('searchbox', { name: 'Suchen' }).waitFor();
 
   await page.getByRole('button', { name: /Grundlagendesign/ }).click();
   await page.getByRole('button', { name: /Grundlagendesign/ }).click();
