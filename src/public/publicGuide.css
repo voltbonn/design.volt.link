@@ -423,41 +423,6 @@
   background: var(--volt-surface-active);
 }
 
-.public-guide__status {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  flex: 0 0 auto;
-  border: 1px solid var(--volt-border);
-  border-radius: 999px;
-  background: var(--volt-surface-strong);
-  color: var(--volt-text);
-  padding: 2px 7px;
-  font-size: 10px;
-  font-weight: 850;
-  line-height: 1.2;
-  text-transform: uppercase;
-}
-
-.public-guide__nav-section a .public-guide__status {
-  margin-left: auto;
-}
-
-.public-guide__status--new {
-  border-color: var(--volt-amber);
-  background: rgba(253, 194, 32, 0.2);
-}
-
-.public-guide__status--updated {
-  border-color: var(--volt-blue);
-  background: rgba(130, 208, 244, 0.18);
-}
-
-.public-guide__status--archive {
-  border-color: var(--volt-muted-text);
-  color: var(--volt-muted-text);
-}
-
 .public-guide__canvas {
   position: relative;
   min-height: calc(100vh - 136px);

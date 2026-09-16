@@ -132,11 +132,6 @@ export const resources = {
           white: 'Weiß',
           brand: 'Lila',
         },
-        status: {
-          new: 'Neu',
-          updated: 'Aktualisiert',
-          archive: 'Archiv',
-        },
         theme: {
           light: 'Light Mode aktivieren',
           dark: 'Dark Mode aktivieren',
@@ -302,11 +297,6 @@ export const resources = {
           guide: 'Guide',
           white: 'White',
           brand: 'Purple',
-        },
-        status: {
-          new: 'New',
-          updated: 'Updated',
-          archive: 'Archive',
         },
         theme: {
           light: 'Enable light mode',
@@ -474,11 +464,6 @@ export const resources = {
           white: 'Wit',
           brand: 'Paars',
         },
-        status: {
-          new: 'Nieuw',
-          updated: 'Bijgewerkt',
-          archive: 'Archief',
-        },
         theme: {
           light: 'Light mode inschakelen',
           dark: 'Dark mode inschakelen',
@@ -644,11 +629,6 @@ export const resources = {
           guide: 'Guide',
           white: 'Blanc',
           brand: 'Violet',
-        },
-        status: {
-          new: 'Nouveau',
-          updated: 'Mis à jour',
-          archive: 'Archive',
         },
         theme: {
           light: 'Activer le mode clair',

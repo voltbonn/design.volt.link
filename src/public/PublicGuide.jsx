@@ -74,23 +74,6 @@ const pages = [
   { id: 'archive', section: 'archive', content: archive },
 ];
 
-const pageStatus = {
-  changes: 'new',
-  decisionGuide: 'new',
-  designTokens: 'new',
-  downloads: 'new',
-  glossary: 'new',
-  guideUsage: 'new',
-  machineReadability: 'new',
-  pageBlueprint: 'new',
-  resources: 'new',
-  layout: 'updated',
-  graphicElements: 'updated',
-  imageLanguage: 'updated',
-  digitalComponents: 'updated',
-  archive: 'archive',
-};
-
 const sectionOrder = ['00', '01', '02', '03', '05', 'archive'];
 
 const languages = [
@@ -194,7 +177,6 @@ const PublicGuideInner = ({ setLocale, setTheme, theme }) => {
   const page = pages.find((item) => item.id === activePage) ?? pages[0];
   const pageIndex = pages.findIndex((item) => item.id === page.id);
   const nextPage = pages[pageIndex + 1] ?? null;
-  const pageStatusKey = pageStatus[page.id];
   const nextTheme = theme === 'dark' ? 'light' : 'dark';
   const background = backgroundModes[backgroundIndex];
   const backgroundLabel = t(`publicGuide.backgrounds.${background}`);
@@ -368,11 +350,6 @@ const PublicGuideInner = ({ setLocale, setTheme, theme }) => {
                           href={`#${item.id}`}
                         >
                           {pageTitle(item, locale, t)}
-                          {pageStatus[item.id] && (
-                            <span className={`public-guide__status public-guide__status--${pageStatus[item.id]}`}>
-                              {t(`publicGuide.status.${pageStatus[item.id]}`)}
-                            </span>
-                          )}
                         </a>
                       ))}
                     </div>
@@ -393,11 +370,6 @@ const PublicGuideInner = ({ setLocale, setTheme, theme }) => {
               <span>{sectionLabel}</span>
             </nav>
             <div className="public-guide__page-actions">
-              {pageStatusKey && (
-                <span className={`public-guide__status public-guide__status--${pageStatusKey}`}>
-                  {t(`publicGuide.status.${pageStatusKey}`)}
-                </span>
-              )}
               <strong>{pageTitle(page, locale, t)}</strong>
               <button type="button" onClick={copyPageLink}>
                 {t('publicGuide.copyLink')}
