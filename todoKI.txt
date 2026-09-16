@@ -194,12 +194,8 @@ Diese Datei enthaelt nur noch offene Punkte. Erledigte Punkte werden entfernt.
 
 1. Neue Volt-Brand-Regeln regelmaessig uebernehmen.
 
-2. Tote Links regelmaessig pruefen.
+2. Beispiele aktualisieren, wenn Teams bessere Materialien liefern.
 
-3. Beispiele aktualisieren, wenn Teams bessere Materialien liefern.
-
-4. Archiv pflegen:
+3. Archiv pflegen:
    - Alte Designs klar als historisch markieren.
    - Nicht mehr gueltige Vorlagen deutlich kennzeichnen.
-
-5. Technische Dependencies regelmaessig aktualisieren.

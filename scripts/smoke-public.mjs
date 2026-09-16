@@ -133,6 +133,32 @@ const assertVisibleFocus = async (page, selector, label) => {
   }
 };
 
+const waitForLogoVariant = async (page, variant, label) => {
+  await page.waitForFunction(
+    (expectedVariant) => {
+      const image = document.querySelector('.public-guide__mark img');
+
+      return Boolean(
+        image &&
+          image.complete &&
+          image.naturalWidth > 0 &&
+          image.getAttribute('src')?.includes(expectedVariant),
+      );
+    },
+    variant,
+    { timeout: 10000 },
+  );
+
+  const logo = await page.locator('.public-guide__mark img').evaluate((image) => ({
+    src: image.getAttribute('src'),
+    loaded: image.complete && image.naturalWidth > 0,
+  }));
+
+  if (!logo.loaded || !logo.src.includes(variant)) {
+    throw new Error(`${label} wird nicht korrekt geladen.`);
+  }
+};
+
 const assertSemanticStructure = async (page, label) => {
   const structure = await page.evaluate(() => {
     const headings = [...document.querySelectorAll('main h1, main h2, main h3')].map((heading) => ({
@@ -207,6 +233,41 @@ const assertMinimumContentBlocks = async (page) => {
   }
 };
 
+const createBrowserDiagnostics = (page) => {
+  const consoleMessages = [];
+  const pageErrors = [];
+
+  page.on('console', (message) => {
+    if (['error', 'warning'].includes(message.type())) {
+      consoleMessages.push(`${message.type()}: ${message.text()}`);
+    }
+  });
+
+  page.on('pageerror', (error) => {
+    pageErrors.push(error.stack || error.message);
+  });
+
+  return async (label) => {
+    const rootHtml = await page.locator('#root').evaluate((element) => element.innerHTML.slice(0, 1200)).catch(() => '');
+
+    return [
+      `${label} konnte die oeffentliche App nicht laden.`,
+      pageErrors.length > 0 ? `Page errors:\n${pageErrors.join('\n')}` : 'Page errors: keine',
+      consoleMessages.length > 0 ? `Console:\n${consoleMessages.join('\n')}` : 'Console: keine relevanten Meldungen',
+      `Root HTML:\n${rootHtml || '[leer]'}`,
+    ].join('\n\n');
+  };
+};
+
+const waitForPublicGuide = async (page, diagnostics, label) => {
+  try {
+    await page.locator('.public-guide').waitFor({ timeout: 60000 });
+    await page.locator('.public-guide__canvas h1').waitFor({ timeout: 60000 });
+  } catch {
+    throw new Error(await diagnostics(label));
+  }
+};
+
 if (!existsSync(join(root, 'index.html'))) {
   throw new Error('dist/index.html fehlt. Bitte zuerst `npm run build` ausfuehren.');
 }
@@ -250,6 +311,7 @@ const context = await browser.newContext({
   viewport: { width: 390, height: 844 },
 });
 const page = await context.newPage();
+const diagnostics = createBrowserDiagnostics(page);
 await page.addInitScript(() => {
   if (!window.localStorage.getItem('volt-theme')) {
     window.localStorage.setItem('volt-theme', 'light');
@@ -258,7 +320,7 @@ await page.addInitScript(() => {
 
 try {
   await page.goto(`http://127.0.0.1:${port}/#intro`);
-  await page.getByRole('heading', { name: 'Volt Design' }).waitFor();
+  await waitForPublicGuide(page, diagnostics, 'Initialer Smoke-Test');
   await page.locator('.public-guide[data-theme="light"]').waitFor();
   await page.locator('.public-guide__actions select').waitFor();
 
@@ -284,14 +346,7 @@ try {
     throw new Error('Datenschutz-Link zeigt nicht auf die erwartete URL.');
   }
 
-  const initialLogo = await page.locator('.public-guide__mark img').evaluate((image) => ({
-    src: image.getAttribute('src'),
-    loaded: image.complete && image.naturalWidth > 0,
-  }));
-
-  if (!initialLogo.loaded || !initialLogo.src.includes('logo_lila')) {
-    throw new Error('Logo im Light Mode wird nicht korrekt geladen.');
-  }
+  await waitForLogoVariant(page, 'logo_lila', 'Logo im Light Mode');
 
   await assertNoHorizontalScroll(page, 'mobile initial');
 
@@ -314,16 +369,8 @@ try {
   }
 
   await page.getByRole('button', { name: /Light Mode aktivieren|Dark Mode aktivieren/ }).click();
-  await page.locator('.public-guide[data-theme="dark"], .public-guide[data-theme="light"]').waitFor();
-
-  const darkLogo = await page.locator('.public-guide__mark img').evaluate((image) => ({
-    src: image.getAttribute('src'),
-    loaded: image.complete && image.naturalWidth > 0,
-  }));
-
-  if (!darkLogo.loaded || !darkLogo.src.includes('logo_white')) {
-    throw new Error('Logo im Dark Mode wird nicht korrekt geladen.');
-  }
+  await page.locator('.public-guide[data-theme="dark"]').waitFor();
+  await waitForLogoVariant(page, 'logo_white', 'Logo im Dark Mode');
 
   await page.reload();
   await page.locator('.public-guide[data-theme="dark"]').waitFor();
