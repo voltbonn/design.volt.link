@@ -1,10 +1,16 @@
 # design.volt.link
 
-design.volt.link is the public Volt design guide for logo usage, colours, typography, layout, accessibility, websites, social media, presentations, files and practical applications.
+design.volt.link is the public Volt design guide for logo usage, colours, typography, layout, accessibility, design tokens, websites, social media, presentations, files, downloads, templates and practical applications.
 
 ## Important URLs
 
 - Public guide: https://design.volt.link/
+- How to use the guide: https://design.volt.link/#guideUsage
+- Decision guide: https://design.volt.link/#decisionGuide
+- Design tokens: https://design.volt.link/#designTokens
+- Downloads and templates: https://design.volt.link/#downloads
+- Glossary: https://design.volt.link/#glossary
+- AI and machine readability: https://design.volt.link/#machineReadability
 - Sitemap: https://design.volt.link/sitemap.xml
 - Robots policy: https://design.volt.link/robots.txt
 - Logo preview image: https://design.volt.link/design.volt.link_logo_lila.png
@@ -15,8 +21,12 @@ The interface supports German, English, Dutch and French. The primary language f
 
 ## Scope
 
-The site is a version-1 static guide. It has no login, no backend and no public template library. Internal planning pages are not linked from the public navigation.
+The site is a version-1 static guide. It has no login and no backend. Public scaffold pages describe how future content should be maintained before detailed templates and downloads are filled in.
+
+## Content Status
+
+Content can be required, recommended, experimental or archived. Archived material is visible for context only and should not be used as the basis for new publications.
 
 ## Usage Notes
 
-Use the current public guide for orientation. Archived material is documentation only and not a valid source for new publications. Legal notes in the guide are informational and do not replace formal legal approval.
+Use the current public guide for orientation. Check page status, update date, ownership and official sources before treating guidance as final. Legal notes in the guide are informational and do not replace formal legal approval.
