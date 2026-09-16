@@ -14,6 +14,7 @@
     "check:links": "node scripts/check-links.mjs",
     "smoke": "node scripts/smoke-public.mjs",
     "storybook": "storybook dev -p 6006",
+    "prebuild-storybook": "node scripts/clean-storybook.mjs",
     "build-storybook": "storybook build"
   },
   "devDependencies": {
