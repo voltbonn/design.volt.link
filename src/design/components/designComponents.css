@@ -402,6 +402,53 @@
   margin: 24px 0 32px;
 }
 
+.volt-access-note {
+  display: inline-flex;
+  width: fit-content;
+  margin-left: 8px;
+  border: 1px solid rgba(27, 190, 111, 0.4);
+  border-radius: 2px;
+  background: var(--volt-agree-bg);
+  color: var(--volt-agree-text);
+  padding: 2px 6px;
+  font-size: 12px;
+  font-weight: 850;
+}
+
+.volt-link-register {
+  display: grid;
+  gap: 14px;
+  margin: 20px 0;
+}
+
+.volt-link-register article {
+  border: 1px solid var(--volt-border);
+  border-radius: 2px;
+  background: var(--volt-surface);
+  padding: 16px;
+}
+
+.volt-link-register h3 {
+  margin: 0 0 8px;
+  color: var(--volt-link);
+  font-size: 18px;
+}
+
+.volt-link-register a {
+  overflow-wrap: anywhere;
+}
+
+.volt-link-register__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0 0 8px;
+  color: var(--volt-muted-text);
+  font-size: 12px;
+  font-weight: 850;
+  text-transform: uppercase;
+}
+
 .volt-change-log__entry {
   border: 1px solid var(--volt-border);
   border-radius: 2px;

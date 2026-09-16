@@ -2,6 +2,8 @@ import {
   applications,
   archive,
   accessibility,
+  brandManualLinks,
+  brandManualPageAdditions,
   brandVoice,
   changes,
   colors,
@@ -130,6 +132,13 @@ const RichList = ({ items }) => (
           <>
             <strong>{item.label}</strong>
             {item.text}
+            {item.href && (
+              <>
+                {' '}
+                <a href={item.href}>{item.hrefLabel ?? item.href}</a>
+              </>
+            )}
+            {item.access && <span className="volt-access-note">{item.access}</span>}
           </>
         )}
       </li>
@@ -168,10 +177,36 @@ const ChangeLog = ({ entries }) => (
   </div>
 );
 
+const BrandManualLinks = ({ links }) => {
+  const { t } = useI18n();
+
+  return (
+    <section>
+      <h2 id="brand-manual-2026-links">{t('brandManualLinks.title')}</h2>
+      <p>{t('brandManualLinks.lead')}</p>
+      <div className="volt-link-register">
+        {links.map((link) => (
+          <article key={link.url}>
+            <p className="volt-link-register__meta">
+              <span>{t('brandManualLinks.page', { pages: link.pages.join(', ') })}</span>
+              <span>{t(`brandManualLinks.access.${link.access}`)}</span>
+            </p>
+            <h3>{link.label}</h3>
+            <a href={link.url}>{link.url}</a>
+          </article>
+        ))}
+      </div>
+    </section>
+  );
+};
+
 export const GuidePage = ({ page: pageId }) => {
   const { locale } = useI18n();
   const page = pages[pageId];
   const c = localeContent(page, locale);
+  const manualAdditions = brandManualPageAdditions[pageId]
+    ? localeContent(brandManualPageAdditions[pageId], locale)
+    : null;
 
   return (
     <>
@@ -338,6 +373,16 @@ export const GuidePage = ({ page: pageId }) => {
           ))}
         </>
       )}
+
+      {manualAdditions && (
+        <>
+          {manualAdditions.sections.map((section) => (
+            <GenericSection key={section.id} section={section} />
+          ))}
+        </>
+      )}
+
+      {pageId === 'resources' && <BrandManualLinks links={brandManualLinks} />}
     </>
   );
 };

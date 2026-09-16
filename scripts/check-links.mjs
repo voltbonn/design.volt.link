@@ -1,7 +1,10 @@
+import { brandManualLinks } from '../src/design/content/guidePages.js';
+
 const externalUrls = [
   'https://volteuropa.org/visual_identity',
   'https://voltdeutschland.org/impressum',
   'https://voltdeutschland.org/datenschutz',
+  ...brandManualLinks.map((link) => link.url),
 ];
 
 const checkUrl = async (url) => {

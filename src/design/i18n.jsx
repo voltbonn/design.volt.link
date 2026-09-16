@@ -91,6 +91,15 @@ export const resources = {
         imprint: 'Impressum',
         privacy: 'Datenschutz',
       },
+      brandManualLinks: {
+        title: 'Brand Manual 2026 Links',
+        lead:
+          'Diese Links wurden am 16.09.2026 ohne Login geprüft. Sie laden öffentlich; Bearbeitungsrechte in Drive oder Figma können trotzdem eingeschränkt sein.',
+        page: 'Manual-Seite {{pages}}',
+        access: {
+          public: 'öffentlich ohne Login',
+        },
+      },
       inPageNav: {
         label: 'Inhalt',
       },
@@ -256,6 +265,15 @@ export const resources = {
       sidebarLabel: 'Legal links in the sidebar',
       imprint: 'Legal notice',
       privacy: 'Privacy',
+    },
+    brandManualLinks: {
+      title: 'Brand Manual 2026 Links',
+      lead:
+        'These links were checked on 2026-09-16 without logging in. They load publicly; edit rights in Drive or Figma may still be restricted.',
+      page: 'Manual page {{pages}}',
+      access: {
+        public: 'public without login',
+      },
     },
     inPageNav: {
       label: 'Contents',
@@ -423,6 +441,15 @@ export const resources = {
       imprint: 'Colofon',
       privacy: 'Privacy',
     },
+    brandManualLinks: {
+      title: 'Brand Manual 2026-links',
+      lead:
+        'Deze links zijn op 16-09-2026 zonder login gecontroleerd. Ze laden openbaar; bewerkingsrechten in Drive of Figma kunnen toch beperkt zijn.',
+      page: 'Manual-pagina {{pages}}',
+      access: {
+        public: 'openbaar zonder login',
+      },
+    },
     inPageNav: {
       label: 'Inhoud',
     },
@@ -588,6 +615,15 @@ export const resources = {
         sidebarLabel: 'Liens juridiques de la barre latérale',
         imprint: 'Mentions légales',
         privacy: 'Confidentialité',
+      },
+      brandManualLinks: {
+        title: 'Liens Brand Manual 2026',
+        lead:
+          'Ces liens ont été vérifiés le 16/09/2026 sans connexion. Ils chargent publiquement ; les droits de modification dans Drive ou Figma peuvent rester limités.',
+        page: 'Page du manuel {{pages}}',
+        access: {
+          public: 'public sans connexion',
+        },
       },
       inPageNav: {
         label: 'Contenu',
