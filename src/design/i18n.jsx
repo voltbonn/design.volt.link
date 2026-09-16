@@ -104,6 +104,7 @@ export const resources = {
       },
       publicGuide: {
         navigation: 'Navigation',
+        skipToContent: 'Zum Hauptinhalt springen',
         language: 'Sprache',
         search: 'Suchen',
         searchPlaceholder: 'Kapitel suchen',
@@ -266,6 +267,7 @@ export const resources = {
       },
       publicGuide: {
         navigation: 'Navigation',
+        skipToContent: 'Skip to main content',
         language: 'Language',
         search: 'Search',
         searchPlaceholder: 'Search chapters',
@@ -428,6 +430,7 @@ export const resources = {
       },
       publicGuide: {
         navigation: 'Navigatie',
+        skipToContent: 'Naar hoofdinhoud springen',
         language: 'Taal',
         search: 'Zoeken',
         searchPlaceholder: 'Hoofdstukken zoeken',
@@ -590,6 +593,7 @@ export const resources = {
       },
       publicGuide: {
         navigation: 'Navigation',
+        skipToContent: 'Aller au contenu principal',
         language: 'Langue',
         search: 'Rechercher',
         searchPlaceholder: 'Rechercher des chapitres',

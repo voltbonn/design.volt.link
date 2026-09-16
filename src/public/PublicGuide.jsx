@@ -203,6 +203,9 @@ const PublicGuideInner = ({ setLocale, setTheme, theme }) => {
 
   return (
     <div className="public-guide" data-theme={theme}>
+      <a className="public-guide__skip-link" href="#main-content">
+        {t('publicGuide.skipToContent')}
+      </a>
       <header className="public-guide__topbar">
         <a className="public-guide__brand" href="#intro">
           <span className="public-guide__mark">
@@ -323,7 +326,7 @@ const PublicGuideInner = ({ setLocale, setTheme, theme }) => {
           <LegalLinks labelKey="legalLinks.sidebarLabel" />
         </aside>
 
-        <main className="public-guide__content">
+        <main id="main-content" className="public-guide__content" tabIndex="-1">
           <div className="public-guide__content-header">
             <span>{t(`publicGuide.sections.${page.section}`)}</span>
             <strong>{pageTitle(page, locale, t)}</strong>

@@ -1,0 +1,22 @@
+# design.volt.link
+
+design.volt.link is the public Volt design guide for logo usage, colours, typography, layout, accessibility, websites, social media, presentations, files and practical applications.
+
+## Important URLs
+
+- Public guide: https://design.volt.link/
+- Sitemap: https://design.volt.link/sitemap.xml
+- Robots policy: https://design.volt.link/robots.txt
+- Logo preview image: https://design.volt.link/design.volt.link_logo_lila.png
+
+## Languages
+
+The interface supports German, English, Dutch and French. The primary language follows the browser language where possible.
+
+## Scope
+
+The site is a version-1 static guide. It has no login, no backend and no public template library. Internal planning pages are not linked from the public navigation.
+
+## Usage Notes
+
+Use the current public guide for orientation. Archived material is documentation only and not a valid source for new publications. Legal notes in the guide are informational and do not replace formal legal approval.

@@ -4,6 +4,27 @@
   color: var(--volt-text);
 }
 
+.public-guide__skip-link {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 100;
+  transform: translateY(-150%);
+  border: 2px solid var(--volt-border);
+  border-radius: 2px;
+  background: var(--volt-surface);
+  color: var(--volt-text);
+  padding: 8px 12px;
+  font-weight: 850;
+  text-decoration: none;
+}
+
+.public-guide__skip-link:focus-visible {
+  transform: translateY(0);
+  outline: 3px solid var(--volt-focus);
+  outline-offset: 2px;
+}
+
 .public-guide__topbar {
   position: sticky;
   top: 0;

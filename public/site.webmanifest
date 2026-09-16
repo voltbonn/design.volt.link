@@ -1,0 +1,22 @@
+{
+  "name": "design.volt.link",
+  "short_name": "Volt Design",
+  "description": "Oeffentlicher Volt Designguide fuer Logo, Farben, Typografie, Layout, Barrierefreiheit und Anwendungen.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "browser",
+  "background_color": "#ffffff",
+  "theme_color": "#502379",
+  "icons": [
+    {
+      "src": "/favicons/favicon-purple-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicons/favicon-purple-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

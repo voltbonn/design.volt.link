@@ -17,7 +17,10 @@ const mimeTypes = {
   '.png': 'image/png',
   '.jpg': 'image/jpeg',
   '.jpeg': 'image/jpeg',
+  '.txt': 'text/plain; charset=utf-8',
+  '.webmanifest': 'application/manifest+json; charset=utf-8',
   '.webp': 'image/webp',
+  '.xml': 'application/xml; charset=utf-8',
 };
 
 const checkedViewports = [
@@ -274,6 +277,12 @@ if (!existsSync(join(root, 'index.html'))) {
 
 const distEntries = await readdir(root, { recursive: true });
 const storybookArtifacts = distEntries.filter((entry) => /(^|[/\\])storybook(-static)?([/\\]|$)/i.test(entry));
+const requiredRootFiles = ['robots.txt', 'sitemap.xml', 'llms.txt', 'site.webmanifest'];
+const missingRootFiles = requiredRootFiles.filter((file) => !existsSync(join(root, file)));
+
+if (missingRootFiles.length > 0) {
+  throw new Error(`dist/ enthaelt nicht alle Maschinenlesbarkeits-Dateien: ${missingRootFiles.join(', ')}`);
+}
 
 if (storybookArtifacts.length > 0) {
   throw new Error(`dist/ enthaelt Storybook-Artefakte: ${storybookArtifacts.slice(0, 5).join(', ')}`);
