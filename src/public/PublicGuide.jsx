@@ -6,7 +6,6 @@ import {
   brandVoice,
   changes,
   colors,
-  decisionGuide,
   designPrinciples,
   designTokens,
   digitalComponents,
@@ -14,7 +13,6 @@ import {
   fileExport,
   glossary,
   graphicElements,
-  guideUsage,
   help,
   iconsUi,
   imageLanguage,
@@ -25,7 +23,6 @@ import {
   pageBlueprint,
   presentations,
   resources,
-  sources,
   socialMedia,
   typography,
   videoMotion,
@@ -42,9 +39,6 @@ const logoWhite = '/design.volt.link_logo_white.svg';
 
 const pages = [
   { id: 'intro', section: '00', content: null },
-  { id: 'sources', section: '00', content: sources },
-  { id: 'guideUsage', section: '00', content: guideUsage },
-  { id: 'decisionGuide', section: '00', content: decisionGuide },
   { id: 'designPrinciples', section: '01', content: designPrinciples },
   { id: 'brandVoice', section: '01', content: brandVoice },
   { id: 'logo', section: '01', content: logo },

@@ -33,9 +33,6 @@ const checkedViewports = [
 
 const publicPageIds = [
   'intro',
-  'sources',
-  'guideUsage',
-  'decisionGuide',
   'designPrinciples',
   'brandVoice',
   'logo',
@@ -235,7 +232,7 @@ const assertMinimumContentBlocks = async (page) => {
     { pageId: 'logo', selector: '.volt-download-card', label: 'Download-Hinweis' },
     { pageId: 'layout', selector: '.volt-guideline-grid article', label: 'Guideline-Karten' },
     { pageId: 'applications', selector: '.volt-application-card', label: 'Anwendungskarten' },
-    { pageId: 'sources', selector: 'main ul li', label: 'Listeninhalt' },
+    { pageId: 'intro', selector: 'main ul li', label: 'Listeninhalt' },
   ];
 
   for (const check of checks) {

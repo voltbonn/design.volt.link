@@ -1,4 +1,5 @@
-import { useT } from '../i18n';
+import { decisionGuide, guideUsage, sources } from '../content/guidePages';
+import { useI18n, useT } from '../i18n';
 import { SectionNav } from './SectionNav';
 import './designComponents.css';
 
@@ -8,10 +9,33 @@ const defaultHrefs = {
   help: '?path=/docs/volt-design-05-hilfe-faq--docs',
 };
 
+const localizedContent = (content, locale) => content[locale] ?? content.de;
+
+const RichList = ({ items }) => (
+  <ul>
+    {items.map((item) => (
+      <li key={typeof item === 'string' ? item : `${item.label}-${item.text}`}>
+        {typeof item === 'string' ? (
+          item
+        ) : (
+          <>
+            <strong>{item.label}</strong>
+            {item.text}
+          </>
+        )}
+      </li>
+    ))}
+  </ul>
+);
+
 export const GuideIntro = ({ hrefs = defaultHrefs }) => {
+  const { locale } = useI18n();
   const t = useT();
   const structureItems = t('guideIntro.structureItems');
   const startItems = t('guideIntro.startItems');
+  const sourceContent = localizedContent(sources, locale);
+  const usageContent = localizedContent(guideUsage, locale);
+  const decisionContent = localizedContent(decisionGuide, locale);
 
   return (
     <>
@@ -58,6 +82,34 @@ export const GuideIntro = ({ hrefs = defaultHrefs }) => {
           <li key={item}>{item}</li>
         ))}
       </ol>
+
+      <h2 id="quellen-und-arbeitsgrundlage">{sourceContent.title}</h2>
+      <p>{sourceContent.lead}</p>
+      <p>
+        <a href="https://volteuropa.org/visual_identity">{t('guideIntro.officialSource')}</a>
+      </p>
+      <h3 id={sourceContent.sections.foundation.id}>{sourceContent.sections.foundation.title}</h3>
+      <RichList items={sourceContent.sections.foundation.items} />
+      <h3 id={sourceContent.sections.editorial.id}>{sourceContent.sections.editorial.title}</h3>
+      <RichList items={sourceContent.sections.editorial.items} />
+
+      <h2 id="so-nutzt-du-diesen-guide">{usageContent.title}</h2>
+      <p>{usageContent.lead}</p>
+      {usageContent.sections.map((section) => (
+        <section key={section.id}>
+          <h3 id={section.id}>{section.title}</h3>
+          <RichList items={section.items} />
+        </section>
+      ))}
+
+      <h2 id="entscheidungshilfe">{decisionContent.title}</h2>
+      <p>{decisionContent.lead}</p>
+      {decisionContent.sections.map((section) => (
+        <section key={section.id}>
+          <h3 id={section.id}>{section.title}</h3>
+          <RichList items={section.items} />
+        </section>
+      ))}
     </>
   );
 };
