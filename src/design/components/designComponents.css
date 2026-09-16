@@ -396,6 +396,38 @@
   font-weight: 850;
 }
 
+.volt-change-log {
+  display: grid;
+  gap: 14px;
+  margin: 24px 0 32px;
+}
+
+.volt-change-log__entry {
+  border: 1px solid var(--volt-border);
+  border-radius: 2px;
+  background: var(--volt-surface);
+  padding: 16px;
+}
+
+.volt-change-log__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0 0 10px;
+  color: var(--volt-muted-text);
+  font-size: 12px;
+  font-weight: 850;
+  text-transform: uppercase;
+}
+
+.volt-change-log__meta span {
+  color: var(--volt-link);
+}
+
+.volt-change-log__entry ul {
+  margin-bottom: 0;
+}
+
 @media (max-width: 720px) {
   .volt-color-swatch,
   .volt-dos-donts,

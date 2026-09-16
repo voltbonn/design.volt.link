@@ -3,6 +3,7 @@ import {
   archive,
   accessibility,
   brandVoice,
+  changes,
   colors,
   deployment,
   designPrinciples,
@@ -18,6 +19,7 @@ import {
   logo,
   newsletter,
   presentations,
+  resources,
   sources,
   socialMedia,
   templates,
@@ -42,6 +44,7 @@ const pages = {
   archive,
   accessibility,
   brandVoice,
+  changes,
   colors,
   deployment,
   designPrinciples,
@@ -57,6 +60,7 @@ const pages = {
   logo,
   newsletter,
   presentations,
+  resources,
   sources,
   socialMedia,
   templates,
@@ -68,6 +72,7 @@ const pages = {
 const genericPageIds = [
   'accessibility',
   'brandVoice',
+  'changes',
   'deployment',
   'designPrinciples',
   'digitalComponents',
@@ -77,6 +82,7 @@ const genericPageIds = [
   'loginPlanning',
   'newsletter',
   'presentations',
+  'resources',
   'socialMedia',
   'videoMotion',
   'websites',
@@ -125,6 +131,20 @@ const GenericSection = ({ section }) => (
         <RichList items={section.items} />
       ))}
   </section>
+);
+
+const ChangeLog = ({ entries }) => (
+  <div className="volt-change-log">
+    {entries.map((entry) => (
+      <article key={`${entry.date}-${entry.category}`} className="volt-change-log__entry">
+        <p className="volt-change-log__meta">
+          <time dateTime={entry.date}>{entry.date}</time>
+          <span>{entry.category}</span>
+        </p>
+        <List items={entry.items} />
+      </article>
+    ))}
+  </div>
 );
 
 export const GuidePage = ({ page: pageId }) => {
@@ -213,6 +233,8 @@ export const GuidePage = ({ page: pageId }) => {
           <GuidelineGrid headingLevel={2} items={c.guidelines} />
           <h2 id={c.sections.rules.id}>{c.sections.rules.title}</h2>
           <List items={c.sections.rules.items} />
+          <h2 id={c.sections.spacing.id}>{c.sections.spacing.title}</h2>
+          <List items={c.sections.spacing.items} />
           <h2 id={c.sections.orientation.id}>{c.sections.orientation.title}</h2>
           <List items={c.sections.orientation.items} />
         </>
@@ -222,6 +244,8 @@ export const GuidePage = ({ page: pageId }) => {
         <>
           <h2 id={c.sections.document.id}>{c.sections.document.title}</h2>
           <List items={c.sections.document.items} />
+          <h2 id={c.sections.markers.id}>{c.sections.markers.title}</h2>
+          <List items={c.sections.markers.items} />
         </>
       )}
 
@@ -229,6 +253,8 @@ export const GuidePage = ({ page: pageId }) => {
         <>
           <GuidelineGrid headingLevel={2} items={c.guidelines} />
           <DosDonts doText={c.doText} dontText={c.dontText} />
+          <h2 id={c.sections.sources.id}>{c.sections.sources.title}</h2>
+          <List items={c.sections.sources.items} />
           <h2 id={c.sections.clarify.id}>{c.sections.clarify.title}</h2>
           <List items={c.sections.clarify.items} />
           <h2 id={c.sections.storage.id}>{c.sections.storage.title}</h2>
@@ -244,6 +270,8 @@ export const GuidePage = ({ page: pageId }) => {
           ))}
         </>
       )}
+
+      {pageId === 'changes' && c.entries && <ChangeLog entries={c.entries} />}
 
       {pageId === 'templates' && (
         <>

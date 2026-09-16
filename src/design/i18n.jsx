@@ -104,6 +104,9 @@ export const resources = {
       },
       publicGuide: {
         navigation: 'Navigation',
+        breadcrumb: 'Breadcrumb',
+        copyLink: 'Link kopieren',
+        nextPage: 'Nächste Seite',
         skipToContent: 'Zum Hauptinhalt springen',
         language: 'Sprache',
         search: 'Suchen',
@@ -128,6 +131,11 @@ export const resources = {
           guide: 'Guide',
           white: 'Weiß',
           brand: 'Lila',
+        },
+        status: {
+          new: 'Neu',
+          updated: 'Aktualisiert',
+          archive: 'Archiv',
         },
         theme: {
           light: 'Light Mode aktivieren',
@@ -267,6 +275,9 @@ export const resources = {
       },
       publicGuide: {
         navigation: 'Navigation',
+        breadcrumb: 'Breadcrumb',
+        copyLink: 'Copy link',
+        nextPage: 'Next page',
         skipToContent: 'Skip to main content',
         language: 'Language',
         search: 'Search',
@@ -291,6 +302,11 @@ export const resources = {
           guide: 'Guide',
           white: 'White',
           brand: 'Purple',
+        },
+        status: {
+          new: 'New',
+          updated: 'Updated',
+          archive: 'Archive',
         },
         theme: {
           light: 'Enable light mode',
@@ -430,6 +446,9 @@ export const resources = {
       },
       publicGuide: {
         navigation: 'Navigatie',
+        breadcrumb: 'Breadcrumb',
+        copyLink: 'Link kopiëren',
+        nextPage: 'Volgende pagina',
         skipToContent: 'Naar hoofdinhoud springen',
         language: 'Taal',
         search: 'Zoeken',
@@ -454,6 +473,11 @@ export const resources = {
           guide: 'Gids',
           white: 'Wit',
           brand: 'Paars',
+        },
+        status: {
+          new: 'Nieuw',
+          updated: 'Bijgewerkt',
+          archive: 'Archief',
         },
         theme: {
           light: 'Light mode inschakelen',
@@ -593,6 +617,9 @@ export const resources = {
       },
       publicGuide: {
         navigation: 'Navigation',
+        breadcrumb: 'Fil d’Ariane',
+        copyLink: 'Copier le lien',
+        nextPage: 'Page suivante',
         skipToContent: 'Aller au contenu principal',
         language: 'Langue',
         search: 'Rechercher',
@@ -617,6 +644,11 @@ export const resources = {
           guide: 'Guide',
           white: 'Blanc',
           brand: 'Violet',
+        },
+        status: {
+          new: 'Nouveau',
+          updated: 'Mis à jour',
+          archive: 'Archive',
         },
         theme: {
           light: 'Activer le mode clair',

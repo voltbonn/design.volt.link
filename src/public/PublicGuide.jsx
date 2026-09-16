@@ -4,6 +4,7 @@ import {
   archive,
   accessibility,
   brandVoice,
+  changes,
   colors,
   designPrinciples,
   digitalComponents,
@@ -16,6 +17,7 @@ import {
   logo,
   newsletter,
   presentations,
+  resources,
   sources,
   socialMedia,
   typography,
@@ -52,9 +54,21 @@ const pages = [
   { id: 'videoMotion', section: '02', content: videoMotion },
   { id: 'fileExport', section: '02', content: fileExport },
   { id: 'applications', section: '03', content: applications },
+  { id: 'changes', section: '05', content: changes },
+  { id: 'resources', section: '05', content: resources },
   { id: 'help', section: '05', content: help },
   { id: 'archive', section: 'archive', content: archive },
 ];
+
+const pageStatus = {
+  changes: 'new',
+  resources: 'new',
+  layout: 'updated',
+  graphicElements: 'updated',
+  imageLanguage: 'updated',
+  digitalComponents: 'updated',
+  archive: 'archive',
+};
 
 const sectionOrder = ['00', '01', '02', '03', '05', 'archive'];
 
@@ -157,11 +171,15 @@ const PublicGuideInner = ({ setLocale, setTheme, theme }) => {
   );
 
   const page = pages.find((item) => item.id === activePage) ?? pages[0];
+  const pageIndex = pages.findIndex((item) => item.id === page.id);
+  const nextPage = pages[pageIndex + 1] ?? null;
+  const pageStatusKey = pageStatus[page.id];
   const nextTheme = theme === 'dark' ? 'light' : 'dark';
   const background = backgroundModes[backgroundIndex];
   const backgroundLabel = t(`publicGuide.backgrounds.${background}`);
   const isSearching = query.trim().length > 0;
   const logoSrc = theme === 'dark' ? logoWhite : logoPurple;
+  const sectionLabel = t(`publicGuide.sections.${page.section}`);
 
   const toggleSection = React.useCallback((section) => {
     setClosedSections((current) => {
@@ -200,6 +218,21 @@ const PublicGuideInner = ({ setLocale, setTheme, theme }) => {
       document.getElementById(route.anchorId)?.scrollIntoView({ block: 'start' });
     });
   }, [route.anchorId, route.pageId, locale]);
+
+  const copyPageLink = React.useCallback(async () => {
+    const href = `${window.location.origin}${window.location.pathname}#${page.id}`;
+
+    try {
+      await navigator.clipboard.writeText(href);
+    } catch {
+      const temporaryInput = document.createElement('input');
+      temporaryInput.value = href;
+      document.body.append(temporaryInput);
+      temporaryInput.select();
+      document.execCommand('copy');
+      temporaryInput.remove();
+    }
+  }, [page.id]);
 
   return (
     <div className="public-guide" data-theme={theme}>
@@ -314,6 +347,11 @@ const PublicGuideInner = ({ setLocale, setTheme, theme }) => {
                           href={`#${item.id}`}
                         >
                           {pageTitle(item, locale, t)}
+                          {pageStatus[item.id] && (
+                            <span className={`public-guide__status public-guide__status--${pageStatus[item.id]}`}>
+                              {t(`publicGuide.status.${pageStatus[item.id]}`)}
+                            </span>
+                          )}
                         </a>
                       ))}
                     </div>
@@ -328,8 +366,22 @@ const PublicGuideInner = ({ setLocale, setTheme, theme }) => {
 
         <main id="main-content" className="public-guide__content" tabIndex="-1">
           <div className="public-guide__content-header">
-            <span>{t(`publicGuide.sections.${page.section}`)}</span>
-            <strong>{pageTitle(page, locale, t)}</strong>
+            <nav className="public-guide__breadcrumb" aria-label={t('publicGuide.breadcrumb')}>
+              <a href="#intro">{t('publicGuide.intro')}</a>
+              <span aria-hidden="true">/</span>
+              <span>{sectionLabel}</span>
+            </nav>
+            <div className="public-guide__page-actions">
+              {pageStatusKey && (
+                <span className={`public-guide__status public-guide__status--${pageStatusKey}`}>
+                  {t(`publicGuide.status.${pageStatusKey}`)}
+                </span>
+              )}
+              <strong>{pageTitle(page, locale, t)}</strong>
+              <button type="button" onClick={copyPageLink}>
+                {t('publicGuide.copyLink')}
+              </button>
+            </div>
           </div>
           <article
             className={[
@@ -351,6 +403,14 @@ const PublicGuideInner = ({ setLocale, setTheme, theme }) => {
               />
             ) : (
               <GuidePage page={page.id} />
+            )}
+            {nextPage && (
+              <nav className="public-guide__next" aria-label={t('publicGuide.nextPage')}>
+                <a href={`#${nextPage.id}`}>
+                  <span>{t('publicGuide.nextPage')}</span>
+                  <strong>{pageTitle(nextPage, locale, t)}</strong>
+                </a>
+              </nav>
             )}
           </article>
         </main>

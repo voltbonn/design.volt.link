@@ -52,6 +52,8 @@ const publicPageIds = [
   'videoMotion',
   'fileExport',
   'applications',
+  'changes',
+  'resources',
   'help',
   'archive',
 ];
