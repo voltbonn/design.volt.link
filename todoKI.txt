@@ -144,9 +144,7 @@ Diese Datei enthaelt nur noch offene Punkte. Erledigte Punkte werden entfernt.
    - Typografie
    - Layout
    - Bildsprache
-   - Social Media
    - Print/Plakat
-   - Praesentation
    - Website
 
 2. Zu jedem Beispiel kurze Erklaerung schreiben:
@@ -195,7 +193,3 @@ Diese Datei enthaelt nur noch offene Punkte. Erledigte Punkte werden entfernt.
 1. Neue Volt-Brand-Regeln regelmaessig uebernehmen.
 
 2. Beispiele aktualisieren, wenn Teams bessere Materialien liefern.
-
-3. Archiv pflegen:
-   - Alte Designs klar als historisch markieren.
-   - Nicht mehr gueltige Vorlagen deutlich kennzeichnen.
