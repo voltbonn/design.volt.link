@@ -31,14 +31,18 @@
 .public-guide__mark {
   display: grid;
   place-items: center;
-  width: 34px;
-  height: 34px;
+  width: 38px;
+  height: 38px;
   border-radius: 2px;
-  background: var(--volt-purple);
-  color: var(--volt-on-brand);
-  font-size: 18px;
-  font-weight: 850;
-  box-shadow: 4px 5px 0 rgba(80, 35, 121, 0.14);
+  overflow: hidden;
+  background: transparent;
+}
+
+.public-guide__mark img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .public-guide__brand-copy {

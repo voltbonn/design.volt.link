@@ -51,10 +51,34 @@ await new Promise((resolveListen) => server.listen(port, '127.0.0.1', resolveLis
 
 const browser = await chromium.launch({ headless: true });
 const page = await browser.newPage({ viewport: { width: 390, height: 844 } });
+await page.addInitScript(() => {
+  if (!window.localStorage.getItem('volt-theme')) {
+    window.localStorage.setItem('volt-theme', 'light');
+  }
+});
 
 try {
   await page.goto(`http://127.0.0.1:${port}/#intro`);
   await page.getByRole('heading', { name: 'Volt Design' }).waitFor();
+  await page.locator('.public-guide[data-theme="light"]').waitFor();
+
+  const initialLogo = await page.locator('.public-guide__mark img').evaluate((image) => ({
+    src: image.getAttribute('src'),
+    loaded: image.complete && image.naturalWidth > 0,
+  }));
+
+  if (!initialLogo.loaded || !initialLogo.src.includes('logo_lila')) {
+    throw new Error('Logo im Light Mode wird nicht korrekt geladen.');
+  }
+
+  const initialViewport = await page.evaluate(() => ({
+    scrollWidth: document.documentElement.scrollWidth,
+    clientWidth: document.documentElement.clientWidth,
+  }));
+
+  if (initialViewport.scrollWidth > initialViewport.clientWidth) {
+    throw new Error('Mobile Ansicht erzeugt horizontales Scrollen.');
+  }
 
   await page.getByRole('button', { name: /Hintergrund/ }).click();
   await page.getByRole('button', { name: /Hintergrund/ }).click();
@@ -76,6 +100,18 @@ try {
 
   await page.getByRole('button', { name: /Light Mode aktivieren|Dark Mode aktivieren/ }).click();
   await page.locator('.public-guide[data-theme="dark"], .public-guide[data-theme="light"]').waitFor();
+
+  const darkLogo = await page.locator('.public-guide__mark img').evaluate((image) => ({
+    src: image.getAttribute('src'),
+    loaded: image.complete && image.naturalWidth > 0,
+  }));
+
+  if (!darkLogo.loaded || !darkLogo.src.includes('logo_white')) {
+    throw new Error('Logo im Dark Mode wird nicht korrekt geladen.');
+  }
+
+  await page.reload();
+  await page.locator('.public-guide[data-theme="dark"]').waitFor();
 
   await page.locator('.public-guide__actions select').selectOption('en');
   await page.getByRole('heading', { name: 'Volt Design' }).waitFor();

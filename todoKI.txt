@@ -1,146 +1,27 @@
-# todoKI.txt - Roadmap zur Vollendung von design.volt.link
+# todoKI.txt - offene ToDos fuer design.volt.link
 
-Diese Liste ist in sinnvoller Abarbeitungsreihenfolge sortiert. Ziel ist zuerst ein sauberes, oeffentliches Version-1-Designportal ohne Login und ohne oeffentlichen Storybook-Eindruck. Danach folgen redaktionelle Vollendung, technische Haertung, Deployment und spaeter Version 2 mit Login/Vorlagenbereich.
+Diese Datei enthaelt nur noch offene Punkte. Erledigte Punkte werden entfernt.
 
-## Bearbeitungsstand 2026-09-16
+## 1. Offene Produkt- und IA-Entscheidungen
 
-- README und `todo.txt` beschreiben Version 1 als oeffentliche Vite-App ohne Login, ohne oeffentlichen Vorlagenbereich und ohne Storybook als Hauptoutput.
-- Oeffentliche Topbar zeigt keine Login-, Vorlagen- oder Storybook-Links mehr; Ansichtswerkzeuge bleiben Raster, Hintergrund, Konturen, Sprache und Theme.
-- Sidebar oeffnet beim Laden automatisch die Gruppe der aktiven Seite; Suche macht Treffer auch aus eingeklappten Gruppen sichtbar.
-- Sprachwechsel Deutsch/Englisch/Deutsch, Themewechsel, Raster, Konturen, Hintergrundwechsel und verbotene oeffentliche Links werden per `npm run smoke` geprueft.
-- Alte ungenutzte Storybook-Default-Assets unter `stories/assets/` wurden entfernt; Beispiel-Stories nutzen projektbezogene Volt-Klassennamen.
-- `public/brand/` enthaelt die geplante Ablagestruktur fuer Logos, Icons, Beispiele und spaetere Vorlagen.
-- Geprueft: `npm run build`, `npm run smoke`, `npm run build-storybook`.
+1. Entscheiden, ob "Archiv" oeffentlich sichtbar bleibt oder nur als Hilfsseite fuer alte Designs dient.
 
-## 1. Projektziel und Informationsarchitektur final klaeren
+2. Primaere Redaktionssprache verbindlich festlegen. Aktuell ist Deutsch die faktische Quelle.
 
-1. Festlegen, was Version 1 genau ist:
-   - Oeffentliche React/Vite-Website unter design.volt.link.
-   - Kein Login.
-   - Kein oeffentlicher Vorlagenbereich.
-   - Storybook nur als interne Arbeits- und Darstellungsumgebung fuer Komponenten und Designinhalte.
+3. Entscheiden, ob Planungsinhalte im Repo bleiben:
+   - Wenn ja: nicht oeffentlich verlinken und klar als interne Projektdokumentation kennzeichnen.
+   - Wenn nein: entfernen oder in README/todoKI ueberfuehren.
 
-2. Festlegen, was Version 1 nicht zeigt:
-   - Keine Planungskapitel in der oeffentlichen Navigation.
-   - Keine anpassbaren Vorlagen.
-   - Keine Login-, Admin- oder Backend-Hinweise als Hauptinhalt.
-   - Keine oeffentliche Storybook-URL als sichtbarer Navigationspunkt.
-
-3. Navigationsstruktur finalisieren:
-   - Einstieg
-   - Grundlagendesign
-   - Digitale Anwendung
-   - Anwendungen
-   - Hilfe
-   - Archiv
-   - Impressum und Datenschutz immer unten.
-
-4. Entscheiden, ob "Archiv" oeffentlich sichtbar bleiben soll oder nur als Hilfsseite fuer alte Designs dient.
-
-5. Entscheiden, welche Sprache die primaere Redaktionssprache ist. Aktuell ist Deutsch die faktische Quelle.
-
-## 2. README und Projektbeschreibung korrigieren
-
-1. README an den aktuellen Stand anpassen:
-   - Link zu anpassbaren Vorlagen aus der Beschreibung der oeffentlichen Oberflaeche entfernen.
-   - Storybook klar als interne Arbeitsumgebung beschreiben.
-   - Build-Ziel fuer die oeffentliche Seite als `npm run build` und Output `dist/` dokumentieren.
-   - Storybook-Build separat als technische Pruefung dokumentieren.
-
-2. Alte Storybook-Formulierungen entfernen oder korrigieren:
-   - Keine Aussage mehr, dass Storybook die oeffentliche Seite ist.
-   - Keine Deployment-Anleitung mehr, die `storybook-static` als Hauptoutput beschreibt.
-
-3. README-Abschnitt "Naechste Schritte" durch Verweis auf `todoKI.txt` ersetzen oder beide TODO-Dateien zusammenfuehren.
-
-4. Entscheiden, ob `todo.txt` bleibt oder in `todoKI.txt` aufgeht. Wenn `todo.txt` bleibt, nur sehr kurze aktuelle Bugs dort fuehren.
-
-## 3. Oeffentliche Oberflaeche stabilisieren
-
-1. Header finalisieren:
-   - Keine Vorlagen- oder Storybook-Links.
-   - Nur sinnvolle Werkzeuge: Raster, Hintergrund, Konturen, Sprache, Theme.
-   - Auf kleinen Viewports pruefen, dass Buttons nicht umbrechen oder ueberlaufen.
-
-2. Sidebar fertigstellen:
-   - Ausklappbare Gruppen beibehalten.
-   - Normales Seitenscrolling sicherstellen, wenn viele Gruppen aufgeklappt sind.
-   - Aktive Seite beim Laden automatisch sichtbar halten.
-   - Suche so pruefen, dass sie auch in eingeklappten Gruppen Treffer sichtbar macht.
-   - Entscheidung treffen, ob Gruppenstatus in `localStorage` gespeichert werden soll.
-
-3. Mobile Layout pruefen:
-   - Sidebar, Suche und Gruppen auf Smartphone-Breite testen.
-   - Sicherstellen, dass Impressum/Datenschutz erreichbar bleiben.
-   - Topbar-Werkzeuge so ordnen, dass sie nicht zu viel vertikalen Raum verbrauchen.
-
-4. Content-Header pruefen:
-   - Abschnitt und Seitentitel sollen auf mobilen Viewports nicht abgeschnitten wirken.
-   - Lange Titel muessen sauber umbrechen oder ellipsieren.
-
-5. Ansichtswerkzeuge pruefen:
-   - Raster muss alle relevanten Flaechen erfassen.
-   - Konturmodus darf Inhalt nicht unlesbar machen.
-   - Hintergrundwechsel muss fuer alle Kapitel visuell funktionieren.
-
-## 4. Theme- und Sprachwechsel reparieren
-
-1. Bug aus `todo.txt` beheben:
-   - Von Deutsch auf andere Sprache und zurueck wechseln muss stabil funktionieren.
-   - Alle sichtbaren Seiten- und UI-Texte muessen nach Sprachwechsel aktualisieren.
-
-2. Theme-Bug aus `todo.txt` beheben:
-   - Wechsel von Light zu Dark und zurueck muss stabil funktionieren.
-   - Gespeichertes Theme aus `localStorage` muss beim Laden korrekt angewendet werden.
-
-3. Overlay-/Werkzeug-Zustaende pruefen:
-   - Raster, Kontur und Hintergrund muessen im Dark Mode lesbar bleiben.
-   - Falls ein Overlay existiert oder spaeter wieder kommt: Texte und Controls muessen mehrsprachig sein.
-
-4. i18n-Struktur aufraeumen:
-   - UI-Labels in `src/design/i18n.jsx` halten.
-   - Inhaltsseiten in `src/design/content/guidePages.js` halten.
-   - Keine hart codierten sichtbaren Texte in Komponenten, ausser es sind Produktnamen oder technische Werte.
-
-5. Jede neue oder geaenderte UI-Beschriftung in `de`, `en`, `nl`, `fr` pflegen.
-
-## 5. Alte Storybook-Beispielinhalte entfernen
-
-1. Standard-Storybook-Beispiele pruefen:
-   - `stories/Button.jsx`
-   - `stories/Button.stories.js`
-   - `stories/Header.jsx`
-   - `stories/Header.stories.js`
-   - `stories/Page.jsx`
-   - `stories/Page.stories.js`
-   - zugehoerige Beispiel-CSS und Assets.
-
-2. Entscheiden:
-   - Entweder komplett entfernen.
-   - Oder durch echte Volt-Komponenten-Stories ersetzen.
-
-3. Storybook-Assets aufraeumen:
-   - Nicht benoetigte Default-Bilder und Icons entfernen.
-   - Nur Assets behalten, die fuer echte Komponenten-Dokumentation gebraucht werden.
-
-4. Storybook-Struktur vereinheitlichen:
-   - Nur Storys und MDX-Dateien fuer echte Designsystem-Komponenten und interne Pruefung.
-   - Keine Storybook-Seiten als Ersatz fuer die oeffentliche Website.
-
-## 6. Inhaltsmodell und Inhaltsseiten konsolidieren
+## 2. Inhaltsmodell und Inhaltsseiten konsolidieren
 
 1. `src/design/content/guidePages.js` auf veraltete Planungsinhalte pruefen:
    - Deployment
    - Governance
    - LoginPlanning
    - Templates
-   - Alle Texte, die noch Storybook als oeffentliche Seite beschreiben.
+   - Texte, die noch Storybook als oeffentliche Seite beschreiben.
 
-2. Entscheiden, ob Planungsinhalte im Repo bleiben:
-   - Wenn ja: nicht oeffentlich verlinken und klar als interne Projektdokumentation kennzeichnen.
-   - Wenn nein: entfernen oder in README/todoKI ueberfuehren.
-
-3. Jede oeffentliche Inhaltsseite redaktionell fertigstellen:
+2. Jede oeffentliche Inhaltsseite redaktionell fertigstellen:
    - Einstieg
    - Quellen und Regeln
    - Designprinzipien
@@ -164,7 +45,7 @@ Diese Liste ist in sinnvoller Abarbeitungsreihenfolge sortiert. Ziel ist zuerst 
    - Hilfe und FAQ
    - Archiv
 
-4. Fuer jede Seite Mindestumfang definieren:
+3. Fuer jede Seite Mindestumfang ergaenzen:
    - Kurzer Zweck.
    - Regeln.
    - Gute Beispiele.
@@ -172,11 +53,11 @@ Diese Liste ist in sinnvoller Abarbeitungsreihenfolge sortiert. Ziel ist zuerst 
    - Praktische Hinweise.
    - Quellen oder Downloads, falls relevant.
 
-5. Platzhalter und "noch zu definieren"-Texte markieren oder ersetzen.
+4. Platzhalter und "noch zu definieren"-Texte markieren oder ersetzen.
 
-## 7. Volt-Quellen und rechtliche Grundlage klaeren
+## 3. Volt-Quellen und rechtliche Grundlage klaeren
 
-1. Offizielle Volt-Europa-Visual-Identity-Quelle auswerten:
+1. Offizielle Volt-Europa-Visual-Identity-Quelle vollstaendig auswerten:
    - Logo-Regeln
    - Farben
    - Typografie
@@ -203,41 +84,31 @@ Diese Liste ist in sinnvoller Abarbeitungsreihenfolge sortiert. Ziel ist zuerst 
    - Wann muss eine Freigabe eingeholt werden?
    - Wo meldet man fehlerhafte oder veraltete Inhalte?
 
-## 8. Assets und Dateiablage aufbauen
+## 4. Assets und Dateiablage vervollstaendigen
 
-1. Ordnerstruktur in `public/brand/` anlegen oder pruefen:
-   - `logos/source/`
-   - `logos/web/`
-   - `logos/print/`
-   - `icons/`
-   - `examples/`
-   - `templates/previews/`
-   - `templates/figma/`
-   - `templates/canva/`
-
-2. Offizielle Logo-Dateien einsortieren:
+1. Offizielle Logo-Dateien einsortieren:
    - Originale getrennt von Web- und Print-Versionen.
    - Dateinamen eindeutig mit Variante, Sprache/Farbe und Format.
 
-3. Web-optimierte Logos bereitstellen:
+2. Web-optimierte Logos bereitstellen:
    - SVG bevorzugen.
    - PNG nur, wenn noetig.
    - Helle und dunkle Hintergrundvarianten pruefen.
 
-4. Print-Dateien bereitstellen:
+3. Print-Dateien bereitstellen:
    - PDF/EPS/AI, falls offiziell vorhanden.
    - CMYK-Hinweise dokumentieren.
 
-5. Beispielmaterial sammeln:
+4. Beispielmaterial sammeln:
    - Social-Media-Beispiele.
    - Plakate.
    - Praesentationen.
    - Website-Abschnitte.
    - Newsletter.
 
-6. Assets auf Lizenz und Freigabe pruefen, bevor sie oeffentlich eingebunden werden.
+5. Assets auf Lizenz und Freigabe pruefen, bevor sie oeffentlich eingebunden werden.
 
-## 9. Design-Tokens und Komponenten vervollstaendigen
+## 5. Design-Tokens und Komponenten vervollstaendigen
 
 1. Tokens pruefen und ergaenzen:
    - Farben
@@ -284,7 +155,7 @@ Diese Liste ist in sinnvoller Abarbeitungsreihenfolge sortiert. Ziel ist zuerst 
    - Light/Dark.
    - Mehrsprachige Inhalte, soweit sinnvoll.
 
-## 10. Positive und negative Beispiele ergaenzen
+## 6. Positive und negative Beispiele ergaenzen
 
 1. Fuer zentrale Kapitel Do/Don't-Beispiele erstellen:
    - Logo
@@ -310,11 +181,9 @@ Diese Liste ist in sinnvoller Abarbeitungsreihenfolge sortiert. Ziel ist zuerst 
 
 4. Sicherstellen, dass Beispiele nicht wie echte offizielle Kampagnen wirken, wenn sie nur Demonstrationen sind.
 
-## 11. Vorlagen-Thema sauber fuer spaeter vorbereiten
+## 7. Vorlagen-Thema sauber fuer spaeter vorbereiten
 
-1. In Version 1 keine Vorlagen als Hauptnavigation anzeigen.
-
-2. Interne Datenstruktur fuer Vorlagen pruefen:
+1. Interne Datenstruktur fuer Vorlagen pruefen:
    - `src/design/data/templates.js`
    - Status
    - Sichtbarkeit
@@ -323,12 +192,12 @@ Diese Liste ist in sinnvoller Abarbeitungsreihenfolge sortiert. Ziel ist zuerst 
    - Link
    - Aktualisierungsdatum
 
-3. Entscheiden, was oeffentlich sichtbar sein darf:
+2. Entscheiden, was oeffentlich sichtbar sein darf:
    - Gar nichts bis zum Login.
    - Nur Hinweise auf kommende Vorlagen.
    - Nur freigegebene oeffentliche Vorlagen.
 
-4. Spaetere Version-2-Anforderungen notieren:
+3. Spaetere Version-2-Anforderungen notieren:
    - Loginbereich.
    - Geschuetzte Vorlagen.
    - Rollen: Mitglied, Redaktion/Admin.
@@ -336,11 +205,11 @@ Diese Liste ist in sinnvoller Abarbeitungsreihenfolge sortiert. Ziel ist zuerst 
    - Freigabestatus.
    - Audit/letzte Aktualisierung.
 
-5. Keine Version-2-Funktion halb oeffentlich verlinken.
+4. Keine Version-2-Funktion halb oeffentlich verlinken.
 
-## 12. Barrierefreiheit und Qualitaet pruefen
+## 8. Barrierefreiheit und Qualitaet pruefen
 
-1. Tastaturnavigation testen:
+1. Tastaturnavigation manuell testen:
    - Header-Controls.
    - Sidebar-Gruppen.
    - Suchfeld.
@@ -368,7 +237,7 @@ Diese Liste ist in sinnvoller Abarbeitungsreihenfolge sortiert. Ziel ist zuerst 
 
 6. Motion/Animation gering halten und nicht fuer zentrale Information nutzen.
 
-## 13. Responsives Layout final testen
+## 9. Responsives Layout final testen
 
 1. Viewports testen:
    - 390 px mobile.
@@ -377,83 +246,68 @@ Diese Liste ist in sinnvoller Abarbeitungsreihenfolge sortiert. Ziel ist zuerst 
    - 1280 px desktop.
    - Breite Desktop-Ansicht.
 
-2. Kein horizontales Scrollen erlauben.
-
-3. Lange Texte und lange Woerter pruefen:
+2. Lange Texte und lange Woerter pruefen:
    - Deutsch.
    - Englisch.
    - Niederlaendisch.
    - Franzoesisch.
 
-4. Sidebar-Verhalten pruefen:
+3. Sidebar-Verhalten pruefen:
    - Viele Gruppen offen.
    - Viele Gruppen geschlossen.
    - Suche aktiv.
    - Wechsel zwischen Seiten.
 
-5. Inhaltsseiten pruefen:
+4. Inhaltsseiten pruefen:
    - Karten.
    - Listen.
    - Beispiele.
    - Downloads.
    - Tabellen oder Metadaten, falls spaeter eingebaut.
 
-## 14. Tests und technische Pruefung einrichten
+## 10. Tests und technische Pruefung ausbauen
 
-1. Build muss immer laufen:
-   - `npm run build`
-
-2. Storybook-Build als technische Pruefung laufen lassen:
-   - `npm run build-storybook`
-   - Nur wenn Storybook-Inhalte gepflegt sind.
-
-3. Vitest-Konfiguration pruefen:
+1. Vitest-Konfiguration pruefen:
    - Gibt es sinnvolle Unit- oder Component-Tests?
    - Falls nicht: minimale Tests fuer kritische Logik ergaenzen.
 
-4. Playwright-Smoketests ergaenzen:
-   - Startseite laedt.
-   - Sprache kann gewechselt werden.
-   - Theme kann gewechselt werden.
-   - Sidebar-Gruppen lassen sich ein-/ausklappen.
-   - Suche liefert Treffer.
-   - Keine oeffentlichen Links zu `/storybook/`, `#templates` oder Planungsseiten.
+2. Playwright-Smoketests erweitern:
+   - Weitere Viewports.
+   - Rechtliche Links.
+   - Keine oeffentlichen Links zu Planungsseiten.
+   - Mehrsprachige lange Labels.
 
-5. Accessibility-Checks ergaenzen:
+3. Accessibility-Checks ergaenzen:
    - Storybook a11y Addon nutzen.
    - Optional Playwright/Axe fuer die oeffentliche Seite.
 
-## 15. Deployment fuer Version 1 festlegen
+## 11. Deployment fuer Version 1 festlegen
 
 1. Deployment-Ziel entscheiden:
    - GitHub Pages.
    - Eigener Server.
    - Anderer statischer Hoster.
 
-2. Oeffentlichen Build definieren:
-   - Build-Befehl: `npm run build`.
-   - Output: `dist/`.
-
-3. Storybook separat behandeln:
+2. Storybook separat behandeln:
    - Nicht als oeffentliche Hauptseite deployen.
    - Optional als geschuetzte/interne Vorschau.
 
-4. Domain und Routing pruefen:
+3. Domain und Routing pruefen:
    - design.volt.link zeigt auf die Vite-App.
    - Direkte Hash-Links funktionieren.
    - Externe Links zu Impressum/Datenschutz funktionieren.
 
-5. CI/CD einrichten:
+4. CI/CD einrichten:
    - Dependencies installieren mit `npm ci`.
    - Build ausfuehren.
    - Tests ausfuehren.
    - Deployment nur bei erfolgreichem Build.
 
-6. Preview-Prozess definieren:
+5. Preview-Prozess definieren:
    - Wie werden groessere Aenderungen vor Veroeffentlichung getestet?
    - Wer gibt Releases frei?
 
-## 16. Redaktioneller Freigabeprozess
+## 12. Redaktioneller Freigabeprozess
 
 1. Rollen klaeren:
    - Redaktion.
@@ -468,7 +322,7 @@ Diese Liste ist in sinnvoller Abarbeitungsreihenfolge sortiert. Ziel ist zuerst 
    - Design pruefen.
    - Recht/Bildrechte pruefen.
    - Technisch pruefen.
-   - Veröffentlichen.
+   - Veroeffentlichen.
    - Aktualisierungsdatum pflegen.
 
 3. Kontaktwege sichtbar machen:
@@ -482,7 +336,7 @@ Diese Liste ist in sinnvoller Abarbeitungsreihenfolge sortiert. Ziel ist zuerst 
    - Pruefung nach Volt-Brand-Updates.
    - Pruefung vor Kampagnen.
 
-## 17. Version 1 Release vorbereiten
+## 13. Version 1 Release vorbereiten
 
 1. Alle oeffentlichen Seiten durchlesen.
 
@@ -508,7 +362,7 @@ Diese Liste ist in sinnvoller Abarbeitungsreihenfolge sortiert. Ziel ist zuerst 
    - Was ist bewusst noch nicht enthalten?
    - Wo kann Feedback gegeben werden?
 
-## 18. Nach Version 1: Version 2 vorbereiten
+## 14. Nach Version 1: Version 2 vorbereiten
 
 1. Anforderungen fuer Loginbereich sammeln:
    - Wer darf sich anmelden?
@@ -542,7 +396,7 @@ Diese Liste ist in sinnvoller Abarbeitungsreihenfolge sortiert. Ziel ist zuerst 
    - Wer Ergebnisse prueft.
    - Wie Missbrauch verhindert wird.
 
-## 19. Laufende Pflege
+## 15. Laufende Pflege
 
 1. Neue Volt-Brand-Regeln regelmaessig uebernehmen.
 
@@ -558,6 +412,8 @@ Diese Liste ist in sinnvoller Abarbeitungsreihenfolge sortiert. Ziel ist zuerst 
 
 6. Nach groesseren Aenderungen immer pruefen:
    - `npm run build`
+   - `npm run smoke`
+   - `npm run build-storybook`
    - Sprachwechsel
    - Theme-Wechsel
    - Sidebar

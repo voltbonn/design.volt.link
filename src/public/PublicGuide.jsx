@@ -27,6 +27,8 @@ import { GuidePage } from '../design/components/GuidePage';
 import { LegalLinks } from '../design/components/LegalLinks';
 import { I18nProvider, supportedLocales, useI18n } from '../design/i18n';
 import { applyTheme, getStoredTheme, supportedThemes, ThemeProvider } from '../design/theme';
+import logoPurple from '../../design.volt.link_logo_lila.jpg';
+import logoWhite from '../../design.volt.link_logo_white.jpg';
 
 const pages = [
   { id: 'intro', section: '00', content: null },
@@ -125,6 +127,7 @@ const PublicGuideInner = ({ setLocale, setTheme, theme }) => {
   const background = backgroundModes[backgroundIndex];
   const backgroundLabel = t(`publicGuide.backgrounds.${background}`);
   const isSearching = query.trim().length > 0;
+  const logoSrc = theme === 'dark' ? logoWhite : logoPurple;
 
   const toggleSection = React.useCallback((section) => {
     setClosedSections((current) => {
@@ -158,7 +161,9 @@ const PublicGuideInner = ({ setLocale, setTheme, theme }) => {
     <div className="public-guide" data-theme={theme}>
       <header className="public-guide__topbar">
         <a className="public-guide__brand" href="#intro">
-          <span className="public-guide__mark">V</span>
+          <span className="public-guide__mark">
+            <img src={logoSrc} alt={t('publicGuide.logoAlt')} />
+          </span>
           <span className="public-guide__brand-copy">
             <strong>design.volt.link</strong>
           </span>
