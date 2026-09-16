@@ -46,6 +46,7 @@
 .volt-color-swatch h3,
 .volt-template-card h3,
 .volt-application-card h3,
+.volt-guideline-grid h2,
 .volt-guideline-grid h3 {
   margin: 0 0 12px;
   color: var(--volt-text);
@@ -170,6 +171,7 @@
   padding: 18px;
 }
 
+.volt-guideline-grid h2,
 .volt-guideline-grid h3,
 .volt-application-card h3 {
   color: var(--volt-link);

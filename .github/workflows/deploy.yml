@@ -29,6 +29,8 @@ jobs:
         run: npm run build
       - name: Run public smoke and accessibility checks
         run: npm run smoke
+      - name: Check external links
+        run: npm run check:links
       - name: Run Storybook accessibility tests
         run: npm run test:storybook
       - name: Build Storybook

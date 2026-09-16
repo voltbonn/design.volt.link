@@ -99,6 +99,7 @@ a:hover {
   color: var(--volt-link-hover);
 }
 
+:focus,
 :focus-visible {
   outline: 0;
   box-shadow: 0 0 0 3px var(--volt-focus);

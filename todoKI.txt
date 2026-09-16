@@ -36,8 +36,6 @@ Diese Datei enthaelt nur noch offene Punkte. Erledigte Punkte werden entfernt.
    - Praktische Hinweise.
    - Quellen oder Downloads, falls relevant.
 
-3. Platzhalter und "noch zu definieren"-Texte markieren oder ersetzen.
-
 ## 2. Volt-Quellen und rechtliche Grundlage klaeren
 
 1. Offizielle Volt-Europa-Visual-Identity-Quelle vollstaendig auswerten:
@@ -164,88 +162,7 @@ Diese Datei enthaelt nur noch offene Punkte. Erledigte Punkte werden entfernt.
 
 4. Sicherstellen, dass Beispiele nicht wie echte offizielle Kampagnen wirken, wenn sie nur Demonstrationen sind.
 
-## 6. Vorlagen-Thema sauber fuer spaeter vorbereiten
-
-1. Spaetere Version-2-Anforderungen notieren:
-   - Loginbereich.
-   - Geschuetzte Vorlagen.
-   - Rollen: Mitglied, Redaktion/Admin.
-   - Sichtbarkeit pro Vorlage.
-   - Freigabestatus.
-   - Audit/letzte Aktualisierung.
-
-## 7. Barrierefreiheit und Qualitaet pruefen
-
-1. Tastaturnavigation manuell testen:
-   - Header-Controls.
-   - Sidebar-Gruppen.
-   - Suchfeld.
-   - Inhaltslinks.
-   - Legal-Links.
-
-2. Fokuszustand sichtbar machen und testen.
-
-3. ARIA-Labels pruefen:
-   - Ausklappbare Gruppen.
-   - Theme Toggle.
-   - Raster/Kontur/Hintergrund-Werkzeuge.
-   - Sprachwahl.
-
-4. Farbkontrast pruefen:
-   - Light Mode.
-   - Dark Mode.
-   - Brand-Hintergrund.
-   - Aktive Navigationspunkte.
-
-5. Screenreader-Struktur pruefen:
-   - Eine klare H1 pro Seite.
-   - Sinnvolle H2/H3-Hierarchie.
-   - Navigationen mit Labels.
-
-6. Motion/Animation gering halten und nicht fuer zentrale Information nutzen.
-
-## 8. Responsives Layout final testen
-
-1. Lange Texte und lange Woerter pruefen:
-   - Deutsch.
-   - Englisch.
-   - Niederlaendisch.
-   - Franzoesisch.
-
-2. Sidebar-Verhalten pruefen:
-   - Viele Gruppen offen.
-   - Viele Gruppen geschlossen.
-   - Suche aktiv.
-   - Wechsel zwischen Seiten.
-
-3. Inhaltsseiten pruefen:
-   - Karten.
-   - Listen.
-   - Beispiele.
-   - Downloads.
-   - Tabellen oder Metadaten, falls spaeter eingebaut.
-
-## 9. Deployment fuer Version 1 festlegen
-
-1. Deployment-Ziel entscheiden:
-   - GitHub Pages.
-   - Eigener Server.
-   - Anderer statischer Hoster.
-
-2. Storybook separat behandeln:
-   - Nicht als oeffentliche Hauptseite deployen.
-   - Optional als geschuetzte/interne Vorschau.
-
-3. Domain und Routing pruefen:
-   - design.volt.link zeigt auf die Vite-App.
-   - Direkte Hash-Links funktionieren.
-   - Externe Links zu Impressum/Datenschutz funktionieren.
-
-4. Preview-Prozess definieren:
-   - Wie werden groessere Aenderungen vor Veroeffentlichung getestet?
-   - Wer gibt Releases frei?
-
-## 10. Redaktioneller Freigabeprozess
+## 6. Redaktioneller Freigabeprozess
 
 1. Rollen klaeren:
    - Redaktion.
@@ -255,86 +172,25 @@ Diese Datei enthaelt nur noch offene Punkte. Erledigte Punkte werden entfernt.
    - Social-Media-Team.
    - Rechtliche Pruefung.
 
-2. Prozess definieren:
-   - Inhalt vorschlagen.
-   - Design pruefen.
-   - Recht/Bildrechte pruefen.
-   - Technisch pruefen.
-   - Veroeffentlichen.
-   - Aktualisierungsdatum pflegen.
-
-3. Kontaktwege sichtbar machen:
+2. Kontaktwege sichtbar machen:
    - Designfragen.
    - Technische Fehler.
    - Rechtliche Hinweise.
    - Veraltete Inhalte.
 
-4. Aktualisierungsrhythmus definieren:
-   - Regelmaessige Inhaltspruefung.
-   - Pruefung nach Volt-Brand-Updates.
-   - Pruefung vor Kampagnen.
-
-## 11. Version 1 Release vorbereiten
+## 7. Version 1 Release vorbereiten
 
 1. Alle oeffentlichen Seiten durchlesen.
 
-2. Alle Links testen:
-   - Interne Hash-Links.
-   - Externe Quellen.
-   - Impressum.
-   - Datenschutz.
+## 8. Nach Version 1: Version 2 vorbereiten
 
-3. Alle Sprachen grob pruefen:
-   - UI vollstaendig.
-   - Keine fehlenden Keys.
-   - Kein Absturz beim Wechsel.
-
-4. Alle Viewports pruefen.
-
-5. Build-Artefakt pruefen:
-   - `dist/` enthaelt die richtige oeffentliche Seite.
-   - Keine Storybook-Oberflaeche im oeffentlichen Build.
-
-6. Release-Notiz schreiben:
-   - Was ist enthalten?
-   - Was ist bewusst noch nicht enthalten?
-   - Wo kann Feedback gegeben werden?
-
-## 12. Nach Version 1: Version 2 vorbereiten
-
-1. Anforderungen fuer Loginbereich sammeln:
-   - Wer darf sich anmelden?
-   - Welche Authentifizierung?
-   - Welche Rollen?
-   - Welche Inhalte sind geschuetzt?
-
-2. Datenschutz und Recht fuer Login klaeren:
+1. Datenschutz und Recht fuer Login klaeren:
    - Welche personenbezogenen Daten werden gespeichert?
    - Welche Rechtsgrundlage?
    - Wer ist verantwortlich?
    - Welche Loesch- und Auskunftsprozesse?
 
-3. Backend-Architektur entscheiden:
-   - Statisches Frontend plus API.
-   - CMS.
-   - Datenbank.
-   - Auth Provider.
-
-4. Vorlagenbereich planen:
-   - Figma/Canva-Linkverwaltung.
-   - Vorschauen.
-   - Status.
-   - Zielgruppen.
-   - Freigaben.
-   - Sichtbarkeit.
-
-5. Optionalen Vorlagen-Editor nur planen, wenn klar ist:
-   - Welche Vorlagen haeufig gebraucht werden.
-   - Welche Felder anpassbar sein muessen.
-   - Wer Ergebnisse prueft.
-   - Wie Missbrauch verhindert wird.
-
-## 13. Laufende Pflege
+## 9. Laufende Pflege
 
 1. Neue Volt-Brand-Regeln regelmaessig uebernehmen.
 
@@ -347,13 +203,3 @@ Diese Datei enthaelt nur noch offene Punkte. Erledigte Punkte werden entfernt.
    - Nicht mehr gueltige Vorlagen deutlich kennzeichnen.
 
 5. Technische Dependencies regelmaessig aktualisieren.
-
-6. Nach groesseren Aenderungen immer pruefen:
-   - `npm run build`
-   - `npm run smoke`
-   - `npm run build-storybook`
-   - Sprachwechsel
-   - Theme-Wechsel
-   - Sidebar
-   - Mobile Layout
-   - Rechtliche Links

@@ -64,7 +64,17 @@ const languages = [
   { value: 'fr', label: 'Français' },
 ];
 
-const getHashPage = () => window.location.hash.replace(/^#\/?/, '') || 'intro';
+const pageIds = pages.map((page) => page.id);
+
+const getHashRoute = () => {
+  const rawHash = window.location.hash.replace(/^#\/?/, '') || 'intro';
+  const [pageId, anchorId = ''] = rawHash.split('/');
+
+  return {
+    pageId: pageIds.includes(pageId) ? pageId : 'intro',
+    anchorId,
+  };
+};
 
 const backgroundModes = ['guide', 'white', 'brand'];
 
@@ -102,18 +112,19 @@ const pageTitle = (page, locale, t) => {
 
 const PublicGuideInner = ({ setLocale, setTheme, theme }) => {
   const { locale, t } = useI18n();
-  const [activePage, setActivePage] = React.useState(getHashPage);
+  const [route, setRoute] = React.useState(getHashRoute);
+  const activePage = route.pageId;
   const [query, setQuery] = React.useState('');
   const [showGrid, setShowGrid] = React.useState(false);
   const [showOutline, setShowOutline] = React.useState(false);
   const [backgroundIndex, setBackgroundIndex] = React.useState(0);
   const [closedSections, setClosedSections] = React.useState(
-    () => new Set(sectionOrder.filter((section) => section !== pageSection(getHashPage()))),
+    () => new Set(sectionOrder.filter((section) => section !== pageSection(getHashRoute().pageId))),
   );
   const activeNavLinkRef = React.useRef(null);
 
   React.useEffect(() => {
-    const onHashChange = () => setActivePage(getHashPage());
+    const onHashChange = () => setRoute(getHashRoute());
     window.addEventListener('hashchange', onHashChange);
     return () => window.removeEventListener('hashchange', onHashChange);
   }, []);
@@ -178,6 +189,16 @@ const PublicGuideInner = ({ setLocale, setTheme, theme }) => {
 
     activeNavLinkRef.current?.scrollIntoView({ block: 'nearest' });
   }, [page.id, page.section, groupedPages]);
+
+  React.useEffect(() => {
+    if (!route.anchorId) {
+      return;
+    }
+
+    window.requestAnimationFrame(() => {
+      document.getElementById(route.anchorId)?.scrollIntoView({ block: 'start' });
+    });
+  }, [route.anchorId, route.pageId, locale]);
 
   return (
     <div className="public-guide" data-theme={theme}>

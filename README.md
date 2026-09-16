@@ -119,6 +119,29 @@ npm run build
 
 Der Output liegt in `dist/`. Dieses Verzeichnis ist das Deployment-Artefakt fuer die oeffentliche Website. `storybook-static/` ist nur fuer interne Storybook-Pruefungen gedacht und nicht der Hauptoutput fuer `design.volt.link`.
 
+Version 1 wird als statische Website ueber GitHub Pages veroeffentlicht. Der Workflow `.github/workflows/deploy.yml` laeuft bei Pull Requests gegen `main`, bei Pushes auf `main` und manuell ueber `workflow_dispatch`.
+
+Der Workflow fuehrt vor dem Deployment aus:
+
+- `npm ci`
+- `npm run test`
+- `npm run build`
+- `npm run smoke`
+- `npm run test:storybook`
+- `npm run build-storybook`
+
+Bei Pull Requests wird `dist/` als Preview-Artefakt hochgeladen. Bei Pushes auf `main` wird ausschliesslich `dist/` auf den Branch `deploy_frontend` deployt. Die konfigurierte Produktionsdomain ist `design.volt.link`.
+
+Storybook bleibt technisch separat: Es wird zur Komponenten-, Dokumentations- und Accessibility-Pruefung gebaut, aber nicht als oeffentliche Hauptseite deployed. Die oeffentliche Navigation der Vite-App darf keine Storybook-, Login-, Vorlagen- oder Planungslinks enthalten; `npm run smoke` prueft diese Abgrenzung zusammen mit Hash-Routing, Rechtslinks, Viewports, Theme- und Sprachwechsel.
+
 ## Roadmap
 
 Die konkrete Arbeitsliste liegt in `todoKI.txt`. `todo.txt` ist nur noch fuer sehr kurze, aktuelle Bugs gedacht.
+
+Die grobe Planung fuer einen spaeteren geschuetzten Vorlagen- und Loginbereich liegt in `VERSION2_PLAN.md`.
+
+Der Preview- und Freigabeprozess fuer groessere Aenderungen liegt in `RELEASE_PROCESS.md`.
+
+Redaktionell offene Inhalte und fachliche Luecken liegen in `CONTENT_GAPS.md`.
+
+Der redaktionelle Pflege- und Pruefprozess liegt in `EDITORIAL_PROCESS.md`.

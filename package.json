@@ -11,6 +11,7 @@
     "build": "vite build",
     "test": "vitest run --project unit",
     "test:storybook": "vitest run --project storybook",
+    "check:links": "node scripts/check-links.mjs",
     "smoke": "node scripts/smoke-public.mjs",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"

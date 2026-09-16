@@ -137,7 +137,14 @@ export const GuidePage = ({ page: pageId }) => {
       <h1>{c.title}</h1>
       {c.lead && <p>{c.lead}</p>}
 
-      {c.nav && <InPageNav items={c.nav} />}
+      {c.nav && (
+        <InPageNav
+          items={c.nav.map((item) => ({
+            ...item,
+            href: `#${pageId}/${item.href.replace(/^#/, '')}`,
+          }))}
+        />
+      )}
 
       {pageId === 'sources' && (
         <>
@@ -203,7 +210,7 @@ export const GuidePage = ({ page: pageId }) => {
 
       {pageId === 'layout' && (
         <>
-          <GuidelineGrid items={c.guidelines} />
+          <GuidelineGrid headingLevel={2} items={c.guidelines} />
           <h2 id={c.sections.rules.id}>{c.sections.rules.title}</h2>
           <List items={c.sections.rules.items} />
           <h2 id={c.sections.orientation.id}>{c.sections.orientation.title}</h2>
@@ -220,7 +227,7 @@ export const GuidePage = ({ page: pageId }) => {
 
       {pageId === 'imageLanguage' && (
         <>
-          <GuidelineGrid items={c.guidelines} />
+          <GuidelineGrid headingLevel={2} items={c.guidelines} />
           <DosDonts doText={c.doText} dontText={c.dontText} />
           <h2 id={c.sections.clarify.id}>{c.sections.clarify.title}</h2>
           <List items={c.sections.clarify.items} />
