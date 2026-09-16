@@ -298,6 +298,37 @@
   line-height: 1.4;
 }
 
+.volt-linked-list {
+  display: grid;
+  gap: 8px;
+  padding-left: 0;
+  list-style: none;
+}
+
+.volt-linked-list a {
+  display: grid;
+  gap: 4px;
+  border: 1px solid var(--volt-border);
+  border-radius: 2px;
+  background: var(--volt-surface-strong);
+  color: var(--volt-text);
+  padding: 12px 14px;
+  text-decoration: none;
+}
+
+.volt-linked-list a:hover {
+  border-color: var(--volt-purple);
+  box-shadow: var(--volt-shadow-small);
+}
+
+.volt-linked-list strong {
+  color: var(--volt-link);
+}
+
+.volt-linked-list span {
+  color: var(--volt-muted-text);
+}
+
 .volt-legal-links {
   display: flex;
   flex-wrap: wrap;

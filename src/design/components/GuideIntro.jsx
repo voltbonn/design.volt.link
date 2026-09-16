@@ -1,5 +1,4 @@
-import { decisionGuide, guideUsage, sources } from '../content/guidePages';
-import { useI18n, useT } from '../i18n';
+import { useT } from '../i18n';
 import { SectionNav } from './SectionNav';
 import './designComponents.css';
 
@@ -9,33 +8,42 @@ const defaultHrefs = {
   help: '?path=/docs/volt-design-05-hilfe-faq--docs',
 };
 
-const localizedContent = (content, locale) => content[locale] ?? content.de;
+const List = ({ items, ordered = false }) => {
+  const Tag = ordered ? 'ol' : 'ul';
 
-const RichList = ({ items }) => (
-  <ul>
+  return (
+    <Tag>
+      {items.map((item) => (
+        <li key={typeof item === 'string' ? item : `${item.label}-${item.text}`}>
+          {typeof item === 'string' ? (
+            item
+          ) : (
+            <>
+              <strong>{item.label}</strong>
+              {item.text}
+            </>
+          )}
+        </li>
+      ))}
+    </Tag>
+  );
+};
+
+const LinkedList = ({ items }) => (
+  <ul className="volt-linked-list">
     {items.map((item) => (
-      <li key={typeof item === 'string' ? item : `${item.label}-${item.text}`}>
-        {typeof item === 'string' ? (
-          item
-        ) : (
-          <>
-            <strong>{item.label}</strong>
-            {item.text}
-          </>
-        )}
+      <li key={item.href}>
+        <a href={item.href}>
+          <strong>{item.label}</strong>
+          <span>{item.text}</span>
+        </a>
       </li>
     ))}
   </ul>
 );
 
 export const GuideIntro = ({ hrefs = defaultHrefs }) => {
-  const { locale } = useI18n();
   const t = useT();
-  const structureItems = t('guideIntro.structureItems');
-  const startItems = t('guideIntro.startItems');
-  const sourceContent = localizedContent(sources, locale);
-  const usageContent = localizedContent(guideUsage, locale);
-  const decisionContent = localizedContent(decisionGuide, locale);
 
   return (
     <>
@@ -66,50 +74,75 @@ export const GuideIntro = ({ hrefs = defaultHrefs }) => {
         ]}
       />
 
-      <h2>{t('guideIntro.structure')}</h2>
-      <ol>
-        {(Array.isArray(structureItems) ? structureItems : []).map((item) => (
-          <li key={item}>{item}</li>
-        ))}
-      </ol>
+      <h2>{t('guideIntro.whatTitle')}</h2>
+      <p>{t('guideIntro.whatLead')}</p>
+      <List ordered items={t('guideIntro.whatItems')} />
+      <p>{t('guideIntro.whatNote')}</p>
 
-      <h2>{t('guideIntro.editorialPrinciple')}</h2>
-      <p>{t('guideIntro.editorialText')}</p>
+      <h2>{t('guideIntro.quickStartTitle')}</h2>
+      <p>{t('guideIntro.quickStartLead')}</p>
+      <List ordered items={t('guideIntro.quickStartItems')} />
 
-      <h2>{t('guideIntro.startTitle')}</h2>
-      <ol>
-        {(Array.isArray(startItems) ? startItems : []).map((item) => (
-          <li key={item}>{item}</li>
-        ))}
-      </ol>
-
-      <h2 id="quellen-und-arbeitsgrundlage">{sourceContent.title}</h2>
-      <p>{sourceContent.lead}</p>
+      <h2>{t('guideIntro.brandBasisTitle')}</h2>
+      <p>{t('guideIntro.brandBasisText')}</p>
       <p>
         <a href="https://volteuropa.org/visual_identity">{t('guideIntro.officialSource')}</a>
       </p>
-      <h3 id={sourceContent.sections.foundation.id}>{sourceContent.sections.foundation.title}</h3>
-      <RichList items={sourceContent.sections.foundation.items} />
-      <h3 id={sourceContent.sections.editorial.id}>{sourceContent.sections.editorial.title}</h3>
-      <RichList items={sourceContent.sections.editorial.items} />
 
-      <h2 id="so-nutzt-du-diesen-guide">{usageContent.title}</h2>
-      <p>{usageContent.lead}</p>
-      {usageContent.sections.map((section) => (
-        <section key={section.id}>
-          <h3 id={section.id}>{section.title}</h3>
-          <RichList items={section.items} />
-        </section>
-      ))}
+      <h3>{t('guideIntro.foundationsTitle')}</h3>
+      <List items={t('guideIntro.foundationItems')} />
+      <p>{t('guideIntro.templatesText')}</p>
 
-      <h2 id="entscheidungshilfe">{decisionContent.title}</h2>
-      <p>{decisionContent.lead}</p>
-      {decisionContent.sections.map((section) => (
-        <section key={section.id}>
-          <h3 id={section.id}>{section.title}</h3>
-          <RichList items={section.items} />
-        </section>
-      ))}
+      <h2>{t('guideIntro.recognitionTitle')}</h2>
+      <p>{t('guideIntro.recognitionLead')}</p>
+      <List items={t('guideIntro.recognitionItems')} />
+      <p>{t('guideIntro.recognitionQuestion')}</p>
+
+      <h2>{t('guideIntro.goodDesignTitle')}</h2>
+      <p>{t('guideIntro.goodDesignLead')}</p>
+      <List items={t('guideIntro.goodDesignItems')} />
+
+      <h2>{t('guideIntro.chapterPickerTitle')}</h2>
+      <p>{t('guideIntro.chapterPickerLead')}</p>
+      <LinkedList
+        items={[
+          {
+            label: t('guideIntro.chapterItems.social.label'),
+            text: t('guideIntro.chapterItems.social.text'),
+            href: '#socialMedia',
+          },
+          {
+            label: t('guideIntro.chapterItems.website.label'),
+            text: t('guideIntro.chapterItems.website.text'),
+            href: '#websites',
+          },
+          {
+            label: t('guideIntro.chapterItems.presentation.label'),
+            text: t('guideIntro.chapterItems.presentation.text'),
+            href: '#presentations',
+          },
+          {
+            label: t('guideIntro.chapterItems.print.label'),
+            text: t('guideIntro.chapterItems.print.text'),
+            href: '#layout',
+          },
+          {
+            label: t('guideIntro.chapterItems.newsletter.label'),
+            text: t('guideIntro.chapterItems.newsletter.text'),
+            href: '#newsletter',
+          },
+          {
+            label: t('guideIntro.chapterItems.ui.label'),
+            text: t('guideIntro.chapterItems.ui.text'),
+            href: '#iconsUi',
+          },
+        ]}
+      />
+
+      <h2>{t('guideIntro.preflightTitle')}</h2>
+      <p>{t('guideIntro.preflightLead')}</p>
+      <List items={t('guideIntro.preflightItems')} />
+      <p>{t('guideIntro.preflightClose')}</p>
     </>
   );
 };
