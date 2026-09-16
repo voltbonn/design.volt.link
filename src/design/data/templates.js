@@ -39,7 +39,7 @@ export const templates = [
     id: 'designSystem',
     title: 'Designsystem',
     tool: 'Figma',
-    format: 'Komponenten und Tokens',
+    format: 'Komponenten und UI-Muster',
     category: 'Designsystem',
     target: 'Designteam und Website-Team für Komponenten, Farben und Layoutmuster.',
     status: 'planned',

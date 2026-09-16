@@ -116,11 +116,11 @@ export const resources = {
         chapterPickerLead: 'Wenn du etwas Konkretes erstellen möchtest, kannst du direkt beim Format einsteigen:',
         chapterItems: {
           social: { label: 'Social Post:', text: ' Social Media, Farben, Typografie, Bildsprache und Barrierefreiheit' },
-          website: { label: 'Website:', text: ' Websites, Komponenten, Design Tokens und Barrierefreiheit' },
+          website: { label: 'Website:', text: ' Websites, Komponenten, Farben und Barrierefreiheit' },
           presentation: { label: 'Präsentation:', text: ' Präsentationen, Logo, Typografie sowie Dateien & Export' },
           print: { label: 'Flyer oder Plakat:', text: ' Layout, Farben, Logo, Bildquellen und Print-Export' },
           newsletter: { label: 'Newsletter:', text: ' Typografie, Farben, Bildsprache, Barrierefreiheit und Newsletter' },
-          ui: { label: 'Icon oder UI-Element:', text: ' Icons & UI, Komponenten, Accessibility und Design Tokens' },
+          ui: { label: 'Icon oder UI-Element:', text: ' Icons & UI, Komponenten, Accessibility und Farben' },
         },
         preflightTitle: 'Vor der Veröffentlichung',
         preflightLead: 'Ein kurzer letzter Check verhindert die häufigsten Fehler:',
@@ -238,7 +238,7 @@ export const resources = {
         },
         designSystem: {
           title: 'Designsystem',
-          format: 'Komponenten und Tokens',
+          format: 'Komponenten und UI',
           target: 'Designteam und Website-Team für Komponenten, Farben und Layoutmuster.',
         },
         websiteBlocks: {
@@ -358,11 +358,11 @@ export const resources = {
       chapterPickerLead: 'If you want to create something concrete, start directly with the format:',
       chapterItems: {
         social: { label: 'Social post:', text: ' social media, colours, typography, imagery and accessibility' },
-        website: { label: 'Website:', text: ' websites, components, design tokens and accessibility' },
+        website: { label: 'Website:', text: ' websites, components, colours and accessibility' },
         presentation: { label: 'Presentation:', text: ' presentations, logo, typography and files & export' },
         print: { label: 'Flyer or poster:', text: ' layout, colours, logo, image sources and print export' },
         newsletter: { label: 'Newsletter:', text: ' typography, colours, imagery, accessibility and newsletter' },
-        ui: { label: 'Icon or UI element:', text: ' icons & UI, components, accessibility and design tokens' },
+        ui: { label: 'Icon or UI element:', text: ' icons & UI, components, accessibility and colours' },
       },
       preflightTitle: 'Before Publishing',
       preflightLead: 'A short final check prevents the most common mistakes:',
@@ -480,7 +480,7 @@ export const resources = {
       },
       designSystem: {
         title: 'Design system',
-        format: 'Components and tokens',
+        format: 'Components and UI',
         target: 'Design team and website team for components, colours and layout patterns.',
       },
       websiteBlocks: {
@@ -600,11 +600,11 @@ export const resources = {
       chapterPickerLead: 'Als je iets concreets wilt maken, kun je direct bij het formaat beginnen:',
       chapterItems: {
         social: { label: 'Social post:', text: ' social media, kleuren, typografie, beeldtaal en toegankelijkheid' },
-        website: { label: 'Website:', text: ' websites, componenten, design tokens en toegankelijkheid' },
+        website: { label: 'Website:', text: ' websites, componenten, kleuren en toegankelijkheid' },
         presentation: { label: 'Presentatie:', text: ' presentaties, logo, typografie en bestanden & export' },
         print: { label: 'Flyer of poster:', text: ' lay-out, kleuren, logo, beeldbronnen en print-export' },
         newsletter: { label: 'Newsletter:', text: ' typografie, kleuren, beeldtaal, toegankelijkheid en newsletter' },
-        ui: { label: 'Icon of UI-element:', text: ' icons & UI, componenten, toegankelijkheid en design tokens' },
+        ui: { label: 'Icon of UI-element:', text: ' icons & UI, componenten, toegankelijkheid en kleuren' },
       },
       preflightTitle: 'Vóór publicatie',
       preflightLead: 'Een korte laatste check voorkomt de meest voorkomende fouten:',
@@ -722,7 +722,7 @@ export const resources = {
       },
       designSystem: {
         title: 'Designsysteem',
-        format: 'Componenten en tokens',
+        format: 'Componenten en UI',
         target: 'Designteam en websiteteam voor componenten, kleuren en lay-outpatronen.',
       },
       websiteBlocks: {
@@ -842,11 +842,11 @@ export const resources = {
         chapterPickerLead: 'Pour créer un support concret, commencez directement par le format :',
         chapterItems: {
           social: { label: 'Post social :', text: ' réseaux sociaux, couleurs, typographie, images et accessibilité' },
-          website: { label: 'Site web :', text: ' sites web, composants, design tokens et accessibilité' },
+          website: { label: 'Site web :', text: ' sites web, composants, couleurs et accessibilité' },
           presentation: { label: 'Présentation :', text: ' présentations, logo, typographie et fichiers & export' },
           print: { label: 'Flyer ou affiche :', text: ' mise en page, couleurs, logo, sources d’images et export print' },
           newsletter: { label: 'Newsletter :', text: ' typographie, couleurs, images, accessibilité et newsletter' },
-          ui: { label: 'Icône ou élément UI :', text: ' icônes & UI, composants, accessibilité et design tokens' },
+          ui: { label: 'Icône ou élément UI :', text: ' icônes & UI, composants, accessibilité et couleurs' },
         },
         preflightTitle: 'Avant publication',
         preflightLead: 'Un dernier contrôle rapide évite les erreurs les plus fréquentes :',
@@ -964,7 +964,7 @@ export const resources = {
         },
         designSystem: {
           title: 'Système de design',
-          format: 'Composants et tokens',
+          format: 'Composants et UI',
           target: 'Équipe design et site web pour composants, couleurs et modèles de mise en page.',
         },
         websiteBlocks: {

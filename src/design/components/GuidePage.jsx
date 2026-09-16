@@ -10,7 +10,6 @@ import {
   decisionGuide,
   deployment,
   designPrinciples,
-  designTokens,
   digitalComponents,
   downloads,
   fileExport,
@@ -57,7 +56,6 @@ const pages = {
   decisionGuide,
   deployment,
   designPrinciples,
-  designTokens,
   digitalComponents,
   downloads,
   fileExport,
@@ -91,7 +89,6 @@ const genericPageIds = [
   'decisionGuide',
   'deployment',
   'designPrinciples',
-  'designTokens',
   'digitalComponents',
   'downloads',
   'fileExport',
@@ -116,7 +113,16 @@ const localeContent = (page, locale) => page[locale] ?? page.de;
 const List = ({ items }) => (
   <ul>
     {items.map((item) => (
-      <li key={item}>{item}</li>
+      <li key={typeof item === 'string' ? item : `${item.label}-${item.text}`}>
+        {typeof item === 'string' ? (
+          item
+        ) : (
+          <>
+            <strong>{item.label}</strong>
+            {item.text}
+          </>
+        )}
+      </li>
     ))}
   </ul>
 );
@@ -199,6 +205,30 @@ const BrandManualLinks = ({ links }) => {
   );
 };
 
+const LogoVariantGallery = ({ items }) => {
+  const { t } = useI18n();
+
+  return (
+    <div className="volt-logo-variant-grid">
+      {items.map((item) => (
+        <article key={item.href} className="volt-logo-variant-card">
+          <div className={`volt-logo-variant-card__preview volt-logo-variant-card__preview--${item.preview}`}>
+            <img src={item.href} alt={item.alt} />
+          </div>
+          <div className="volt-logo-variant-card__content">
+            <p className="volt-download-card__format">{item.format}</p>
+            <h3>{item.title}</h3>
+            <p>{item.description}</p>
+            <a href={item.href} download>
+              {t('downloadCard.download')}
+            </a>
+          </div>
+        </article>
+      ))}
+    </div>
+  );
+};
+
 export const GuidePage = ({ page: pageId }) => {
   const { locale } = useI18n();
   const page = pages[pageId];
@@ -252,9 +282,22 @@ export const GuidePage = ({ page: pageId }) => {
           {c.dosDonts.map((item) => (
             <DosDonts key={item.doText} doText={item.doText} dontText={item.dontText} />
           ))}
+          <h2 id={c.sections.files.id}>{c.sections.files.title}</h2>
+          {c.sections.files.text && <p>{c.sections.files.text}</p>}
+          <List items={c.sections.files.items} />
+          <LogoVariantGallery items={c.logoVariants} />
           <h2 id={c.sections.storage.id}>{c.sections.storage.title}</h2>
           <List items={c.sections.storage.items} />
           <DownloadCard {...c.download} />
+          <h2 id={c.sections.taglines.id}>{c.sections.taglines.title}</h2>
+          {c.sections.taglines.text && <p>{c.sections.taglines.text}</p>}
+          <List items={c.sections.taglines.items} />
+          <h2 id={c.sections.subbrands.id}>{c.sections.subbrands.title}</h2>
+          {c.sections.subbrands.text && <p>{c.sections.subbrands.text}</p>}
+          <List items={c.sections.subbrands.items} />
+          <h2 id={c.sections.check.id}>{c.sections.check.title}</h2>
+          {c.sections.check.text && <p>{c.sections.check.text}</p>}
+          <List items={c.sections.check.items} />
         </>
       )}
 
@@ -262,14 +305,27 @@ export const GuidePage = ({ page: pageId }) => {
         <>
           <h2 id={c.sections.rules.id}>{c.sections.rules.title}</h2>
           <GuidelineGrid items={c.guidelines} />
+          {c.sections.rules.items && <List items={c.sections.rules.items} />}
           <h2 id={c.sections.values.id}>{c.sections.values.title}</h2>
-          {c.swatches.map((swatch) => (
-            <ColorSwatch key={swatch.name} {...swatch} />
-          ))}
+          <div className="volt-color-palette-grid">
+            {c.swatches.map((swatch) => (
+              <ColorSwatch key={swatch.name} {...swatch} />
+            ))}
+          </div>
           <h2 id={c.sections.combinations.id}>{c.sections.combinations.title}</h2>
           <List items={c.sections.combinations.items} />
+          <h2 id={c.sections.accessibility.id}>{c.sections.accessibility.title}</h2>
+          <List items={c.sections.accessibility.items} />
+          <h2 id={c.sections.data.id}>{c.sections.data.title}</h2>
+          <List items={c.sections.data.items} />
+          <h2 id={c.sections.digitalPrint.id}>{c.sections.digitalPrint.title}</h2>
+          <List items={c.sections.digitalPrint.items} />
+          <h2 id={c.sections.onPurple.id}>{c.sections.onPurple.title}</h2>
+          <List items={c.sections.onPurple.items} />
           <h2 id={c.sections.avoid.id}>{c.sections.avoid.title}</h2>
           <List items={c.sections.avoid.items} />
+          <h2 id={c.sections.check.id}>{c.sections.check.title}</h2>
+          <List items={c.sections.check.items} />
         </>
       )}
 

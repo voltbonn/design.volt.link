@@ -37,7 +37,6 @@ const publicPageIds = [
   'brandVoice',
   'logo',
   'colors',
-  'designTokens',
   'typography',
   'layout',
   'graphicElements',

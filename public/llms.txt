@@ -1,13 +1,12 @@
 # design.volt.link
 
-design.volt.link is the public Volt design guide for logo usage, colours, typography, layout, accessibility, design tokens, websites, social media, presentations, files, downloads, templates and practical applications.
+design.volt.link is the public Volt design guide for logo usage, colours, typography, layout, accessibility, websites, social media, presentations, files, downloads, templates and practical applications.
 
 ## Important URLs
 
 - Public guide: https://design.volt.link/
 - How to use the guide: https://design.volt.link/#guideUsage
 - Decision guide: https://design.volt.link/#decisionGuide
-- Design tokens: https://design.volt.link/#designTokens
 - Downloads and templates: https://design.volt.link/#downloads
 - Glossary: https://design.volt.link/#glossary
 - AI and machine readability: https://design.volt.link/#machineReadability
