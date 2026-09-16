@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://design.volt.link/sitemap.xml
+Host: https://design.volt.link
