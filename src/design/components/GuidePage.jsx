@@ -5,19 +5,26 @@ import {
   brandVoice,
   changes,
   colors,
+  decisionGuide,
   deployment,
   designPrinciples,
+  designTokens,
   digitalComponents,
+  downloads,
   fileExport,
+  glossary,
   governance,
   graphicElements,
+  guideUsage,
   help,
   iconsUi,
   imageLanguage,
   layout,
   loginPlanning,
   logo,
+  machineReadability,
   newsletter,
+  pageBlueprint,
   presentations,
   resources,
   sources,
@@ -46,19 +53,26 @@ const pages = {
   brandVoice,
   changes,
   colors,
+  decisionGuide,
   deployment,
   designPrinciples,
+  designTokens,
   digitalComponents,
+  downloads,
   fileExport,
+  glossary,
   governance,
   graphicElements,
+  guideUsage,
   help,
   iconsUi,
   imageLanguage,
   layout,
   loginPlanning,
   logo,
+  machineReadability,
   newsletter,
+  pageBlueprint,
   presentations,
   resources,
   sources,
@@ -73,14 +87,21 @@ const genericPageIds = [
   'accessibility',
   'brandVoice',
   'changes',
+  'decisionGuide',
   'deployment',
   'designPrinciples',
+  'designTokens',
   'digitalComponents',
+  'downloads',
   'fileExport',
+  'glossary',
   'governance',
   'iconsUi',
+  'guideUsage',
   'loginPlanning',
+  'machineReadability',
   'newsletter',
+  'pageBlueprint',
   'presentations',
   'resources',
   'socialMedia',
@@ -156,6 +177,16 @@ export const GuidePage = ({ page: pageId }) => {
     <>
       <h1>{c.title}</h1>
       {c.lead && <p>{c.lead}</p>}
+      {c.meta && (
+        <dl className="volt-page-meta">
+          {c.meta.map((item) => (
+            <div key={`${item.label}-${item.value}`}>
+              <dt>{item.label}</dt>
+              <dd>{item.value}</dd>
+            </div>
+          ))}
+        </dl>
+      )}
 
       {c.nav && (
         <InPageNav
