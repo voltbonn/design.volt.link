@@ -110,54 +110,85 @@ const genericPageIds = [
 
 const localeContent = (page, locale) => page[locale] ?? page.de;
 
-const List = ({ items }) => (
-  <ul>
-    {items.map((item) => (
+const normalizeLabel = (label = '') => label.toLowerCase().replace(/[:：]/g, '').trim();
+const isWeakExampleLabel = (label) =>
+  ['statt', 'instead of', 'nicht', 'au lieu de'].includes(normalizeLabel(label));
+const isStrongExampleLabel = (label) =>
+  ['besser', 'better', 'mieux'].includes(normalizeLabel(label));
+
+const ExamplePair = ({ weak, strong }) => (
+  <li className="volt-example-pair">
+    <article className="volt-example-pair__item volt-example-pair__item--weak">
+      <strong>{weak.label}</strong>
+      <p>{weak.text.trim()}</p>
+    </article>
+    <article className="volt-example-pair__item volt-example-pair__item--strong">
+      <strong>{strong.label}</strong>
+      <p>{strong.text.trim()}</p>
+    </article>
+  </li>
+);
+
+const renderListItems = (items, renderItem) =>
+  items.reduce((nodes, item, index) => {
+    const next = items[index + 1];
+
+    if (item?.label && next?.label && isWeakExampleLabel(item.label) && isStrongExampleLabel(next.label)) {
+      nodes.push(<ExamplePair key={`${item.label}-${next.label}-${index}`} weak={item} strong={next} />);
+      return nodes;
+    }
+
+    if (index > 0 && items[index - 1]?.label && isWeakExampleLabel(items[index - 1].label) && isStrongExampleLabel(item?.label)) {
+      return nodes;
+    }
+
+    nodes.push(
       <li key={typeof item === 'string' ? item : `${item.label}-${item.text}`}>
-        {typeof item === 'string' ? (
-          item
-        ) : (
-          <>
-            <strong>{item.label}</strong>
-            {item.text}
-          </>
-        )}
-      </li>
+        {typeof item === 'string' ? item : renderItem(item)}
+      </li>,
+    );
+
+    return nodes;
+  }, []);
+
+const List = ({ items }) => (
+  <ul className="volt-guide-list">
+    {renderListItems(items, (item) => (
+      <>
+        <strong>{item.label}</strong>
+        {item.text}
+      </>
     ))}
   </ul>
 );
 
 const RichList = ({ items }) => (
-  <ul>
-    {items.map((item) => (
-      <li key={item.label ?? item}>
-        {typeof item === 'string' ? (
-          item
-        ) : (
+  <ul className="volt-guide-list volt-guide-list--rich">
+    {renderListItems(items, (item) => (
+      <>
+        <strong>{item.label}</strong>
+        {item.text}
+        {item.href && (
           <>
-            <strong>{item.label}</strong>
-            {item.text}
-            {item.href && (
-              <>
-                {' '}
-                <a href={item.href}>{item.hrefLabel ?? item.href}</a>
-              </>
-            )}
-            {item.access && <span className="volt-access-note">{item.access}</span>}
+            {' '}
+            <a href={item.href}>{item.hrefLabel ?? item.href}</a>
           </>
         )}
-      </li>
+        {item.access && <span className="volt-access-note">{item.access}</span>}
+      </>
     ))}
   </ul>
 );
 
 const GenericSection = ({ section }) => (
-  <section>
-    <h2 id={section.id}>{section.title}</h2>
-    {section.text && <p>{section.text}</p>}
+  <section className="volt-guide-section">
+    <div className="volt-guide-section__header">
+      <h2 id={section.id}>{section.title}</h2>
+      {section.text && <p className="volt-section-lead">{section.text}</p>}
+    </div>
     {section.items.length > 0 &&
       (section.ordered ? (
-        <ol>
+        <ol className="volt-guide-list volt-guide-list--ordered">
           {section.items.map((item) => (
             <li key={item}>{item}</li>
           ))}

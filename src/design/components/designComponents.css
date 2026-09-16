@@ -57,7 +57,7 @@
 .volt-guideline-grid h2,
 .volt-guideline-grid h3 {
   margin: 0 0 12px;
-  color: var(--volt-text);
+  color: var(--volt-link);
   font-weight: 850;
   letter-spacing: 0;
 }
@@ -201,6 +201,140 @@
   color: var(--volt-on-brand);
   box-shadow: var(--volt-shadow-small);
   transform: translate(-1px, -1px);
+}
+
+.volt-guide-section {
+  display: grid;
+  gap: 16px;
+  margin: 28px 0;
+  border: 1px solid var(--volt-border);
+  border-radius: 2px;
+  background: var(--volt-surface-strong);
+  padding: 22px;
+}
+
+.volt-guide-section__header {
+  display: grid;
+  gap: 10px;
+}
+
+.volt-guide-section__header h2 {
+  margin: 0;
+}
+
+.volt-section-lead {
+  max-width: 72ch;
+  margin: 0;
+  color: var(--volt-muted-text);
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.55;
+}
+
+.public-guide__content .volt-guide-list {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+.public-guide__content .volt-guide-section__header + .volt-guide-list,
+.public-guide__content .volt-guide-section__header + .volt-guide-list--ordered {
+  margin-top: 2px;
+}
+
+.public-guide__content .volt-guide-list > li:not(.volt-example-pair) {
+  position: relative;
+  margin: 0;
+  border: 1px solid var(--volt-border);
+  border-left: 4px solid var(--volt-purple);
+  border-radius: 2px;
+  background: var(--volt-surface);
+  padding: 12px 14px 12px 16px;
+}
+
+.public-guide__content .volt-guide-list--rich > li:not(.volt-example-pair) {
+  border-left-color: var(--volt-blue);
+}
+
+.public-guide__content .volt-guide-list--ordered {
+  counter-reset: volt-ordered-list;
+}
+
+.public-guide__content .volt-guide-list--ordered > li {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 10px;
+  align-items: start;
+  counter-increment: volt-ordered-list;
+}
+
+.public-guide__content .volt-guide-list--ordered > li::before {
+  display: inline-grid;
+  min-width: 28px;
+  height: 28px;
+  place-items: center;
+  border-radius: 2px;
+  background: var(--volt-purple);
+  color: var(--volt-on-brand);
+  font-size: 13px;
+  font-weight: 850;
+  content: counter(volt-ordered-list);
+}
+
+.public-guide__content .volt-guide-list strong {
+  color: var(--volt-link);
+  font-weight: 850;
+}
+
+.public-guide__content .volt-guide-list a {
+  font-weight: 850;
+}
+
+.public-guide__content li.volt-example-pair {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin: 6px 0 8px;
+  list-style: none;
+}
+
+.public-guide__content li.volt-example-pair::marker {
+  content: '';
+}
+
+.volt-example-pair__item {
+  border: 1px solid var(--volt-border);
+  border-radius: 2px;
+  padding: 16px;
+}
+
+.volt-example-pair__item strong {
+  display: inline-flex;
+  margin: 0 0 8px;
+  font-size: 12px;
+  font-weight: 850;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.volt-example-pair__item p {
+  margin: 0;
+  color: inherit;
+  font-weight: 700;
+}
+
+.volt-example-pair__item--weak {
+  border-color: rgba(230, 62, 18, 0.45);
+  background: var(--volt-disagree-bg);
+  color: var(--volt-disagree-text);
+}
+
+.volt-example-pair__item--strong {
+  border-color: rgba(27, 190, 111, 0.45);
+  background: var(--volt-agree-bg);
+  color: var(--volt-agree-text);
 }
 
 .volt-download-card h3,
@@ -620,6 +754,7 @@
 @media (max-width: 720px) {
   .volt-color-swatch,
   .volt-dos-donts,
+  .public-guide__content li.volt-example-pair,
   .volt-section-nav,
   .volt-guideline-grid,
   .volt-template-gallery__controls,

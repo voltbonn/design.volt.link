@@ -1,9 +1,44 @@
 @font-face {
   font-family: 'Ubuntu';
   font-style: normal;
-  font-weight: 400 850;
+  font-weight: 400;
   font-display: swap;
-  src: local('Ubuntu');
+  src:
+    url('/fonts/Ubuntu-R.ttf') format('truetype'),
+    local('Ubuntu');
+}
+
+@font-face {
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src:
+    url('/fonts/Ubuntu-M.ttf') format('truetype'),
+    local('Ubuntu Medium'),
+    local('Ubuntu');
+}
+
+@font-face {
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src:
+    url('/fonts/Ubuntu-B.ttf') format('truetype'),
+    local('Ubuntu Bold'),
+    local('Ubuntu');
+}
+
+@font-face {
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 850;
+  font-display: swap;
+  src:
+    url('/fonts/Ubuntu-B.ttf') format('truetype'),
+    local('Ubuntu Bold'),
+    local('Ubuntu');
 }
 
 :root {

@@ -477,6 +477,7 @@
 
 .public-guide__content h2 {
   margin: 40px 0 14px;
+  color: var(--volt-link);
   font-size: 28px;
   font-weight: 850;
   line-height: 1.15;
@@ -485,6 +486,7 @@
 
 .public-guide__content h3 {
   margin: 0 0 10px;
+  color: var(--volt-link);
   font-weight: 850;
 }
 
