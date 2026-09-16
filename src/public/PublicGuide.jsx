@@ -66,6 +66,8 @@ const getHashPage = () => window.location.hash.replace(/^#\/?/, '') || 'intro';
 
 const backgroundModes = ['guide', 'white', 'brand'];
 
+const pageSection = (pageId) => (pages.find((item) => item.id === pageId) ?? pages[0]).section;
+
 const pageTitle = (page, locale, t) => {
   if (page.id === 'intro') {
     return t('publicGuide.intro');
@@ -81,7 +83,9 @@ const PublicGuideInner = ({ setLocale, setTheme, theme }) => {
   const [showGrid, setShowGrid] = React.useState(false);
   const [showOutline, setShowOutline] = React.useState(false);
   const [backgroundIndex, setBackgroundIndex] = React.useState(0);
-  const [closedSections, setClosedSections] = React.useState(() => new Set());
+  const [closedSections, setClosedSections] = React.useState(
+    () => new Set(sectionOrder.filter((section) => section !== pageSection(getHashPage()))),
+  );
   const activeNavLinkRef = React.useRef(null);
 
   React.useEffect(() => {
@@ -122,18 +126,6 @@ const PublicGuideInner = ({ setLocale, setTheme, theme }) => {
   const backgroundLabel = t(`publicGuide.backgrounds.${background}`);
   const isSearching = query.trim().length > 0;
 
-  React.useEffect(() => {
-    setClosedSections((current) => {
-      if (!current.has(page.section)) {
-        return current;
-      }
-
-      const next = new Set(current);
-      next.delete(page.section);
-      return next;
-    });
-  }, [page.section]);
-
   const toggleSection = React.useCallback((section) => {
     setClosedSections((current) => {
       const next = new Set(current);
@@ -149,8 +141,18 @@ const PublicGuideInner = ({ setLocale, setTheme, theme }) => {
   }, []);
 
   React.useEffect(() => {
+    setClosedSections((current) => {
+      if (!current.has(page.section)) {
+        return current;
+      }
+
+      const next = new Set(current);
+      next.delete(page.section);
+      return next;
+    });
+
     activeNavLinkRef.current?.scrollIntoView({ block: 'nearest' });
-  }, [page.id, groupedPages]);
+  }, [page.id, page.section, groupedPages]);
 
   return (
     <div className="public-guide" data-theme={theme}>
@@ -213,9 +215,6 @@ const PublicGuideInner = ({ setLocale, setTheme, theme }) => {
             <span aria-hidden="true">{theme === 'dark' ? '☀' : '☾'}</span>
             <span>{t(`publicGuide.theme.current.${theme}`)}</span>
           </button>
-          <a className="public-guide__login-link" href="#intro" title={t('publicGuide.login.title')}>
-            {t('publicGuide.login.label')}
-          </a>
         </div>
       </header>
 

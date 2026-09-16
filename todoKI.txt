@@ -2,6 +2,16 @@
 
 Diese Liste ist in sinnvoller Abarbeitungsreihenfolge sortiert. Ziel ist zuerst ein sauberes, oeffentliches Version-1-Designportal ohne Login und ohne oeffentlichen Storybook-Eindruck. Danach folgen redaktionelle Vollendung, technische Haertung, Deployment und spaeter Version 2 mit Login/Vorlagenbereich.
 
+## Bearbeitungsstand 2026-09-16
+
+- README und `todo.txt` beschreiben Version 1 als oeffentliche Vite-App ohne Login, ohne oeffentlichen Vorlagenbereich und ohne Storybook als Hauptoutput.
+- Oeffentliche Topbar zeigt keine Login-, Vorlagen- oder Storybook-Links mehr; Ansichtswerkzeuge bleiben Raster, Hintergrund, Konturen, Sprache und Theme.
+- Sidebar oeffnet beim Laden automatisch die Gruppe der aktiven Seite; Suche macht Treffer auch aus eingeklappten Gruppen sichtbar.
+- Sprachwechsel Deutsch/Englisch/Deutsch, Themewechsel, Raster, Konturen, Hintergrundwechsel und verbotene oeffentliche Links werden per `npm run smoke` geprueft.
+- Alte ungenutzte Storybook-Default-Assets unter `stories/assets/` wurden entfernt; Beispiel-Stories nutzen projektbezogene Volt-Klassennamen.
+- `public/brand/` enthaelt die geplante Ablagestruktur fuer Logos, Icons, Beispiele und spaetere Vorlagen.
+- Geprueft: `npm run build`, `npm run smoke`, `npm run build-storybook`.
+
 ## 1. Projektziel und Informationsarchitektur final klaeren
 
 1. Festlegen, was Version 1 genau ist:

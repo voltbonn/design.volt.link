@@ -68,8 +68,7 @@
 }
 
 .public-guide__tools button,
-.public-guide__theme-toggle,
-.public-guide__login-link {
+.public-guide__theme-toggle {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -151,19 +150,11 @@
   padding: 0 12px;
 }
 
-.public-guide__login-link {
-  border: 1px solid var(--volt-border);
-  background: var(--volt-control-bg);
-  color: var(--volt-link);
-  padding: 0 12px;
-}
-
 .public-guide__theme-toggle {
   cursor: pointer;
 }
 
-.public-guide__theme-toggle:hover,
-.public-guide__login-link:hover {
+.public-guide__theme-toggle:hover {
   background: var(--volt-brand-hover);
   color: var(--volt-on-brand);
   box-shadow: var(--volt-shadow-small);
@@ -573,7 +564,6 @@
 @media (max-width: 520px) {
   .public-guide__tools button,
   .public-guide__theme-toggle,
-  .public-guide__login-link,
   .public-guide__actions select {
     width: 100%;
   }

@@ -1,4 +1,4 @@
-.storybook-header {
+.volt-story-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -9,13 +9,13 @@
   font-family: Ubuntu, Arial, sans-serif;
 }
 
-.storybook-header__brand {
+.volt-story-header__brand {
   display: flex;
   align-items: center;
   gap: 12px;
 }
 
-.storybook-header__mark {
+.volt-story-header__mark {
   display: grid;
   place-items: center;
   width: 36px;
@@ -27,7 +27,7 @@
   box-shadow: var(--volt-shadow-small);
 }
 
-.storybook-header h1 {
+.volt-story-header h1 {
   margin: 0;
   color: var(--volt-text);
   font-weight: 850;
@@ -35,11 +35,11 @@
   line-height: 1;
 }
 
-.storybook-header button + button {
+.volt-story-header button + button {
   margin-left: 10px;
 }
 
-.storybook-header .welcome {
+.volt-story-header .welcome {
   margin-right: 10px;
   color: var(--volt-text);
   font-size: 14px;

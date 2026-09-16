@@ -133,10 +133,6 @@ export const resources = {
             dark: 'Dunkel',
           },
         },
-        login: {
-          label: 'Login',
-          title: 'Login öffnen',
-        },
         sections: {
           '00': 'Einstieg',
           '01': 'Grundlagendesign',
@@ -295,10 +291,6 @@ export const resources = {
             light: 'Light',
             dark: 'Dark',
           },
-        },
-        login: {
-          label: 'Login',
-          title: 'Open login',
         },
         sections: {
           '00': 'Introduction',
@@ -459,10 +451,6 @@ export const resources = {
             dark: 'Donker',
           },
         },
-        login: {
-          label: 'Login',
-          title: 'Login openen',
-        },
         sections: {
           '00': 'Start',
           '01': 'Basisdesign',
@@ -621,10 +609,6 @@ export const resources = {
             light: 'Clair',
             dark: 'Sombre',
           },
-        },
-        login: {
-          label: 'Login',
-          title: 'Ouvrir le login',
         },
         sections: {
           '00': 'Introduction',

@@ -11,9 +11,9 @@ export const Header = ({ onStartGuide }) => {
 
   return (
     <header>
-      <div className="storybook-header">
-        <div className="storybook-header__brand">
-          <span className="storybook-header__mark" aria-hidden="true">V</span>
+      <div className="volt-story-header">
+        <div className="volt-story-header__brand">
+          <span className="volt-story-header__mark" aria-hidden="true">V</span>
           <h1>{t('header.title')}</h1>
         </div>
         <Button primary size="small" onClick={onStartGuide} label={t('buttonStories.startGuide')} />

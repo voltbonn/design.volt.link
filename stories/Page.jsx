@@ -12,11 +12,11 @@ export const Page = () => {
     <article>
       <Header onStartGuide={() => setHighlightGuide(true)} />
 
-      <section className="storybook-page" data-highlight={highlightGuide ? 'true' : 'false'}>
+      <section className="volt-story-page" data-highlight={highlightGuide ? 'true' : 'false'}>
         <p className="eyebrow">{t('common.version')}</p>
         <h2>{t('page.headline')}</h2>
         <p className="lead">{t('page.lead')}</p>
-        <div className="storybook-page__grid">
+        <div className="volt-story-page__grid">
           <article>
             <h3>{t('page.foundationsTitle')}</h3>
             <p>{t('page.foundationsText')}</p>
@@ -30,7 +30,7 @@ export const Page = () => {
             <p>{t('page.helpText')}</p>
           </article>
         </div>
-        {highlightGuide && <p className="storybook-page__notice">{t('page.startNotice')}</p>}
+        {highlightGuide && <p className="volt-story-page__notice">{t('page.startNotice')}</p>}
       </section>
     </article>
   );

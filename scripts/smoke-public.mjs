@@ -91,9 +91,9 @@ try {
     throw new Error('Oeffentliche Navigation enthaelt Storybook- oder Templates-Link.');
   }
 
-  await page.getByRole('link', { name: 'Login' }).click();
-  if (!page.url().includes('#intro')) {
-    throw new Error('Login-Link zeigt nicht auf die Startseite.');
+  const loginLinks = await page.getByRole('link', { name: /^Login$/ }).count();
+  if (loginLinks > 0) {
+    throw new Error('Oeffentliche Navigation enthaelt einen Login-Link.');
   }
 } finally {
   await browser.close();
