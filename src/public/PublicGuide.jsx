@@ -6,6 +6,7 @@ import {
   brandVoice,
   changes,
   colors,
+  foundationTldr,
   designPrinciples,
   digitalComponents,
   downloads,
@@ -38,6 +39,7 @@ const logoWhite = '/design.volt.link_logo_white.svg';
 
 const pages = [
   { id: 'intro', section: '00', content: null },
+  { id: 'foundationTldr', section: '01', content: foundationTldr },
   { id: 'designPrinciples', section: '01', content: designPrinciples },
   { id: 'brandVoice', section: '01', content: brandVoice },
   { id: 'logo', section: '01', content: logo },
@@ -381,7 +383,7 @@ const PublicGuideInner = ({ setLocale, setTheme, theme }) => {
             {page.id === 'intro' ? (
               <GuideIntro
                 hrefs={{
-                  foundations: '#designPrinciples',
+                  foundations: '#foundationTldr',
                   applications: '#websites',
                   help: '#help',
                 }}

@@ -83,42 +83,38 @@ export const logo = {
   de: {
     title: 'Logo',
     lead: 'Das Volt Logo ist eines der wichtigsten Erkennungszeichen der Marke. Deshalb sollte es immer in einer freigegebenen Variante und mit ausreichend Abstand eingesetzt werden.',
-    nav: [{ label: 'Regeln', href: '#regeln' }, { label: 'Do und Don’t', href: '#do-und-dont' }, { label: 'Dateien', href: '#dateien-und-formate' }, { label: 'Ablage', href: '#ablage' }, { label: 'Kurz prüfen', href: '#kurz-pruefen' }],
-    sections: { rules: { id: 'regeln', title: 'Regeln', items: ['Verwende ausschließlich freigegebene Logo-Dateien.', 'Zulässig sind Volt Purple und White, jeweils mit oder ohne EU-Sterne.', 'Die Variante mit EU-Sternen ist optional. Nutze dafür immer die bereitgestellte Datei und baue die Sterne nicht selbst nach.', 'Das Logo muss sich klar vom Hintergrund abheben: Purple auf hellen Flächen, White auf Purple oder dunklen Flächen.', 'Vermeide Varianten mit zu wenig Kontrast oder selbst erstellte Farbkombinationen.'] }, dos: { id: 'do-und-dont', title: 'Do und Don’t' }, files: { id: 'dateien-und-formate', title: 'Dateien und Formate', text: 'Für Websites und digitale Anwendungen ist SVG in der Regel die beste Wahl. Bis die SVGs ergänzt sind, stehen die folgenden PNG-Versionen als Web-Dateien bereit.', items: ['SVG bleibt in jeder Größe scharf, hat eine geringe Dateigröße und ist gut für responsive Anwendungen geeignet.', 'Für Printmaterialien sollten Vektorformate verwendet werden, wenn die Vorlage oder Druckerei dies unterstützt.', 'Vermeide niedrig aufgelöste PNG- oder JPG-Dateien für größere Druckformate.'] }, storage: { id: 'ablage', title: 'Ablage', items: ['Originale: public/brand/logos/source/', 'Web: public/brand/logos/web/', 'Print: public/brand/logos/print/', 'ToDo: SVG-Versionen und ein vollständiges Logo-Paket ergänzen.'] }, taglines: { id: 'taglines', title: 'Taglines', text: 'Die Tagline „Future Made in Europe“ kann ergänzend verwendet werden und darf lokalisiert werden.', items: ['Die Tagline ist optional.', 'Sie sollte das Logo nicht überladen.', 'Nicht mehrere Claims gleichzeitig um das Logo gruppieren.', 'Bei Kampagnen sollte klar bleiben, was Logo, Claim und Kampagnenbotschaft ist.'] }, subbrands: { id: 'subbrands-und-projekte', title: 'Subbrands und Projekte', text: 'Projekte oder Subbrands können ergänzende Bezeichnungen verwenden.', items: ['Powered by Volt', 'Curated by Volt', 'Edited by Volt', 'Diese Zusätze ersetzen das Volt Logo nicht und sollten nicht wie ein eigenständiges neues Logo gestaltet werden.'] }, check: { id: 'kurz-pruefen', title: 'Kurz prüfen', text: 'Vor Veröffentlichung:', items: ['Ist es die richtige Logo-Datei?', 'Hat das Logo genug Kontrast?', 'Ist rundherum genug Platz?', 'Ist es groß genug?', 'Wurde es weder verzerrt noch verändert?', 'Passt das Dateiformat zum Einsatz?', 'Wenn diese Punkte stimmen, ist das Logo in der Regel korrekt eingesetzt.'] } },
+    nav: [{ label: 'Regeln', href: '#regeln' }, { label: 'Do und Don’t', href: '#do-und-dont' }, { label: 'Dateien', href: '#dateien-und-formate' }, { label: 'Kurz prüfen', href: '#kurz-pruefen' }],
+    sections: { rules: { id: 'regeln', title: 'Regeln', items: ['Verwende ausschließlich freigegebene Logo-Dateien.', 'Zulässig sind Volt Purple und White, jeweils mit oder ohne EU-Sterne.', 'Die Variante mit EU-Sternen ist optional. Nutze dafür immer die bereitgestellte Datei und baue die Sterne nicht selbst nach.', 'Das Logo muss sich klar vom Hintergrund abheben: Purple auf hellen Flächen, White auf Purple oder dunklen Flächen.', 'Vermeide Varianten mit zu wenig Kontrast oder selbst erstellte Farbkombinationen.'] }, dos: { id: 'do-und-dont', title: 'Do und Don’t' }, files: { id: 'dateien-und-formate', title: 'Dateien und Formate', text: 'Für Websites und digitale Anwendungen ist SVG in der Regel die beste Wahl. Bis die SVGs ergänzt sind, stehen die folgenden PNG-Versionen als Web-Dateien bereit.', items: ['SVG bleibt in jeder Größe scharf, hat eine geringe Dateigröße und ist gut für responsive Anwendungen geeignet.', 'Für Printmaterialien sollten Vektorformate verwendet werden, wenn die Vorlage oder Druckerei dies unterstützt.', 'Vermeide niedrig aufgelöste PNG- oder JPG-Dateien für größere Druckformate.'] }, taglines: { id: 'taglines', title: 'Taglines', text: 'Die Tagline „Future Made in Europe“ kann ergänzend verwendet werden und darf lokalisiert werden.', items: ['Die Tagline ist optional.', 'Sie sollte das Logo nicht überladen.', 'Nicht mehrere Claims gleichzeitig um das Logo gruppieren.', 'Bei Kampagnen sollte klar bleiben, was Logo, Claim und Kampagnenbotschaft ist.'] }, subbrands: { id: 'subbrands-und-projekte', title: 'Subbrands und Projekte', text: 'Projekte oder Subbrands können ergänzende Bezeichnungen verwenden.', items: ['Powered by Volt', 'Curated by Volt', 'Edited by Volt', 'Diese Zusätze ersetzen das Volt Logo nicht und sollten nicht wie ein eigenständiges neues Logo gestaltet werden.'] }, check: { id: 'kurz-pruefen', title: 'Kurz prüfen', text: 'Vor Veröffentlichung:', items: ['Ist es die richtige Logo-Datei?', 'Hat das Logo genug Kontrast?', 'Ist rundherum genug Platz?', 'Ist es groß genug?', 'Wurde es weder verzerrt noch verändert?', 'Passt das Dateiformat zum Einsatz?', 'Wenn diese Punkte stimmen, ist das Logo in der Regel korrekt eingesetzt.'] } },
     guidelines: [{ title: 'Varianten', text: 'Nutze das Logo in Volt Purple oder White. Die Variante mit EU-Sternen ist optional und muss als freigegebene Datei vorliegen.' }, { title: 'Hintergrund und Kontrast', text: 'Purple funktioniert auf hellen Flächen. White funktioniert auf Purple oder dunklen Hintergründen. Vermeide eigene Farbkombinationen.' }, { title: 'Schutzraum', text: 'Rund um das Logo muss ausreichend freier Raum bleiben. Beim Volt-Europa-Logo entspricht der minimale Schutzraum der Breite des Buchstabens T in „Volt“.' }, { title: 'Größe und Position', text: 'Das Logo nicht zu klein verwenden, nicht direkt an den Rand setzen und nicht mit Text, Pflichtangaben oder anderen Logos überlagern.' }],
     dosDonts: [{ doText: 'Nutze freigegebene Logo-Dateien und achte auf ausreichend Kontrast und Schutzraum.', dontText: 'Baue das Logo nicht nach und verändere die Farben nicht eigenständig.' }, { doText: 'Nutze SVG oder andere Vektorformate, wenn möglich, und verwende für Print die dafür vorgesehenen Dateien.', dontText: 'Verzerre, drehe oder verkippe das Logo nicht und ergänze keine Schatten, Konturen oder Effekte.' }, { doText: 'Halte vorgesehene Positionen in Vorlagen möglichst bei.', dontText: 'Verwende keine Screenshots, Social-Media-Kopien oder Kombinationen mit anderen Elementen zu einer neuen Wort-Bild-Marke.' }],
     logoVariants: [{ title: 'Volt Purple', description: 'Für helle Hintergründe und digitale Anwendungen.', format: 'PNG', href: '/brand/logos/web/volt_logo_purple.png', preview: 'light', alt: 'Volt Logo in Purple' }, { title: 'Volt White', description: 'Für Purple oder dunkle Hintergründe.', format: 'PNG', href: '/brand/logos/web/volt_logo_white.png', preview: 'dark', alt: 'Volt Logo in Weiß' }, { title: 'Volt Purple mit EU-Sternen', description: 'Optionale Europa-Variante für helle Hintergründe.', format: 'PNG', href: '/brand/logos/web/volt_logo_with_eu_stars_purple.png', preview: 'light', alt: 'Volt Logo mit EU-Sternen in Purple' }, { title: 'Volt White mit EU-Sternen', description: 'Optionale Europa-Variante für Purple oder dunkle Hintergründe.', format: 'PNG', href: '/brand/logos/web/volt_logo_with_eu_stars_white.png', preview: 'dark', alt: 'Volt Logo mit EU-Sternen in Weiß' }],
-    download: { title: 'Logo-Paket', description: 'Hier wird das vollständige Logo-Paket mit Web- und Printdateien verlinkt, sobald SVGs und Printformate ergänzt sind.', format: 'Geplant: SVG, PDF, ZIP' },
   },
   en: {
     title: 'Logo',
     lead: 'The Volt logo is one of the most important recognition marks of the brand. It should always be used in an approved variant and with enough clear space.',
-    nav: [{ label: 'Rules', href: '#rules' }, { label: 'Do and Don’t', href: '#do-and-dont' }, { label: 'Files', href: '#files-and-formats' }, { label: 'Storage', href: '#storage' }, { label: 'Quick Check', href: '#quick-check' }],
-    sections: { rules: { id: 'rules', title: 'Rules', items: ['Use only approved logo files.', 'Allowed variants are Volt Purple and White, each with or without EU stars.', 'The EU-stars variant is optional. Always use the provided file and do not recreate the stars yourself.', 'The logo must stand out clearly from the background: Purple on light surfaces, White on Purple or dark surfaces.', 'Avoid low-contrast variants or self-made colour combinations.'] }, dos: { id: 'do-and-dont', title: 'Do and Don’t' }, files: { id: 'files-and-formats', title: 'Files and Formats', text: 'For websites and digital applications, SVG is usually the best choice. Until SVGs are added, the following PNG versions are available as web files.', items: ['SVG stays sharp at every size, has a small file size and works well for responsive applications.', 'For print materials, use vector formats where the template or printer supports them.', 'Avoid low-resolution PNG or JPG files for larger print formats.'] }, storage: { id: 'storage', title: 'Storage', items: ['Originals: public/brand/logos/source/', 'Web: public/brand/logos/web/', 'Print: public/brand/logos/print/', 'ToDo: add SVG versions and a complete logo package.'] }, taglines: { id: 'taglines', title: 'Taglines', text: 'The tagline “Future Made in Europe” may be used as an addition and may be localised.', items: ['The tagline is optional.', 'It should not overload the logo.', 'Do not group several claims around the logo at the same time.', 'For campaigns, keep clear what is the logo, claim and campaign message.'] }, subbrands: { id: 'subbrands-and-projects', title: 'Subbrands and Projects', text: 'Projects or subbrands may use additional labels.', items: ['Powered by Volt', 'Curated by Volt', 'Edited by Volt', 'These additions do not replace the Volt logo and should not be designed like a separate new logo.'] }, check: { id: 'quick-check', title: 'Quick Check', text: 'Before publishing:', items: ['Is it the right logo file?', 'Does the logo have enough contrast?', 'Is there enough space around it?', 'Is it large enough?', 'Has it not been distorted or changed?', 'Does the file format fit the use case?', 'If these points are met, the logo is usually used correctly.'] } },
+    nav: [{ label: 'Rules', href: '#rules' }, { label: 'Do and Don’t', href: '#do-and-dont' }, { label: 'Files', href: '#files-and-formats' }, { label: 'Quick Check', href: '#quick-check' }],
+    sections: { rules: { id: 'rules', title: 'Rules', items: ['Use only approved logo files.', 'Allowed variants are Volt Purple and White, each with or without EU stars.', 'The EU-stars variant is optional. Always use the provided file and do not recreate the stars yourself.', 'The logo must stand out clearly from the background: Purple on light surfaces, White on Purple or dark surfaces.', 'Avoid low-contrast variants or self-made colour combinations.'] }, dos: { id: 'do-and-dont', title: 'Do and Don’t' }, files: { id: 'files-and-formats', title: 'Files and Formats', text: 'For websites and digital applications, SVG is usually the best choice. Until SVGs are added, the following PNG versions are available as web files.', items: ['SVG stays sharp at every size, has a small file size and works well for responsive applications.', 'For print materials, use vector formats where the template or printer supports them.', 'Avoid low-resolution PNG or JPG files for larger print formats.'] }, taglines: { id: 'taglines', title: 'Taglines', text: 'The tagline “Future Made in Europe” may be used as an addition and may be localised.', items: ['The tagline is optional.', 'It should not overload the logo.', 'Do not group several claims around the logo at the same time.', 'For campaigns, keep clear what is the logo, claim and campaign message.'] }, subbrands: { id: 'subbrands-and-projects', title: 'Subbrands and Projects', text: 'Projects or subbrands may use additional labels.', items: ['Powered by Volt', 'Curated by Volt', 'Edited by Volt', 'These additions do not replace the Volt logo and should not be designed like a separate new logo.'] }, check: { id: 'quick-check', title: 'Quick Check', text: 'Before publishing:', items: ['Is it the right logo file?', 'Does the logo have enough contrast?', 'Is there enough space around it?', 'Is it large enough?', 'Has it not been distorted or changed?', 'Does the file format fit the use case?', 'If these points are met, the logo is usually used correctly.'] } },
     guidelines: [{ title: 'Variants', text: 'Use the logo in Volt Purple or White. The EU-stars variant is optional and must be available as an approved file.' }, { title: 'Background and Contrast', text: 'Purple works on light surfaces. White works on Purple or dark backgrounds. Avoid self-made colour combinations.' }, { title: 'Clear Space', text: 'Leave enough clear space around the logo. For the Volt Europe logo, the minimum clear space equals the width of the letter T in “Volt”.' }, { title: 'Size and Position', text: 'Do not use the logo too small, directly at the edge, or overlapped with text, mandatory information or other logos.' }],
     dosDonts: [{ doText: 'Use approved logo files and check for sufficient contrast and clear space.', dontText: 'Do not rebuild the logo or change the colours yourself.' }, { doText: 'Use SVG or other vector formats where possible, and use the intended files for print.', dontText: 'Do not distort, rotate or tilt the logo, and do not add shadows, outlines or effects.' }, { doText: 'Keep intended positions in templates wherever possible.', dontText: 'Do not use screenshots, social-media copies or combinations with other elements to create a new word-image mark.' }],
     logoVariants: [{ title: 'Volt Purple', description: 'For light backgrounds and digital applications.', format: 'PNG', href: '/brand/logos/web/volt_logo_purple.png', preview: 'light', alt: 'Volt logo in Purple' }, { title: 'Volt White', description: 'For Purple or dark backgrounds.', format: 'PNG', href: '/brand/logos/web/volt_logo_white.png', preview: 'dark', alt: 'Volt logo in White' }, { title: 'Volt Purple with EU Stars', description: 'Optional Europe variant for light backgrounds.', format: 'PNG', href: '/brand/logos/web/volt_logo_with_eu_stars_purple.png', preview: 'light', alt: 'Volt logo with EU stars in Purple' }, { title: 'Volt White with EU Stars', description: 'Optional Europe variant for Purple or dark backgrounds.', format: 'PNG', href: '/brand/logos/web/volt_logo_with_eu_stars_white.png', preview: 'dark', alt: 'Volt logo with EU stars in White' }],
-    download: { title: 'Logo Package', description: 'The complete logo package with web and print files will be linked here once SVGs and print formats have been added.', format: 'Planned: SVG, PDF, ZIP' },
   },
   nl: {
     title: 'Logo',
     lead: 'Het Volt-logo is een van de belangrijkste herkenningstekens van het merk. Gebruik het daarom altijd in een goedgekeurde variant en met voldoende vrije ruimte.',
-    nav: [{ label: 'Regels', href: '#regels' }, { label: 'Do en Don’t', href: '#do-en-dont' }, { label: 'Bestanden', href: '#bestanden-en-formaten' }, { label: 'Opslag', href: '#opslag' }, { label: 'Korte Check', href: '#korte-check' }],
-    sections: { rules: { id: 'regels', title: 'Regels', items: ['Gebruik uitsluitend goedgekeurde logo-bestanden.', 'Toegestaan zijn Volt Purple en White, telkens met of zonder EU-sterren.', 'De variant met EU-sterren is optioneel. Gebruik daarvoor altijd het aangeleverde bestand en bouw de sterren niet zelf na.', 'Het logo moet duidelijk afsteken tegen de achtergrond: Purple op lichte vlakken, White op Purple of donkere vlakken.', 'Vermijd varianten met te weinig contrast of zelfgemaakte kleurcombinaties.'] }, dos: { id: 'do-en-dont', title: 'Do en Don’t' }, files: { id: 'bestanden-en-formaten', title: 'Bestanden en formaten', text: 'Voor websites en digitale toepassingen is SVG meestal de beste keuze. Tot de SVGs zijn toegevoegd, staan de volgende PNG-versies als webbestanden klaar.', items: ['SVG blijft op elk formaat scherp, heeft een kleine bestandsgrootte en werkt goed voor responsieve toepassingen.', 'Voor drukwerk gebruik je vectorformaten wanneer het sjabloon of de drukker dit ondersteunt.', 'Vermijd laag opgeloste PNG- of JPG-bestanden voor grotere drukformaten.'] }, storage: { id: 'opslag', title: 'Opslag', items: ['Originelen: public/brand/logos/source/', 'Web: public/brand/logos/web/', 'Print: public/brand/logos/print/', 'ToDo: SVG-versies en een volledig logo-pakket toevoegen.'] }, taglines: { id: 'taglines', title: 'Taglines', text: 'De tagline “Future Made in Europe” kan aanvullend worden gebruikt en mag worden gelokaliseerd.', items: ['De tagline is optioneel.', 'Hij mag het logo niet overladen.', 'Groepeer niet meerdere claims tegelijk rond het logo.', 'Bij campagnes moet duidelijk blijven wat logo, claim en campagneboodschap is.'] }, subbrands: { id: 'subbrands-en-projecten', title: 'Subbrands en projecten', text: 'Projecten of subbrands kunnen aanvullende aanduidingen gebruiken.', items: ['Powered by Volt', 'Curated by Volt', 'Edited by Volt', 'Deze aanvullingen vervangen het Volt-logo niet en mogen niet als zelfstandig nieuw logo worden vormgegeven.'] }, check: { id: 'korte-check', title: 'Korte check', text: 'Voor publicatie:', items: ['Is dit het juiste logo-bestand?', 'Heeft het logo genoeg contrast?', 'Is er rondom genoeg ruimte?', 'Is het groot genoeg?', 'Is het niet vervormd of gewijzigd?', 'Past het bestandsformaat bij de toepassing?', 'Als deze punten kloppen, is het logo meestal correct gebruikt.'] } },
+    nav: [{ label: 'Regels', href: '#regels' }, { label: 'Do en Don’t', href: '#do-en-dont' }, { label: 'Bestanden', href: '#bestanden-en-formaten' }, { label: 'Korte Check', href: '#korte-check' }],
+    sections: { rules: { id: 'regels', title: 'Regels', items: ['Gebruik uitsluitend goedgekeurde logo-bestanden.', 'Toegestaan zijn Volt Purple en White, telkens met of zonder EU-sterren.', 'De variant met EU-sterren is optioneel. Gebruik daarvoor altijd het aangeleverde bestand en bouw de sterren niet zelf na.', 'Het logo moet duidelijk afsteken tegen de achtergrond: Purple op lichte vlakken, White op Purple of donkere vlakken.', 'Vermijd varianten met te weinig contrast of zelfgemaakte kleurcombinaties.'] }, dos: { id: 'do-en-dont', title: 'Do en Don’t' }, files: { id: 'bestanden-en-formaten', title: 'Bestanden en formaten', text: 'Voor websites en digitale toepassingen is SVG meestal de beste keuze. Tot de SVGs zijn toegevoegd, staan de volgende PNG-versies als webbestanden klaar.', items: ['SVG blijft op elk formaat scherp, heeft een kleine bestandsgrootte en werkt goed voor responsieve toepassingen.', 'Voor drukwerk gebruik je vectorformaten wanneer het sjabloon of de drukker dit ondersteunt.', 'Vermijd laag opgeloste PNG- of JPG-bestanden voor grotere drukformaten.'] }, taglines: { id: 'taglines', title: 'Taglines', text: 'De tagline “Future Made in Europe” kan aanvullend worden gebruikt en mag worden gelokaliseerd.', items: ['De tagline is optioneel.', 'Hij mag het logo niet overladen.', 'Groepeer niet meerdere claims tegelijk rond het logo.', 'Bij campagnes moet duidelijk blijven wat logo, claim en campagneboodschap is.'] }, subbrands: { id: 'subbrands-en-projecten', title: 'Subbrands en projecten', text: 'Projecten of subbrands kunnen aanvullende aanduidingen gebruiken.', items: ['Powered by Volt', 'Curated by Volt', 'Edited by Volt', 'Deze aanvullingen vervangen het Volt-logo niet en mogen niet als zelfstandig nieuw logo worden vormgegeven.'] }, check: { id: 'korte-check', title: 'Korte check', text: 'Voor publicatie:', items: ['Is dit het juiste logo-bestand?', 'Heeft het logo genoeg contrast?', 'Is er rondom genoeg ruimte?', 'Is het groot genoeg?', 'Is het niet vervormd of gewijzigd?', 'Past het bestandsformaat bij de toepassing?', 'Als deze punten kloppen, is het logo meestal correct gebruikt.'] } },
     guidelines: [{ title: 'Varianten', text: 'Gebruik het logo in Volt Purple of White. De variant met EU-sterren is optioneel en moet als goedgekeurd bestand beschikbaar zijn.' }, { title: 'Achtergrond en contrast', text: 'Purple werkt op lichte vlakken. White werkt op Purple of donkere achtergronden. Vermijd zelfgemaakte kleurcombinaties.' }, { title: 'Vrije ruimte', text: 'Rond het logo moet voldoende vrije ruimte blijven. Bij het Volt Europe-logo is de minimale vrije ruimte gelijk aan de breedte van de letter T in “Volt”.' }, { title: 'Grootte en positie', text: 'Gebruik het logo niet te klein, niet direct tegen de rand en niet overlapt met tekst, verplichte informatie of andere logo’s.' }],
     dosDonts: [{ doText: 'Gebruik goedgekeurde logo-bestanden en let op voldoende contrast en vrije ruimte.', dontText: 'Bouw het logo niet na en verander de kleuren niet zelf.' }, { doText: 'Gebruik SVG of andere vectorformaten waar mogelijk en gebruik voor drukwerk de bedoelde bestanden.', dontText: 'Vervorm, draai of kantel het logo niet en voeg geen schaduwen, contouren of effecten toe.' }, { doText: 'Houd bedoelde posities in sjablonen zoveel mogelijk aan.', dontText: 'Gebruik geen screenshots, socialmedia-kopieën of combinaties met andere elementen om een nieuw woord-beeldmerk te maken.' }],
     logoVariants: [{ title: 'Volt Purple', description: 'Voor lichte achtergronden en digitale toepassingen.', format: 'PNG', href: '/brand/logos/web/volt_logo_purple.png', preview: 'light', alt: 'Volt-logo in Purple' }, { title: 'Volt White', description: 'Voor Purple of donkere achtergronden.', format: 'PNG', href: '/brand/logos/web/volt_logo_white.png', preview: 'dark', alt: 'Volt-logo in White' }, { title: 'Volt Purple met EU-sterren', description: 'Optionele Europa-variant voor lichte achtergronden.', format: 'PNG', href: '/brand/logos/web/volt_logo_with_eu_stars_purple.png', preview: 'light', alt: 'Volt-logo met EU-sterren in Purple' }, { title: 'Volt White met EU-sterren', description: 'Optionele Europa-variant voor Purple of donkere achtergronden.', format: 'PNG', href: '/brand/logos/web/volt_logo_with_eu_stars_white.png', preview: 'dark', alt: 'Volt-logo met EU-sterren in White' }],
-    download: { title: 'Logo-pakket', description: 'Het volledige logo-pakket met web- en printbestanden wordt hier gelinkt zodra SVGs en printformaten zijn toegevoegd.', format: 'Gepland: SVG, PDF, ZIP' },
   },
   fr: {
     title: 'Logo',
     lead: 'Le logo Volt est l’un des signes de reconnaissance les plus importants de la marque. Il doit donc toujours être utilisé dans une variante validée et avec suffisamment d’espace libre.',
-    nav: [{ label: 'Règles', href: '#regles' }, { label: 'Do et Don’t', href: '#do-et-dont' }, { label: 'Fichiers', href: '#fichiers-et-formats' }, { label: 'Dépôt', href: '#depot' }, { label: 'Contrôle rapide', href: '#controle-rapide' }],
-    sections: { rules: { id: 'regles', title: 'Règles', items: ['Utiliser uniquement des fichiers logo validés.', 'Les variantes autorisées sont Volt Purple et White, chacune avec ou sans étoiles européennes.', 'La variante avec étoiles européennes est optionnelle. Toujours utiliser le fichier fourni et ne pas reconstruire les étoiles soi-même.', 'Le logo doit se détacher clairement du fond : Purple sur surfaces claires, White sur Purple ou surfaces sombres.', 'Éviter les variantes avec trop peu de contraste ou les combinaisons de couleurs créées soi-même.'] }, dos: { id: 'do-et-dont', title: 'Do et Don’t' }, files: { id: 'fichiers-et-formats', title: 'Fichiers et formats', text: 'Pour les sites web et applications numériques, SVG est généralement le meilleur choix. En attendant l’ajout des SVGs, les versions PNG suivantes sont disponibles comme fichiers web.', items: ['SVG reste net à toutes les tailles, a une faible taille de fichier et convient bien aux applications responsives.', 'Pour les supports imprimés, utiliser des formats vectoriels lorsque le modèle ou l’imprimerie les prend en charge.', 'Éviter les PNG ou JPG en basse résolution pour les grands formats imprimés.'] }, storage: { id: 'depot', title: 'Dépôt', items: ['Originaux : public/brand/logos/source/', 'Web : public/brand/logos/web/', 'Print : public/brand/logos/print/', 'ToDo : ajouter les versions SVG et un package logo complet.'] }, taglines: { id: 'taglines', title: 'Taglines', text: 'La tagline “Future Made in Europe” peut être utilisée en complément et peut être localisée.', items: ['La tagline est optionnelle.', 'Elle ne doit pas surcharger le logo.', 'Ne pas regrouper plusieurs claims autour du logo en même temps.', 'Pour les campagnes, il doit rester clair ce qui est logo, claim et message de campagne.'] }, subbrands: { id: 'subbrands-et-projets', title: 'Subbrands et projets', text: 'Les projets ou subbrands peuvent utiliser des mentions complémentaires.', items: ['Powered by Volt', 'Curated by Volt', 'Edited by Volt', 'Ces ajouts ne remplacent pas le logo Volt et ne doivent pas être conçus comme un nouveau logo indépendant.'] }, check: { id: 'controle-rapide', title: 'Contrôle rapide', text: 'Avant publication :', items: ['Est-ce le bon fichier logo ?', 'Le logo a-t-il assez de contraste ?', 'Y a-t-il assez d’espace autour ?', 'Est-il assez grand ?', 'N’a-t-il été ni déformé ni modifié ?', 'Le format de fichier convient-il à l’usage ?', 'Si ces points sont corrects, le logo est généralement bien utilisé.'] } },
+    nav: [{ label: 'Règles', href: '#regles' }, { label: 'Do et Don’t', href: '#do-et-dont' }, { label: 'Fichiers', href: '#fichiers-et-formats' }, { label: 'Contrôle rapide', href: '#controle-rapide' }],
+    sections: { rules: { id: 'regles', title: 'Règles', items: ['Utiliser uniquement des fichiers logo validés.', 'Les variantes autorisées sont Volt Purple et White, chacune avec ou sans étoiles européennes.', 'La variante avec étoiles européennes est optionnelle. Toujours utiliser le fichier fourni et ne pas reconstruire les étoiles soi-même.', 'Le logo doit se détacher clairement du fond : Purple sur surfaces claires, White sur Purple ou surfaces sombres.', 'Éviter les variantes avec trop peu de contraste ou les combinaisons de couleurs créées soi-même.'] }, dos: { id: 'do-et-dont', title: 'Do et Don’t' }, files: { id: 'fichiers-et-formats', title: 'Fichiers et formats', text: 'Pour les sites web et applications numériques, SVG est généralement le meilleur choix. En attendant l’ajout des SVGs, les versions PNG suivantes sont disponibles comme fichiers web.', items: ['SVG reste net à toutes les tailles, a une faible taille de fichier et convient bien aux applications responsives.', 'Pour les supports imprimés, utiliser des formats vectoriels lorsque le modèle ou l’imprimerie les prend en charge.', 'Éviter les PNG ou JPG en basse résolution pour les grands formats imprimés.'] }, taglines: { id: 'taglines', title: 'Taglines', text: 'La tagline “Future Made in Europe” peut être utilisée en complément et peut être localisée.', items: ['La tagline est optionnelle.', 'Elle ne doit pas surcharger le logo.', 'Ne pas regrouper plusieurs claims autour du logo en même temps.', 'Pour les campagnes, il doit rester clair ce qui est logo, claim et message de campagne.'] }, subbrands: { id: 'subbrands-et-projets', title: 'Subbrands et projets', text: 'Les projets ou subbrands peuvent utiliser des mentions complémentaires.', items: ['Powered by Volt', 'Curated by Volt', 'Edited by Volt', 'Ces ajouts ne remplacent pas le logo Volt et ne doivent pas être conçus comme un nouveau logo indépendant.'] }, check: { id: 'controle-rapide', title: 'Contrôle rapide', text: 'Avant publication :', items: ['Est-ce le bon fichier logo ?', 'Le logo a-t-il assez de contraste ?', 'Y a-t-il assez d’espace autour ?', 'Est-il assez grand ?', 'N’a-t-il été ni déformé ni modifié ?', 'Le format de fichier convient-il à l’usage ?', 'Si ces points sont corrects, le logo est généralement bien utilisé.'] } },
     guidelines: [{ title: 'Variantes', text: 'Utiliser le logo en Volt Purple ou White. La variante avec étoiles européennes est optionnelle et doit exister comme fichier validé.' }, { title: 'Fond et contraste', text: 'Purple fonctionne sur surfaces claires. White fonctionne sur Purple ou fonds sombres. Éviter les combinaisons de couleurs créées soi-même.' }, { title: 'Espace de protection', text: 'Laisser suffisamment d’espace libre autour du logo. Pour le logo Volt Europe, l’espace minimal correspond à la largeur de la lettre T dans “Volt”.' }, { title: 'Taille et position', text: 'Ne pas utiliser le logo trop petit, directement au bord, ni superposé à du texte, des mentions obligatoires ou d’autres logos.' }],
     dosDonts: [{ doText: 'Utiliser des fichiers logo validés et vérifier le contraste ainsi que l’espace libre.', dontText: 'Ne pas reconstruire le logo ni modifier les couleurs soi-même.' }, { doText: 'Utiliser SVG ou d’autres formats vectoriels lorsque c’est possible, et les fichiers prévus pour le print.', dontText: 'Ne pas déformer, tourner ou incliner le logo, et ne pas ajouter d’ombres, contours ou effets.' }, { doText: 'Conserver autant que possible les positions prévues dans les modèles.', dontText: 'Ne pas utiliser de captures d’écran, copies issues des réseaux sociaux ou combinaisons avec d’autres éléments pour créer une nouvelle marque verbale-visuelle.' }],
     logoVariants: [{ title: 'Volt Purple', description: 'Pour fonds clairs et applications numériques.', format: 'PNG', href: '/brand/logos/web/volt_logo_purple.png', preview: 'light', alt: 'Logo Volt en Purple' }, { title: 'Volt White', description: 'Pour Purple ou fonds sombres.', format: 'PNG', href: '/brand/logos/web/volt_logo_white.png', preview: 'dark', alt: 'Logo Volt en White' }, { title: 'Volt Purple avec étoiles européennes', description: 'Variante Europe optionnelle pour fonds clairs.', format: 'PNG', href: '/brand/logos/web/volt_logo_with_eu_stars_purple.png', preview: 'light', alt: 'Logo Volt avec étoiles européennes en Purple' }, { title: 'Volt White avec étoiles européennes', description: 'Variante Europe optionnelle pour Purple ou fonds sombres.', format: 'PNG', href: '/brand/logos/web/volt_logo_with_eu_stars_white.png', preview: 'dark', alt: 'Logo Volt avec étoiles européennes en White' }],
-    download: { title: 'Package logo', description: 'Le package logo complet avec fichiers web et print sera lié ici dès que les SVGs et formats print auront été ajoutés.', format: 'Prévu : SVG, PDF, ZIP' },
   },
 };
 
@@ -535,6 +531,165 @@ Object.assign(typography, {
   fr: { title: 'Typographie', lead: 'Volt utilise Ubuntu pour les titres, sous-titres, textes courants et appels à l’action. La police est assez calme pour les textes longs et assez reconnaissable pour la communication politique.', sections: { roles: { id: 'roles', title: 'Rôles' }, hierarchy: { id: 'hierarchie-de-base', title: 'Hiérarchie de base pour la version 1', items: ['H1 : titre d’une page ou d’un support, court et clair.', 'H2 : titre de section pour chapitres et grands groupes de contenu.', 'H3 : sous-points, cartes et modules récurrents.', 'Texte courant : explications, notes, règles d’utilisation et FAQ.', 'CTA : verbes courts comme « Ouvrir le modèle », « Télécharger », « En savoir plus ».'] }, formats: { id: 'notes-de-format', title: 'Notes de format', items: ['Réseaux sociaux : peu de mots, hiérarchie forte, pas de longs blocs de texte.', 'Site web : H1 clair, sous-titres faciles à scanner, bonne longueur de ligne.', 'Print : assez d’espace, pas de tailles de police trop petites, vérifier le contraste d’impression.'] }, open: { id: 'encore-a-definir', title: 'Encore à définir', items: ['Typographie web pour ce site.', 'Hiérarchie pour les réseaux sociaux.', 'Hiérarchie print pour affiches et flyers.', 'Polices de secours pour les systèmes sans Ubuntu.'] } }, samples: [{ label: 'Titre', sample: 'Repenser l’Europe', description: 'Ubuntu Bold pour des messages courts, clairs et reconnaissables.' }, { label: 'Texte courant', sample: 'Les supports Volt doivent être faciles à parcourir, accessibles et cohérents.', description: 'Ubuntu Regular pour textes explicatifs, notes et contenus plus longs.' }, { label: 'Appel à l’action', sample: 'Ouvrir le modèle', description: 'Ubuntu Bold pour des appels à l’action courts.' }] },
 });
 
+Object.assign(typography, {
+  de: {
+    title: 'Typografie',
+    lead: 'Volt nutzt Ubuntu als Standardschrift. Sie sorgt dafür, dass Materialien schnell als Volt erkennbar sind und gut lesbar bleiben.',
+    sections: {
+      roles: {
+        id: 'welche-schrift-wofuer',
+        title: 'Welche Schrift wofür?',
+        items: [
+          { label: 'Headlines:', text: ' Nutze Ubuntu Bold für kurze, klare Überschriften.' },
+          { label: 'Fließtext:', text: ' Nutze Ubuntu Regular für längere Texte, Erklärungen und Hinweise.' },
+          { label: 'Calls to Action:', text: ' Nutze Ubuntu Bold für kurze Aufforderungen wie „Mehr erfahren“, „Jetzt anmelden“ oder „Vorlage öffnen“.' },
+          { label: 'Inter Black:', text: ' Nur für sehr kurze Headlines oder einzelne starke Hervorhebungen. Für Fließtext und Untertitel bleibt Ubuntu die Standardschrift.' },
+        ],
+      },
+      hierarchy: {
+        id: 'klare-hierarchie',
+        title: 'So entsteht eine klare Hierarchie',
+        text: 'Menschen sollten sofort erkennen, was zuerst gelesen werden soll.',
+        items: ['Unterschiedliche Schriftgrößen.', 'Bold für wichtige Ebenen.', 'Klare Abstände.', 'Wenige Textstile.', { label: 'H1:', text: ' Seitentitel oder Hauptbotschaft.' }, { label: 'H2:', text: ' größere Abschnitte.' }, { label: 'H3:', text: ' Unterpunkte.' }, { label: 'Fließtext:', text: ' Erklärung.' }, { label: 'CTA:', text: ' nächste Handlung.' }],
+      },
+      readability: {
+        id: 'gut-lesbar-gestalten',
+        title: 'Gut lesbar gestalten',
+        text: 'Achte darauf, dass Texte gut erfassbar bleiben.',
+        items: ['Texte groß genug setzen.', 'Genügend Kontrast sicherstellen.', 'Zeilen nicht zu eng setzen.', 'Zeilen nicht zu lang laufen lassen.', 'Lange Texte in Bold, Versalien oder sehr kleinen Schriftgrößen vermeiden.', 'Wenn Text nur noch hineinpasst, weil du ihn kleiner machst, solltest du eher den Inhalt kürzen.'],
+      },
+      formats: {
+        id: 'je-nach-format',
+        title: 'Je nach Format',
+        items: [{ label: 'Social Media:', text: ' kurze Headlines, wenig Text, auf dem Smartphone prüfen.' }, { label: 'Website:', text: ' klare Überschriften und gut scanbare Abschnitte.' }, { label: 'Präsentation:', text: ' große Schrift, wenig Text pro Folie.' }, { label: 'Print:', text: ' Schriftgröße an Format und Betrachtungsabstand anpassen.' }],
+      },
+      check: {
+        id: 'kurz-pruefen',
+        title: 'Kurz prüfen',
+        items: ['Ubuntu verwendet?', 'Wichtigstes Element sofort erkennbar?', 'Text gut lesbar?', 'Nicht zu viele Größen oder Schnitte?', 'Inter Black nur gezielt eingesetzt?'],
+      },
+    },
+    samples: [{ label: 'Headline', sample: 'Europa neu denken', description: 'Ubuntu Bold für kurze, klare Überschriften.' }, { label: 'Fließtext', sample: 'Volt Materialien sollen schnell erfassbar, barrierearm und konsistent wirken.', description: 'Ubuntu Regular für längere Texte, Erklärungen und Hinweise.' }, { label: 'Call to Action', sample: 'Vorlage öffnen', description: 'Ubuntu Bold für kurze Handlungsaufforderungen.' }],
+  },
+  en: {
+    title: 'Typography',
+    lead: 'Volt uses Ubuntu as its standard typeface. It helps materials feel recognisably Volt and remain easy to read.',
+    sections: {
+      roles: {
+        id: 'which-typeface-for-what',
+        title: 'Which Typeface for What?',
+        items: [
+          { label: 'Headlines:', text: ' Use Ubuntu Bold for short, clear headings.' },
+          { label: 'Body copy:', text: ' Use Ubuntu Regular for longer text, explanations and notes.' },
+          { label: 'Calls to action:', text: ' Use Ubuntu Bold for short prompts such as “Learn more”, “Register now” or “Open template”.' },
+          { label: 'Inter Black:', text: ' Use only for very short headlines or single strong highlights. Ubuntu remains the standard for body copy and subtitles.' },
+        ],
+      },
+      hierarchy: {
+        id: 'clear-hierarchy',
+        title: 'How Clear Hierarchy Works',
+        text: 'People should immediately understand what to read first.',
+        items: ['Different type sizes.', 'Bold for important levels.', 'Clear spacing.', 'Few text styles.', { label: 'H1:', text: ' page title or main message.' }, { label: 'H2:', text: ' larger sections.' }, { label: 'H3:', text: ' subpoints.' }, { label: 'Body copy:', text: ' explanation.' }, { label: 'CTA:', text: ' next action.' }],
+      },
+      readability: {
+        id: 'keep-text-readable',
+        title: 'Keep Text Readable',
+        text: 'Make sure text remains easy to understand.',
+        items: ['Set text large enough.', 'Ensure enough contrast.', 'Do not set lines too tightly.', 'Avoid overly long line lengths.', 'Avoid long texts in Bold, all caps or very small sizes.', 'If text only fits because you make it smaller, shorten the content instead.'],
+      },
+      formats: {
+        id: 'by-format',
+        title: 'By Format',
+        items: [{ label: 'Social media:', text: ' short headlines, little text, check on a smartphone.' }, { label: 'Website:', text: ' clear headings and scannable sections.' }, { label: 'Presentation:', text: ' large type, little text per slide.' }, { label: 'Print:', text: ' adapt type size to format and viewing distance.' }],
+      },
+      check: {
+        id: 'quick-check',
+        title: 'Quick Check',
+        items: ['Using Ubuntu?', 'Most important element immediately recognisable?', 'Text easy to read?', 'Not too many sizes or weights?', 'Inter Black used only deliberately?'],
+      },
+    },
+    samples: [{ label: 'Headline', sample: 'Rethinking Europe', description: 'Ubuntu Bold for short, clear headings.' }, { label: 'Body copy', sample: 'Volt materials should be easy to scan, accessible and consistent.', description: 'Ubuntu Regular for longer text, explanations and notes.' }, { label: 'Call to Action', sample: 'Open template', description: 'Ubuntu Bold for short calls to action.' }],
+  },
+  nl: {
+    title: 'Typografie',
+    lead: 'Volt gebruikt Ubuntu als standaardlettertype. Het zorgt ervoor dat materialen snel als Volt herkenbaar zijn en goed leesbaar blijven.',
+    sections: {
+      roles: {
+        id: 'welk-lettertype-waarvoor',
+        title: 'Welk lettertype waarvoor?',
+        items: [
+          { label: 'Koppen:', text: ' Gebruik Ubuntu Bold voor korte, duidelijke koppen.' },
+          { label: 'Lopende tekst:', text: ' Gebruik Ubuntu Regular voor langere teksten, uitleg en aanwijzingen.' },
+          { label: 'Calls to action:', text: ' Gebruik Ubuntu Bold voor korte oproepen zoals “Meer weten”, “Nu aanmelden” of “Sjabloon openen”.' },
+          { label: 'Inter Black:', text: ' Alleen voor zeer korte headlines of afzonderlijke sterke accenten. Voor lopende tekst en ondertitels blijft Ubuntu het standaardlettertype.' },
+        ],
+      },
+      hierarchy: {
+        id: 'heldere-hierarchie',
+        title: 'Zo ontstaat een heldere hiërarchie',
+        text: 'Mensen moeten meteen herkennen wat eerst gelezen moet worden.',
+        items: ['Verschillende lettergroottes.', 'Bold voor belangrijke niveaus.', 'Duidelijke afstanden.', 'Weinig tekststijlen.', { label: 'H1:', text: ' paginatitel of hoofdboodschap.' }, { label: 'H2:', text: ' grotere secties.' }, { label: 'H3:', text: ' subpunten.' }, { label: 'Lopende tekst:', text: ' uitleg.' }, { label: 'CTA:', text: ' volgende handeling.' }],
+      },
+      readability: {
+        id: 'goed-leesbaar-vormgeven',
+        title: 'Goed leesbaar vormgeven',
+        text: 'Let erop dat tekst goed begrijpelijk blijft.',
+        items: ['Tekst groot genoeg zetten.', 'Genoeg contrast gebruiken.', 'Regels niet te krap zetten.', 'Regels niet te lang laten lopen.', 'Lange teksten in Bold, kapitalen of zeer kleine groottes vermijden.', 'Als tekst alleen past doordat je hem kleiner maakt, kort dan liever de inhoud in.'],
+      },
+      formats: {
+        id: 'per-formaat',
+        title: 'Per formaat',
+        items: [{ label: 'Social media:', text: ' korte headlines, weinig tekst, op smartphone controleren.' }, { label: 'Website:', text: ' duidelijke koppen en goed scanbare secties.' }, { label: 'Presentatie:', text: ' grote tekst, weinig tekst per slide.' }, { label: 'Print:', text: ' lettergrootte aanpassen aan formaat en kijkafstand.' }],
+      },
+      check: {
+        id: 'korte-check',
+        title: 'Korte check',
+        items: ['Ubuntu gebruikt?', 'Belangrijkste element meteen herkenbaar?', 'Tekst goed leesbaar?', 'Niet te veel groottes of gewichten?', 'Inter Black alleen gericht gebruikt?'],
+      },
+    },
+    samples: [{ label: 'Kop', sample: 'Europa opnieuw denken', description: 'Ubuntu Bold voor korte, duidelijke koppen.' }, { label: 'Lopende tekst', sample: 'Volt-materialen moeten snel scanbaar, toegankelijk en consistent zijn.', description: 'Ubuntu Regular voor langere teksten, uitleg en aanwijzingen.' }, { label: 'Call to Action', sample: 'Sjabloon openen', description: 'Ubuntu Bold voor korte oproepen tot actie.' }],
+  },
+  fr: {
+    title: 'Typographie',
+    lead: 'Volt utilise Ubuntu comme police standard. Elle rend les supports rapidement reconnaissables comme Volt et faciles à lire.',
+    sections: {
+      roles: {
+        id: 'quelle-police-pour-quoi',
+        title: 'Quelle police pour quoi ?',
+        items: [
+          { label: 'Titres :', text: ' utiliser Ubuntu Bold pour des titres courts et clairs.' },
+          { label: 'Texte courant :', text: ' utiliser Ubuntu Regular pour textes longs, explications et notes.' },
+          { label: 'Appels à l’action :', text: ' utiliser Ubuntu Bold pour des invitations courtes comme « En savoir plus », « S’inscrire » ou « Ouvrir le modèle ».' },
+          { label: 'Inter Black :', text: ' seulement pour des titres très courts ou quelques mises en avant fortes. Ubuntu reste la police standard pour texte courant et sous-titres.' },
+        ],
+      },
+      hierarchy: {
+        id: 'hierarchie-claire',
+        title: 'Créer une hiérarchie claire',
+        text: 'Les personnes doivent voir immédiatement quoi lire en premier.',
+        items: ['Tailles de police différentes.', 'Bold pour les niveaux importants.', 'Espacements clairs.', 'Peu de styles de texte.', { label: 'H1 :', text: ' titre de page ou message principal.' }, { label: 'H2 :', text: ' grandes sections.' }, { label: 'H3 :', text: ' sous-points.' }, { label: 'Texte courant :', text: ' explication.' }, { label: 'CTA :', text: ' prochaine action.' }],
+      },
+      readability: {
+        id: 'garder-le-texte-lisible',
+        title: 'Garder le texte lisible',
+        text: 'Veiller à ce que les textes restent faciles à comprendre.',
+        items: ['Utiliser une taille suffisante.', 'Assurer assez de contraste.', 'Ne pas trop serrer les lignes.', 'Éviter les lignes trop longues.', 'Éviter les textes longs en Bold, capitales ou très petites tailles.', 'Si le texte ne rentre qu’en le réduisant, raccourcir plutôt le contenu.'],
+      },
+      formats: {
+        id: 'selon-le-format',
+        title: 'Selon le format',
+        items: [{ label: 'Réseaux sociaux :', text: ' titres courts, peu de texte, vérifier sur smartphone.' }, { label: 'Site web :', text: ' titres clairs et sections faciles à scanner.' }, { label: 'Présentation :', text: ' grande taille, peu de texte par slide.' }, { label: 'Print :', text: ' adapter la taille au format et à la distance de lecture.' }],
+      },
+      check: {
+        id: 'controle-rapide',
+        title: 'Contrôle rapide',
+        items: ['Ubuntu utilisée ?', 'Élément principal immédiatement reconnaissable ?', 'Texte bien lisible ?', 'Pas trop de tailles ou graisses ?', 'Inter Black utilisée seulement de façon ciblée ?'],
+      },
+    },
+    samples: [{ label: 'Titre', sample: 'Repenser l’Europe', description: 'Ubuntu Bold pour des titres courts et clairs.' }, { label: 'Texte courant', sample: 'Les supports Volt doivent être faciles à parcourir, accessibles et cohérents.', description: 'Ubuntu Regular pour textes longs, explications et notes.' }, { label: 'Appel à l’action', sample: 'Ouvrir le modèle', description: 'Ubuntu Bold pour des appels à l’action courts.' }],
+  },
+});
+
 Object.assign(layout, {
   fr: { title: 'Mise en page', lead: 'La mise en page rend les supports Volt rapidement compréhensibles et évite qu’ils ressemblent à un assemblage aléatoire d’éléments.', guidelines: [{ title: 'Un point central', text: 'Chaque support a besoin d’un message principal clair. Tout le reste doit le soutenir.' }, { title: 'Assez d’espace', text: 'Logo, titre, texte et CTA ont besoin d’air. La densité vient de l’ordre, pas du manque d’espace.' }, { title: 'Répétition', text: 'Grilles, couleurs, tailles de police et bandes doivent être utilisés de façon récurrente.' }], sections: { rules: { id: 'regles-version-1', title: 'Règles version 1', items: ['Principes de base pour un design simple et vite compréhensible.', 'Exemples pour affiche, réseaux sociaux, site web et présentation.', 'Règles pour espace blanc, priorité visuelle et quantité de texte.', 'Notes pour affichage mobile et accessible.'] }, spacing: { id: 'espacements', title: 'Espacements', items: ['Les espacements doivent montrer les relations : plus serrés pour les éléments liés, plus grands pour les nouveaux sujets.', 'Garder des marges internes cohérentes dans cartes, boutons et formulaires.', 'Sur petits écrans, empiler les contenus plutôt que réduire les espaces jusqu’à perdre la hiérarchie.', 'Pour la version 1, les règles d’espacement sont éditoriales ; des règles de composants pourront définir des valeurs concrètes plus tard.'] }, orientation: { id: 'orientation-pratique', title: 'Orientation pratique', items: ['Affiche : grand titre, visuel clair, information complémentaire courte.', 'Réseaux sociaux : première ligne forte, peu de texte, couleur Volt reconnaissable.', 'Site web : sections faciles à scanner, assez de contraste, pas de mur de texte.', 'Présentation : une idée par diapositive, grande typographie, peu de détails.'] } } },
 });
@@ -574,6 +729,177 @@ Object.assign(loginPlanning, {
 Object.assign(archive, {
   fr: { title: 'Anciens designs Volt', lead: 'Cette zone d’archive est destinée aux anciens états de design Volt ou aux versions remplacées. Les supports archivés sont des références historiques et non des modèles valides pour de nouvelles publications.', sections: [{ id: 'historique-ne-plus-utiliser', title: 'Historique / Ne plus utiliser', items: ['Les designs archivés restent visibles afin que les équipes puissent classer les anciens supports.', 'Les nouveaux supports doivent suivre les chapitres actuels de ce guide.', 'Les anciennes couleurs, variantes de logo, mises en page ou modèles ne doivent pas être copiés comme point de départ de nouveaux designs.', 'Les modèles qui ne sont plus valides doivent être marqués avec statut, date et indication de remplacement.'] }, { id: 'objectif-archive', title: 'Objectif de l’archive', items: ['Rassembler d’anciens modèles graphiques sans les présenter comme recommandation actuelle.', 'Montrer les différences entre l’ancien et l’actuel design Volt.', 'Évaluer les supports existants : encore utilisables, à retravailler ou à remplacer.', 'Aider les équipes à actualiser progressivement les anciens stocks locaux.'] }, { id: 'structure-proposee', title: 'Structure proposée', items: [{ label: 'Couleurs :', text: ' anciennes valeurs, écarts et usages typiques.' }, { label: 'Logo :', text: ' anciennes variantes, usages incorrects et fichiers remplacés.' }, { label: 'Typographie :', text: ' anciennes solutions typographiques ou écarts locaux.' }, { label: 'Modèles :', text: ' anciens modèles Canva, Figma et print avec statut.' }, { label: 'Exemples :', text: ' captures ou exports d’anciens supports réseaux sociaux, print ou web.' }] }, { id: 'categories-statut', title: 'Catégories de statut', items: [{ label: 'Archivé :', text: ' documentation seulement, ne plus utiliser.' }, { label: 'Transition :', text: ' peut être utilisé brièvement, mais devrait être remplacé.' }, { label: 'À vérifier :', text: ' statut incertain, nécessite une consultation.' }, { label: 'Migrer :', text: ' bon support, mais adaptation au design actuel nécessaire.' }] }, { id: 'stockage', title: 'Stockage', text: 'Les anciennes références pourront être stockées plus tard sous public/brand/examples/old/ ou dans un dossier dédié public/brand/archive/. Les assets actuels restent séparés dans public/brand/logos, public/brand/templates et les chapitres actifs du guide.', items: [] }] },
 });
+
+export const foundationTldr = {
+  de: {
+    title: 'TL;DR',
+    lead: 'Die wichtigsten Grundlagen für Volt Design auf einer Seite: erst klären, dann reduzieren, wiedererkennbar bleiben und vor Veröffentlichung prüfen.',
+    sections: [
+      {
+        id: 'grundsatz',
+        title: 'Grundsatz',
+        items: [
+          { label: 'Klarheit:', text: ' eine Hauptbotschaft, klare Reihenfolge, genug Abstand.', href: '#designPrinciples', hrefLabel: 'Designprinzipien' },
+          { label: 'Wiedererkennung:', text: ' Volt Purple, Logo, Ubuntu und typische Gestaltungselemente konsistent nutzen.', href: '#logo', hrefLabel: 'Logo' },
+          { label: 'Nutzbarkeit:', text: ' Lesbarkeit, Kontrast, mobile Darstellung und Barrierefreiheit gehen vor Dekoration.', href: '#accessibility', hrefLabel: 'Barrierefreiheit' },
+          { label: 'Format:', text: ' Social Post, Website, Präsentation oder Print brauchen unterschiedliche Entscheidungen.', href: '#layout', hrefLabel: 'Layout' },
+        ],
+      },
+      {
+        id: 'seiten-im-kapitel',
+        title: 'Seiten im Grundlagendesign',
+        items: [
+          { label: 'Designprinzipien:', text: ' Entscheidungsregeln für klare, erkennbare und nutzbare Gestaltung.', href: '#designPrinciples', hrefLabel: 'Öffnen' },
+          { label: 'Marke und Tonalität:', text: ' Sprache, Haltung, Claims und gemeinsames Auftreten.', href: '#brandVoice', hrefLabel: 'Öffnen' },
+          { label: 'Logo:', text: ' Varianten, Schutzraum, Kontrast und korrekter Einsatz.', href: '#logo', hrefLabel: 'Öffnen' },
+          { label: 'Farben:', text: ' Purple und White als Basis, Akzentfarben mit klarem Zweck.', href: '#colors', hrefLabel: 'Öffnen' },
+          { label: 'Typografie:', text: ' Ubuntu, Hierarchie, Lesbarkeit und Einsatz je Format.', href: '#typography', hrefLabel: 'Öffnen' },
+          { label: 'Layout:', text: ' Struktur, Abstände, Hierarchie und formatgerechte Komposition.', href: '#layout', hrefLabel: 'Öffnen' },
+          { label: 'Grafische Elemente:', text: ' Linien, Winkel, Formen und unterstützende Markenelemente.', href: '#graphicElements', hrefLabel: 'Öffnen' },
+          { label: 'Bildsprache:', text: ' Motive, Bildrechte, Lesbarkeit und glaubwürdige Darstellung.', href: '#imageLanguage', hrefLabel: 'Öffnen' },
+          { label: 'Barrierefreiheit:', text: ' Kontrast, Alternativtexte, Bedienbarkeit und Verständlichkeit.', href: '#accessibility', hrefLabel: 'Öffnen' },
+        ],
+      },
+      {
+        id: 'letzter-check',
+        title: 'Letzter Check',
+        items: [
+          'Ist sofort erkennbar, dass das Material von Volt kommt?',
+          'Ist die wichtigste Botschaft innerhalb weniger Sekunden verständlich?',
+          'Stimmen Logo, Farben, Typografie und Kontrast?',
+          'Funktioniert das Material im tatsächlichen Format und auf Mobilgeräten?',
+          'Kann etwas entfernt werden, ohne die Aussage zu schwächen?',
+        ],
+      },
+    ],
+  },
+  en: {
+    title: 'TL;DR',
+    lead: 'The key Volt design foundations on one page: clarify first, reduce, stay recognisable and check before publishing.',
+    sections: [
+      {
+        id: 'principle',
+        title: 'Principle',
+        items: [
+          { label: 'Clarity:', text: ' one main message, clear order, enough spacing.', href: '#designPrinciples', hrefLabel: 'Design Principles' },
+          { label: 'Recognition:', text: ' use Volt Purple, logo, Ubuntu and typical design elements consistently.', href: '#logo', hrefLabel: 'Logo' },
+          { label: 'Usability:', text: ' readability, contrast, mobile display and accessibility come before decoration.', href: '#accessibility', hrefLabel: 'Accessibility' },
+          { label: 'Format:', text: ' social post, website, presentation and print need different decisions.', href: '#layout', hrefLabel: 'Layout' },
+        ],
+      },
+      {
+        id: 'pages-in-this-chapter',
+        title: 'Pages in Foundations',
+        items: [
+          { label: 'Design Principles:', text: ' decision rules for clear, recognisable and usable design.', href: '#designPrinciples', hrefLabel: 'Open' },
+          { label: 'Brand and Tone:', text: ' language, attitude, claims and shared appearance.', href: '#brandVoice', hrefLabel: 'Open' },
+          { label: 'Logo:', text: ' variants, clear space, contrast and correct use.', href: '#logo', hrefLabel: 'Open' },
+          { label: 'Colours:', text: ' Purple and White as the base, accent colours with clear purpose.', href: '#colors', hrefLabel: 'Open' },
+          { label: 'Typography:', text: ' Ubuntu, hierarchy, readability and use by format.', href: '#typography', hrefLabel: 'Open' },
+          { label: 'Layout:', text: ' structure, spacing, hierarchy and format-aware composition.', href: '#layout', hrefLabel: 'Open' },
+          { label: 'Graphic Elements:', text: ' lines, angles, shapes and supporting brand elements.', href: '#graphicElements', hrefLabel: 'Open' },
+          { label: 'Image Language:', text: ' motifs, image rights, readability and credible representation.', href: '#imageLanguage', hrefLabel: 'Open' },
+          { label: 'Accessibility:', text: ' contrast, alt text, usability and understandability.', href: '#accessibility', hrefLabel: 'Open' },
+        ],
+      },
+      {
+        id: 'final-check',
+        title: 'Final Check',
+        items: [
+          'Is it immediately recognisable as Volt?',
+          'Can the main message be understood within a few seconds?',
+          'Do logo, colours, typography and contrast fit?',
+          'Does it work in the actual format and on mobile devices?',
+          'Can anything be removed without weakening the message?',
+        ],
+      },
+    ],
+  },
+  nl: {
+    title: 'TL;DR',
+    lead: 'De belangrijkste basis van Volt-design op één pagina: eerst verduidelijken, dan reduceren, herkenbaar blijven en controleren vóór publicatie.',
+    sections: [
+      {
+        id: 'principe',
+        title: 'Principe',
+        items: [
+          { label: 'Helderheid:', text: ' één hoofdboodschap, duidelijke volgorde, genoeg afstand.', href: '#designPrinciples', hrefLabel: 'Designprincipes' },
+          { label: 'Herkenning:', text: ' Volt Purple, logo, Ubuntu en typische designelementen consistent gebruiken.', href: '#logo', hrefLabel: 'Logo' },
+          { label: 'Bruikbaarheid:', text: ' leesbaarheid, contrast, mobiele weergave en toegankelijkheid gaan vóór decoratie.', href: '#accessibility', hrefLabel: 'Toegankelijkheid' },
+          { label: 'Formaat:', text: ' social post, website, presentatie en print vragen verschillende keuzes.', href: '#layout', hrefLabel: 'Lay-out' },
+        ],
+      },
+      {
+        id: 'paginas-in-dit-hoofdstuk',
+        title: 'Pagina’s in basisdesign',
+        items: [
+          { label: 'Designprincipes:', text: ' beslisregels voor heldere, herkenbare en bruikbare vormgeving.', href: '#designPrinciples', hrefLabel: 'Openen' },
+          { label: 'Merk en tonaliteit:', text: ' taal, houding, claims en gezamenlijk optreden.', href: '#brandVoice', hrefLabel: 'Openen' },
+          { label: 'Logo:', text: ' varianten, vrije ruimte, contrast en correct gebruik.', href: '#logo', hrefLabel: 'Openen' },
+          { label: 'Kleuren:', text: ' Purple en White als basis, accentkleuren met duidelijk doel.', href: '#colors', hrefLabel: 'Openen' },
+          { label: 'Typografie:', text: ' Ubuntu, hiërarchie, leesbaarheid en gebruik per formaat.', href: '#typography', hrefLabel: 'Openen' },
+          { label: 'Lay-out:', text: ' structuur, afstand, hiërarchie en formaatbewuste compositie.', href: '#layout', hrefLabel: 'Openen' },
+          { label: 'Grafische elementen:', text: ' lijnen, hoeken, vormen en ondersteunende merkelementen.', href: '#graphicElements', hrefLabel: 'Openen' },
+          { label: 'Beeldtaal:', text: ' motieven, beeldrechten, leesbaarheid en geloofwaardige weergave.', href: '#imageLanguage', hrefLabel: 'Openen' },
+          { label: 'Toegankelijkheid:', text: ' contrast, alt-teksten, bruikbaarheid en begrijpelijkheid.', href: '#accessibility', hrefLabel: 'Openen' },
+        ],
+      },
+      {
+        id: 'laatste-check',
+        title: 'Laatste check',
+        items: [
+          'Is meteen herkenbaar dat het materiaal van Volt komt?',
+          'Is de hoofdboodschap binnen enkele seconden duidelijk?',
+          'Kloppen logo, kleuren, typografie en contrast?',
+          'Werkt het in het echte formaat en op mobiele apparaten?',
+          'Kan iets worden verwijderd zonder de boodschap te verzwakken?',
+        ],
+      },
+    ],
+  },
+  fr: {
+    title: 'TL;DR',
+    lead: 'Les fondamentaux essentiels du design Volt en une page : clarifier d’abord, réduire, rester reconnaissable et vérifier avant publication.',
+    sections: [
+      {
+        id: 'principe',
+        title: 'Principe',
+        items: [
+          { label: 'Clarté :', text: ' un message principal, un ordre clair, assez d’espace.', href: '#designPrinciples', hrefLabel: 'Principes de design' },
+          { label: 'Reconnaissance :', text: ' utiliser Volt Purple, le logo, Ubuntu et les éléments typiques de façon cohérente.', href: '#logo', hrefLabel: 'Logo' },
+          { label: 'Utilisabilité :', text: ' lisibilité, contraste, mobile et accessibilité passent avant la décoration.', href: '#accessibility', hrefLabel: 'Accessibilité' },
+          { label: 'Format :', text: ' post social, site web, présentation et print demandent des décisions différentes.', href: '#layout', hrefLabel: 'Mise en page' },
+        ],
+      },
+      {
+        id: 'pages-du-chapitre',
+        title: 'Pages des fondamentaux',
+        items: [
+          { label: 'Principes de design :', text: ' règles de décision pour un design clair, reconnaissable et utilisable.', href: '#designPrinciples', hrefLabel: 'Ouvrir' },
+          { label: 'Marque et tonalité :', text: ' langage, attitude, claims et présence commune.', href: '#brandVoice', hrefLabel: 'Ouvrir' },
+          { label: 'Logo :', text: ' variantes, espace de protection, contraste et bon usage.', href: '#logo', hrefLabel: 'Ouvrir' },
+          { label: 'Couleurs :', text: ' Purple et White comme base, couleurs d’accent avec but clair.', href: '#colors', hrefLabel: 'Ouvrir' },
+          { label: 'Typographie :', text: ' Ubuntu, hiérarchie, lisibilité et usage selon le format.', href: '#typography', hrefLabel: 'Ouvrir' },
+          { label: 'Mise en page :', text: ' structure, espacements, hiérarchie et composition adaptée au format.', href: '#layout', hrefLabel: 'Ouvrir' },
+          { label: 'Éléments graphiques :', text: ' lignes, angles, formes et éléments de marque de soutien.', href: '#graphicElements', hrefLabel: 'Ouvrir' },
+          { label: 'Langage visuel :', text: ' motifs, droits d’image, lisibilité et représentation crédible.', href: '#imageLanguage', hrefLabel: 'Ouvrir' },
+          { label: 'Accessibilité :', text: ' contraste, textes alternatifs, utilisabilité et compréhension.', href: '#accessibility', hrefLabel: 'Ouvrir' },
+        ],
+      },
+      {
+        id: 'dernier-controle',
+        title: 'Dernier contrôle',
+        items: [
+          'Reconnaît-on immédiatement Volt ?',
+          'Le message principal se comprend-il en quelques secondes ?',
+          'Logo, couleurs, typographie et contraste sont-ils corrects ?',
+          'Le support fonctionne-t-il dans le vrai format et sur mobile ?',
+          'Peut-on retirer quelque chose sans affaiblir le message ?',
+        ],
+      },
+    ],
+  },
+};
 
 export const designPrinciples = {
   de: { title: 'Designprinzipien', lead: 'Volt Design soll klar, wiedererkennbar und einfach nutzbar sein. Die Regeln in diesem Guide geben Orientierung, ohne jede Gestaltung unnötig festzulegen.', sections: [{ id: 'bevor-du-startest', title: 'Bevor du startest', text: 'Kläre zuerst:', items: ['Was ist die wichtigste Botschaft?', 'Für wen ist das Material gedacht?', 'Wo wird es genutzt?', 'Was sollen Menschen danach wissen oder tun?', 'Wenn diese Fragen nicht klar sind, wird auch die Gestaltung schnell unklar.'] }, { id: 'klar-gestalten', title: 'Klar gestalten', text: 'Halte Gestaltung so einfach wie möglich.', items: ['Eine Hauptbotschaft pro Fläche.', 'Wichtige Informationen zuerst.', 'Zusatzinformationen klar unterordnen.', 'Genug Abstand zwischen Elementen.', 'Nur so viele Farben, Schriftgrößen und Formen wie wirklich nötig.', 'Wenn eine Gestaltung unruhig wirkt, hilft meist Reduzieren mehr als Hinzufügen.'] }, { id: 'volt-erkennbar-machen', title: 'Volt erkennbar machen', text: 'Volt soll nicht nur am Logo erkennbar sein. Nutze das gemeinsame Designsystem.', items: ['Volt Purple.', 'Volt Logo.', 'Ubuntu.', 'Typische grafische Elemente.', 'Konsistente Abstände und Layouts.', 'Nicht jedes Material muss alle Elemente gleichzeitig nutzen. Insgesamt sollte aber sofort erkennbar sein, dass es von Volt kommt.'] }, { id: 'fuer-menschen-gestalten', title: 'Für Menschen gestalten', text: 'Lesbarkeit und Verständlichkeit gehen vor dekorativen Effekten.', items: ['Ausreichenden Kontrast sicherstellen.', 'Gut lesbare Schriftgrößen wählen.', 'Klare Reihenfolge der Inhalte schaffen.', 'Verständliche Sprache nutzen.', 'Mobile Darstellung prüfen.', 'Barrierefreiheit berücksichtigen.', 'Wenn etwas gut aussieht, aber schwer lesbar oder unverständlich ist, funktioniert es nicht.'] }, { id: 'zum-format-passend', title: 'Zum Format passend gestalten', text: 'Nicht jedes Format braucht dieselbe Lösung. Die Gestaltung sollte sich immer danach richten, wie und wo sie tatsächlich genutzt wird.', items: [{ label: 'Social Media:', text: ' schnell erfassbar, wenig Text, mobil lesbar.' }, { label: 'Plakat:', text: ' große Schrift, starke Kontraste, wenige Inhalte.' }, { label: 'Präsentation:', text: ' ein Gedanke pro Folie, wenig Fließtext.' }, { label: 'Website:', text: ' klare Navigation, konsistente Komponenten und gute Bedienbarkeit.' }] }, { id: 'verbindlich-oder-flexibel', title: 'Verbindlich oder flexibel?', text: 'Einige Vorgaben sind verbindlich, andere geben Orientierung.', items: [{ label: 'Verbindlich:', text: ' Logo, Markenfarben, Typografie und Barrierefreiheit.' }, { label: 'Flexibel:', text: ' Layout, Bildauswahl, Komposition und zusätzliche grafische Elemente.' }, 'Abweichungen sollten einen guten funktionalen Grund haben, etwa bessere Lesbarkeit, technische Anforderungen oder besondere Eigenschaften des Formats.'] }, { id: 'gemeinsame-marke', title: 'Gemeinsame Marke', text: 'Volt ist eine gemeinsame europäische Marke: One Europe, One Democracy. Die Marke soll über Länder, Landesverbände, Chapter und Kampagnen hinweg wiedererkennbar bleiben. Je konsistenter Volt auftritt, desto stärker wird die gemeinsame Marke.', items: ['Landesverbände, Chapter und Teams können Gestaltung an Inhalte, Zielgruppen und Formate anpassen. Die grundlegende Markenidentität bleibt dabei erhalten.', 'Logo, Markenfarben und Typografie nicht eigenständig verändern.', 'Keine eigenen Untermarken oder vollständigen Parallel-Designsysteme aufbauen.', 'Lokale Gestaltung an Volt anlehnen, statt jedes Mal eine neue visuelle Sprache zu entwickeln.', 'Kampagnen dürfen einen eigenen Charakter haben, sollten aber weiterhin klar als Volt erkennbar sein.', 'Zusätzliche Farben, Formen oder Gestaltungselemente sparsam und bewusst einsetzen.', 'Ein Landesverband oder Chapter muss nicht genauso aussehen wie jedes andere Team. Zu starke Abweichungen erschweren aber die Wiedererkennung und schwächen langfristig die gemeinsame Markenbildung.', 'Je öffentlicher und dauerhafter ein Material ist, desto näher sollte es an der gemeinsamen Markenidentität bleiben.', 'Bei kurzfristigen oder kampagnenspezifischen Formaten ist mehr Spielraum möglich. Die grundlegende visuelle Identität sollte trotzdem nicht ersetzt werden.', 'Wenn ältere Vorlagen oder Materialien von aktuellen Vorgaben abweichen, gelten die aktuellen Vorgaben von Volt Europa. Ältere Designs können als Inspiration dienen, sind aber kein Maßstab für neue Materialien.'] }, { id: 'wenn-du-unsicher-bist', title: 'Wenn du unsicher bist', text: 'Prüfe kurz:', items: ['Ist die Hauptbotschaft sofort erkennbar?', 'Sieht es eindeutig nach Volt aus?', 'Ist alles gut lesbar?', 'Ist klar, was zuerst gesehen werden soll?', 'Kann etwas entfernt oder vereinfacht werden?', 'Funktioniert die Gestaltung im tatsächlichen Format?', 'Wenn mehrere Punkte nicht passen, vereinfache die Gestaltung.'] }] },

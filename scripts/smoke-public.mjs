@@ -33,6 +33,7 @@ const checkedViewports = [
 
 const publicPageIds = [
   'intro',
+  'foundationTldr',
   'designPrinciples',
   'brandVoice',
   'logo',
@@ -228,7 +229,7 @@ const assertMinimumContentBlocks = async (page) => {
   const checks = [
     { pageId: 'colors', selector: '.volt-color-swatch', label: 'Farbkarten' },
     { pageId: 'logo', selector: '.volt-dos-donts article', label: 'Do/Don’t-Beispiele' },
-    { pageId: 'logo', selector: '.volt-download-card', label: 'Download-Hinweis' },
+    { pageId: 'logo', selector: '.volt-logo-variant-card', label: 'Logo-Downloads' },
     { pageId: 'layout', selector: '.volt-guideline-grid article', label: 'Guideline-Karten' },
     { pageId: 'applications', selector: '.volt-application-card', label: 'Anwendungskarten' },
     { pageId: 'intro', selector: 'main ul li', label: 'Listeninhalt' },

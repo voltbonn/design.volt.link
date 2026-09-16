@@ -13,6 +13,7 @@ import {
   digitalComponents,
   downloads,
   fileExport,
+  foundationTldr,
   glossary,
   governance,
   graphicElements,
@@ -59,6 +60,7 @@ const pages = {
   digitalComponents,
   downloads,
   fileExport,
+  foundationTldr,
   glossary,
   governance,
   graphicElements,
@@ -88,6 +90,7 @@ const genericPageIds = [
   'changes',
   'decisionGuide',
   'deployment',
+  'foundationTldr',
   'designPrinciples',
   'digitalComponents',
   'downloads',
@@ -317,9 +320,6 @@ export const GuidePage = ({ page: pageId }) => {
           {c.sections.files.text && <p>{c.sections.files.text}</p>}
           <List items={c.sections.files.items} />
           <LogoVariantGallery items={c.logoVariants} />
-          <h2 id={c.sections.storage.id}>{c.sections.storage.title}</h2>
-          <List items={c.sections.storage.items} />
-          <DownloadCard {...c.download} />
           <h2 id={c.sections.taglines.id}>{c.sections.taglines.title}</h2>
           {c.sections.taglines.text && <p>{c.sections.taglines.text}</p>}
           <List items={c.sections.taglines.items} />
@@ -363,15 +363,36 @@ export const GuidePage = ({ page: pageId }) => {
       {pageId === 'typography' && (
         <>
           <h2 id={c.sections.roles.id}>{c.sections.roles.title}</h2>
+          {c.sections.roles.text && <p>{c.sections.roles.text}</p>}
+          {c.sections.roles.items && <List items={c.sections.roles.items} />}
           {c.samples.map((sample) => (
             <TypographySample key={sample.label} {...sample} />
           ))}
           <h2 id={c.sections.hierarchy.id}>{c.sections.hierarchy.title}</h2>
+          {c.sections.hierarchy.text && <p>{c.sections.hierarchy.text}</p>}
           <List items={c.sections.hierarchy.items} />
+          {c.sections.readability && (
+            <>
+              <h2 id={c.sections.readability.id}>{c.sections.readability.title}</h2>
+              {c.sections.readability.text && <p>{c.sections.readability.text}</p>}
+              <List items={c.sections.readability.items} />
+            </>
+          )}
           <h2 id={c.sections.formats.id}>{c.sections.formats.title}</h2>
+          {c.sections.formats.text && <p>{c.sections.formats.text}</p>}
           <List items={c.sections.formats.items} />
-          <h2 id={c.sections.open.id}>{c.sections.open.title}</h2>
-          <List items={c.sections.open.items} />
+          {c.sections.check && (
+            <>
+              <h2 id={c.sections.check.id}>{c.sections.check.title}</h2>
+              <List items={c.sections.check.items} />
+            </>
+          )}
+          {c.sections.open && (
+            <>
+              <h2 id={c.sections.open.id}>{c.sections.open.title}</h2>
+              <List items={c.sections.open.items} />
+            </>
+          )}
         </>
       )}
 
