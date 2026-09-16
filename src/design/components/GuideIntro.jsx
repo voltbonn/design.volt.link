@@ -1,5 +1,4 @@
 import { useT } from '../i18n';
-import { LegalLinks } from './LegalLinks';
 import { SectionNav } from './SectionNav';
 import './designComponents.css';
 
@@ -12,6 +11,7 @@ const defaultHrefs = {
 export const GuideIntro = ({ hrefs = defaultHrefs }) => {
   const t = useT();
   const structureItems = t('guideIntro.structureItems');
+  const startItems = t('guideIntro.startItems');
 
   return (
     <>
@@ -52,8 +52,12 @@ export const GuideIntro = ({ hrefs = defaultHrefs }) => {
       <h2>{t('guideIntro.editorialPrinciple')}</h2>
       <p>{t('guideIntro.editorialText')}</p>
 
-      <h2>{t('guideIntro.legal')}</h2>
-      <LegalLinks />
+      <h2>{t('guideIntro.startTitle')}</h2>
+      <ol>
+        {(Array.isArray(startItems) ? startItems : []).map((item) => (
+          <li key={item}>{item}</li>
+        ))}
+      </ol>
     </>
   );
 };

@@ -67,7 +67,13 @@ export const resources = {
         editorialPrinciple: 'Redaktionsprinzip',
         editorialText:
           'Jedes Kapitel soll kurz erklären, was erlaubt ist, warum es wichtig ist und wie man es praktisch anwendet. Wo möglich, sollen Beispiele und Downloads direkt neben der Regel stehen.',
-        legal: 'Rechtliches',
+        startTitle: 'So startest du',
+        startItems: [
+          'Wähle zuerst den passenden Anlass: Social Post, Website, Präsentation, Printmaterial oder UI-Element.',
+          'Springe dann in das passende Kapitel und prüfe Logo, Farbe, Typografie, Layout und Barrierefreiheit.',
+          'Nutze Vorlagen und Beispiele als Ausgangspunkt, aber halte Zielgruppe, Format und Kanal sichtbar im Blick.',
+          'Vor Veröffentlichung einmal mit der Entscheidungshilfe gegenprüfen.',
+        ],
       },
       templateGallery: {
         search: 'Suchen',
@@ -242,7 +248,13 @@ export const resources = {
       editorialPrinciple: 'Editorial Principle',
       editorialText:
         'Each chapter should briefly explain what is allowed, why it matters and how to apply it in practice. Where possible, examples and downloads should sit next to the rule.',
-      legal: 'Legal',
+      startTitle: 'How to Start',
+      startItems: [
+        'First choose the use case: social post, website, presentation, print material or UI element.',
+        'Then open the matching chapter and check logo, colour, typography, layout and accessibility.',
+        'Use templates and examples as a starting point while keeping audience, format and channel visible.',
+        'Before publishing, run one final check with the decision guide.',
+      ],
     },
     templateGallery: {
       search: 'Search',
@@ -417,7 +429,13 @@ export const resources = {
       editorialPrinciple: 'Redactioneel Principe',
       editorialText:
         'Elk hoofdstuk moet kort uitleggen wat is toegestaan, waarom het belangrijk is en hoe je het praktisch toepast. Waar mogelijk staan voorbeelden en downloads direct naast de regel.',
-      legal: 'Juridisch',
+      startTitle: 'Zo start je',
+      startItems: [
+        'Kies eerst de aanleiding: social post, website, presentatie, printmateriaal of UI-element.',
+        'Open daarna het passende hoofdstuk en controleer logo, kleur, typografie, lay-out en toegankelijkheid.',
+        'Gebruik sjablonen en voorbeelden als startpunt, maar houd doelgroep, formaat en kanaal zichtbaar in beeld.',
+        'Controleer vóór publicatie nog één keer met de beslisgids.',
+      ],
     },
     templateGallery: {
       search: 'Zoeken',
@@ -592,7 +610,13 @@ export const resources = {
         editorialPrinciple: 'Principe éditorial',
         editorialText:
           'Chaque chapitre doit expliquer brièvement ce qui est autorisé, pourquoi c’est important et comment l’appliquer concrètement. Lorsque c’est possible, exemples et téléchargements doivent être placés près de la règle.',
-        legal: 'Mentions légales',
+        startTitle: 'Comment commencer',
+        startItems: [
+          'Choisir d’abord le cas d’usage : post social, site web, présentation, support print ou élément UI.',
+          'Ouvrir ensuite le chapitre correspondant et vérifier logo, couleur, typographie, mise en page et accessibilité.',
+          'Utiliser modèles et exemples comme point de départ, tout en gardant public, format et canal visibles.',
+          'Avant publication, refaire une dernière vérification avec l’aide à la décision.',
+        ],
       },
       templateGallery: {
         search: 'Rechercher',

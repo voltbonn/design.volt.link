@@ -353,15 +353,9 @@ try {
   await page.getByRole('searchbox', { name: 'Suchen' }).waitFor();
   await page.getByRole('button', { name: /Archiv/ }).waitFor();
 
-  const imprintHref = await page.getByRole('link', { name: 'Impressum' }).first().getAttribute('href');
-  const privacyHref = await page.getByRole('link', { name: 'Datenschutz' }).first().getAttribute('href');
-
-  if (imprintHref !== 'https://voltdeutschland.org/impressum') {
-    throw new Error('Impressum-Link zeigt nicht auf die erwartete URL.');
-  }
-
-  if (privacyHref !== 'https://voltdeutschland.org/datenschutz') {
-    throw new Error('Datenschutz-Link zeigt nicht auf die erwartete URL.');
+  const introLegalLinks = await page.locator('.volt-legal-links').count();
+  if (introLegalLinks > 0) {
+    throw new Error('Der Einstieg zeigt noch rechtliche Links.');
   }
 
   await waitForLogoVariant(page, 'logo_lila', 'Logo im Light Mode');
@@ -460,7 +454,6 @@ try {
   await assertVisibleFocus(page, '.public-guide__search input', 'Suche');
   await assertVisibleFocus(page, '.public-guide__nav-section-toggle', 'Sidebar-Gruppe');
   await assertVisibleFocus(page, '.public-guide__nav-section-links a', 'Sidebar-Link');
-  await assertVisibleFocus(page, '.volt-legal-links a', 'Rechtlicher Link');
 
   await page.goto(`http://127.0.0.1:${port}/#intro`);
   await page.locator('.public-guide__actions select').selectOption('de');
@@ -473,7 +466,6 @@ try {
     { selector: '.public-guide__search input', label: 'Suche', maxTabs: 5 },
     { selector: '.public-guide__nav-section-toggle', label: 'Sidebar-Gruppe', maxTabs: 8 },
     { selector: '.public-guide__nav-section-links a', label: 'Sidebar-Link', maxTabs: 8 },
-    { selector: '.volt-legal-links a', label: 'Rechtlicher Link', maxTabs: 60 },
   ]);
 
   const loginLinks = await page.getByRole('link', { name: /^Login$/ }).count();

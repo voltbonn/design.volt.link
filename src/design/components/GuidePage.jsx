@@ -239,13 +239,8 @@ export const GuidePage = ({ page: pageId }) => {
           </p>
           <h2 id={c.sections.foundation.id}>{c.sections.foundation.title}</h2>
           <List items={c.sections.foundation.items} />
-          <h2 id={c.sections.legal.id}>{c.sections.legal.title}</h2>
-          <p>{c.sections.legal.text}</p>
-          <h2 id={c.sections.links.id}>{c.sections.links.title}</h2>
-          <p>{c.sections.links.text}</p>
-          <LegalLinks />
-          <h2 id={c.sections.open.id}>{c.sections.open.title}</h2>
-          <List items={c.sections.open.items} />
+          <h2 id={c.sections.editorial.id}>{c.sections.editorial.title}</h2>
+          <List items={c.sections.editorial.items} />
         </>
       )}
 
