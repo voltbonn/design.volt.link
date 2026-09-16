@@ -1,9 +1,0 @@
-# Kurz-TODO
-
-Die Roadmap liegt in `todoKI.txt`.
-
-Aktuelle offene Bugs:
-
-- Keine bekannten Blocker nach dem letzten Build.
-
-Version-2-Themen wie Loginbereich, geschuetzte Vorlagen und Backend bleiben in `todoKI.txt`.
