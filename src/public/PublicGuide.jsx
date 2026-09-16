@@ -27,8 +27,9 @@ import { GuidePage } from '../design/components/GuidePage';
 import { LegalLinks } from '../design/components/LegalLinks';
 import { I18nProvider, supportedLocales, useI18n } from '../design/i18n';
 import { applyTheme, getStoredTheme, supportedThemes, ThemeProvider } from '../design/theme';
-import logoPurple from '../../design.volt.link_logo_lila.jpg';
-import logoWhite from '../../design.volt.link_logo_white.jpg';
+
+const logoPurple = '/design.volt.link_logo_lila.svg';
+const logoWhite = '/design.volt.link_logo_white.svg';
 
 const pages = [
   { id: 'intro', section: '00', content: null },

@@ -2,7 +2,7 @@ Add-Type -AssemblyName System.Drawing
 
 $ErrorActionPreference = 'Stop'
 
-$source = Resolve-Path 'design.volt.link_logo_lila.jpg'
+$source = Resolve-Path 'design.volt.link_logo_lila.png'
 $publicDir = Join-Path (Get-Location) 'public'
 $faviconsDir = Join-Path $publicDir 'favicons'
 New-Item -ItemType Directory -Force -Path $faviconsDir | Out-Null
