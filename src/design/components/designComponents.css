@@ -283,6 +283,57 @@
   font-weight: 850;
 }
 
+.public-guide__content .volt-guide-list--check {
+  padding-left: 0;
+  list-style: none;
+}
+
+.public-guide__content .volt-guide-list--check > li:not(.volt-example-pair) {
+  display: grid;
+  grid-template-columns: 18px minmax(0, 1fr);
+  gap: 9px;
+  align-items: start;
+  padding-left: 0;
+}
+
+.public-guide__content .volt-guide-list--check > li:not(.volt-example-pair)::before {
+  display: inline-grid;
+  width: 14px;
+  height: 14px;
+  margin-top: 0.35em;
+  border: 2px solid var(--volt-purple);
+  border-radius: 2px;
+  content: '';
+}
+
+.public-guide__content .volt-definition-list {
+  display: grid;
+  margin: 4px 0 0;
+  border-top: 1px solid var(--volt-border);
+}
+
+.public-guide__content .volt-definition-list div {
+  display: grid;
+  grid-template-columns: minmax(128px, 0.38fr) minmax(0, 1fr);
+  gap: 14px;
+  border-bottom: 1px solid var(--volt-border);
+  padding: 10px 0;
+}
+
+.public-guide__content .volt-definition-list dt {
+  margin: 0;
+  color: var(--volt-link);
+  font-weight: 850;
+}
+
+.public-guide__content .volt-definition-list dd {
+  margin: 0;
+}
+
+.public-guide__content .volt-definition-list a {
+  font-weight: 850;
+}
+
 .public-guide__content li.volt-example-pair {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -746,6 +797,7 @@
   .volt-color-swatch,
   .volt-dos-donts,
   .public-guide__content li.volt-example-pair,
+  .public-guide__content .volt-definition-list div,
   .volt-section-nav,
   .volt-guideline-grid,
   .volt-template-gallery__controls,

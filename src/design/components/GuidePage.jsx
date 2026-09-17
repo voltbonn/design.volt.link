@@ -118,6 +118,22 @@ const isWeakExampleLabel = (label) =>
   ['statt', 'instead of', 'nicht', 'au lieu de'].includes(normalizeLabel(label));
 const isStrongExampleLabel = (label) =>
   ['besser', 'better', 'mieux'].includes(normalizeLabel(label));
+const isQuestionItem = (item) => typeof item === 'string' && item.trim().endsWith('?');
+const isQuestionList = (items) => {
+  const questionCount = items.filter(isQuestionItem).length;
+
+  return questionCount >= 2 && questionCount >= Math.ceil(items.length / 2);
+};
+const isDefinitionList = (items) =>
+  items.length > 1 &&
+  items.every(
+    (item) =>
+      typeof item === 'object' &&
+      item?.label &&
+      item?.text &&
+      !isWeakExampleLabel(item.label) &&
+      !isStrongExampleLabel(item.label),
+  );
 
 const ExamplePair = ({ weak, strong }) => (
   <li className="volt-example-pair">
@@ -155,32 +171,60 @@ const renderListItems = (items, renderItem) =>
   }, []);
 
 const List = ({ items }) => (
-  <ul className="volt-guide-list">
-    {renderListItems(items, (item) => (
-      <>
-        <strong>{item.label}</strong>
-        {item.text}
-      </>
-    ))}
-  </ul>
+  isDefinitionList(items) ? (
+    <DefinitionList items={items} />
+  ) : (
+    <ul className={`volt-guide-list${isQuestionList(items) ? ' volt-guide-list--check' : ''}`}>
+      {renderListItems(items, (item) => (
+        <>
+          <strong>{item.label}</strong>
+          {item.text}
+        </>
+      ))}
+    </ul>
+  )
 );
 
 const RichList = ({ items }) => (
-  <ul className="volt-guide-list volt-guide-list--rich">
-    {renderListItems(items, (item) => (
-      <>
-        <strong>{item.label}</strong>
-        {item.text}
-        {item.href && (
-          <>
-            {' '}
-            <a href={item.href}>{item.hrefLabel ?? item.href}</a>
-          </>
-        )}
-        {item.access && <span className="volt-access-note">{item.access}</span>}
-      </>
+  isDefinitionList(items) ? (
+    <DefinitionList items={items} />
+  ) : (
+    <ul className={`volt-guide-list volt-guide-list--rich${isQuestionList(items) ? ' volt-guide-list--check' : ''}`}>
+      {renderListItems(items, (item) => (
+        <>
+          <strong>{item.label}</strong>
+          {item.text}
+          {item.href && (
+            <>
+              {' '}
+              <a href={item.href}>{item.hrefLabel ?? item.href}</a>
+            </>
+          )}
+          {item.access && <span className="volt-access-note">{item.access}</span>}
+        </>
+      ))}
+    </ul>
+  )
+);
+
+const DefinitionList = ({ items }) => (
+  <dl className="volt-definition-list">
+    {items.map((item) => (
+      <div key={`${item.label}-${item.text}`}>
+        <dt>{item.label.replace(/[:：]\s*$/, '')}</dt>
+        <dd>
+          {item.text.trim()}
+          {item.href && (
+            <>
+              {' '}
+              <a href={item.href}>{item.hrefLabel ?? item.href}</a>
+            </>
+          )}
+          {item.access && <span className="volt-access-note">{item.access}</span>}
+        </dd>
+      </div>
     ))}
-  </ul>
+  </dl>
 );
 
 const GenericSection = ({ section }) => (
