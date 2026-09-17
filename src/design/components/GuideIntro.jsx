@@ -1,4 +1,5 @@
 import { useT } from '../i18n';
+import { stripFragmentPeriod } from '../textFormatting';
 import { SectionNav } from './SectionNav';
 import './designComponents.css';
 
@@ -30,11 +31,11 @@ const List = ({ items, ordered = false }) => {
       {items.map((item) => (
         <li key={typeof item === 'string' ? item : `${item.label}-${item.text}`}>
           {typeof item === 'string' ? (
-            item
+            stripFragmentPeriod(item)
           ) : (
             <>
               <strong>{item.label}</strong>
-              {item.text}
+              {stripFragmentPeriod(item.text, { force: true })}
             </>
           )}
         </li>

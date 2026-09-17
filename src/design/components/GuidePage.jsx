@@ -38,6 +38,7 @@ import {
 } from '../content/guidePages';
 import { templates as templateData } from '../data/templates';
 import { useI18n } from '../i18n';
+import { stripFragmentPeriod } from '../textFormatting';
 import { ApplicationCard } from './ApplicationCard';
 import { ColorSwatch } from './ColorSwatch';
 import { DosDonts } from './DosDonts';
@@ -163,7 +164,7 @@ const renderListItems = (items, renderItem) =>
 
     nodes.push(
       <li key={typeof item === 'string' ? item : `${item.label}-${item.text}`}>
-        {typeof item === 'string' ? item : renderItem(item)}
+        {typeof item === 'string' ? stripFragmentPeriod(item) : renderItem(item)}
       </li>,
     );
 
@@ -178,7 +179,7 @@ const List = ({ items }) => (
       {renderListItems(items, (item) => (
         <>
           <strong>{item.label}</strong>
-          {item.text}
+          {stripFragmentPeriod(item.text, { force: true })}
         </>
       ))}
     </ul>
@@ -193,7 +194,7 @@ const RichList = ({ items }) => (
       {renderListItems(items, (item) => (
         <>
           <strong>{item.label}</strong>
-          {item.text}
+          {stripFragmentPeriod(item.text, { force: true })}
           {item.href && (
             <>
               {' '}
@@ -213,7 +214,7 @@ const DefinitionList = ({ items }) => (
       <div key={`${item.label}-${item.text}`}>
         <dt>{item.label.replace(/[:：]\s*$/, '')}</dt>
         <dd>
-          {item.text.trim()}
+          {stripFragmentPeriod(item.text.trim(), { force: true })}
           {item.href && (
             <>
               {' '}
@@ -237,7 +238,7 @@ const GenericSection = ({ section }) => (
       (section.ordered ? (
         <ol className="volt-guide-list volt-guide-list--ordered">
           {section.items.map((item) => (
-            <li key={item}>{item}</li>
+            <li key={item}>{stripFragmentPeriod(item)}</li>
           ))}
         </ol>
       ) : (
