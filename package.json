@@ -30,7 +30,7 @@
     "@vitest/coverage-v8": "latest",
     "playwright": "latest",
     "prop-types": "latest",
-    "storybook": "^10.5.9",
+    "storybook": "^10.6.2",
     "storybook-addon-pseudo-states": "^10.5.9",
     "vitest": "latest"
   }
